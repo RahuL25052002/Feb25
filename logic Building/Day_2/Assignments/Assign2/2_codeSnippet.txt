@@ -1,0 +1,19 @@
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+	}	
+}
+
+Error :-
+ Main method is  not found in class 
+we have to declare main method as public in that 
+
+
+
+corrected code :
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+	}	
+}

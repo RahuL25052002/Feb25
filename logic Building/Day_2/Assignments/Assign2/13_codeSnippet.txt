@@ -1,0 +1,16 @@
+Snippet 13:
+public class Main {
+	public static void main(String[] args) {
+		String str = null;
+		System.out.println(str.length());
+	}
+}
+ What exception is thrown? 
+	Exception in thread "main" java.lang.NullPointerException
+        at Main.main(Main.java:4)
+
+Why does it occur?
+	if we initialise string with null then it means have nothing 
+	in it we cannot access its length 
+	if its nothing then how it can be accessed null value has nothing
+	thats why it gave an exception

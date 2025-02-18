@@ -1,0 +1,27 @@
+Snippet 12:
+public class Main {
+	public static void main(String[] args) {
+		while (true) {
+			System.out.println("Infinite Loop");
+		}
+	}
+}
+ What happens when you run this code?
+ 	it goes on the infinite loop it will print again and again SOP statement
+	
+
+ How can you avoid infinite loops?
+	To make termination condition in loop statement thats can simply 
+	avoid code not going into infinite loop
+
+corrected code
+
+public class Main {
+	public static void main(String[] args) {
+		int a=10;
+		while (a!=0) {
+			System.out.println("Infinite Loop");
+			a--;
+		}
+	}
+}

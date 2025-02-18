@@ -1,0 +1,29 @@
+Snippet 17:
+public class Main {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 5;
+		int result = a ** b;
+		System.out.println(result);
+	}
+}
+ What compilation error occurs?
+
+error: illegal start of expression
+                int result = a ** b;
+
+ Why is the ** operator not valid in Java?
+	because java have not design in that way that 
+	supports it and it have no meaning in that
+
+
+corrected code
+
+public class Main {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 5;
+		int result = a * b;
+		System.out.println(result);
+	}
+}

@@ -1,0 +1,26 @@
+/*
+public class Main {
+	public void main(String[] args) {
+		System.out.println("Hello, World!");
+	}
+}
+
+*/
+
+
+/*errors
+
+class is public thats why file name and class name should be Same!!
+After that it give Error that you main method is Static and you have not
+write static there 
+
+*/ 
+
+//correct code 
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+	}
+}
+	

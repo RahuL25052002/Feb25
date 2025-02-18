@@ -1,0 +1,23 @@
+Snippet 16:
+public class Main {
+	public static void main(String[] args) {
+		int num = 10;
+		double result = num / 4;
+		System.out.println(result);
+	}
+}
+ What is the result of this operation?
+	it give output: 2.0
+
+
+ Is the output what you expected?
+	No it give an 2.5 it losses point
+	we have typecast them then it will run
+
+public class Main {
+	public static void main(String[] args) {
+		int num = 10;
+		double result = (double)num / 4;
+		System.out.println(result);
+	}
+}

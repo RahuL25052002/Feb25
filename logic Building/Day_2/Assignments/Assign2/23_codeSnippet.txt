@@ -1,0 +1,47 @@
+Snippet 23:
+public class Confusion {
+	public static void main(String[] args) {
+		int value = 2;
+		switch(value) {
+			case 1:
+				System.out.println("Value is 1");
+			case 2:
+				System.out.println("Value is 2");
+			case 3:
+				System.out.println("Value is 3");
+			default:
+				System.out.println("Default case");
+		}
+	}
+}
+ Error to Investigate: Why does the default case print after "Value is 2"? How can you prevent the program from executing the default case?
+	it gave an output of
+	Value is 2
+	Value is 3
+	Default case
+	
+	because here we dont add break statement to any case
+	after matching 2 case value=2 after that all cases will run 
+	because upto it not find the break statement 
+	thats why it will default case also
+
+
+public class Confusion {
+	public static void main(String[] args) {
+		int value = 2;
+		switch(value) {
+			case 1:
+				System.out.println("Value is 1");
+				break;
+			case 2:
+				System.out.println("Value is 2");
+				break;
+			case 3:
+				System.out.println("Value is 3");
+				break;
+			default:
+				System.out.println("Default case");
+				break;
+		}
+	}
+}

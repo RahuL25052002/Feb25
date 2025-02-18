@@ -1,0 +1,21 @@
+Snippet 8:
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!"
+	}
+}
+ What syntax errors are present? 
+	We have not closing the bracket of println (method) statement
+	thats why it gave an syntax error
+
+How do they affect compilation?
+	compiler check all the code syntax if it is not in format
+	it gave an error and also .class file not generate 
+	it preventing the running of that program.
+
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+	}
+}

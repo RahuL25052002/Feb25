@@ -1,0 +1,18 @@
+Snippet 3:
+public class Main {
+	public static int main(String[] args) {
+		System.out.println("Hello, World!");
+		return 0;
+	}
+}
+ What error do you encounter?
+
+Only we have to do class name and file name same because class is public
+Answer
+It not give an error here code is working
+it print the SOP statement
+
+ Why is void used in the main method?
+Beacuse main method does not return any value so thats why it is void 
+
+

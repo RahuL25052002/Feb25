@@ -1,0 +1,40 @@
+Snippet 10:
+public class Main {
+	public void display() {
+		System.out.println("No parameters");
+	}
+	public void display(int num) {
+		System.out.println("With parameter: " + num);
+	}
+	public static void main(String[] args) {
+		display();
+		display(5);
+	}
+}
+ What happens when you compile and run this code? 
+	non-static method display() cannot be referenced from a static context
+
+
+Is method overloading allowed?
+	allowed,
+	but in the code methode are instance methode thats why it gave that 
+	error 
+	we have to make that method as static or also we can call that methode by 
+	creating object and call then it will work
+
+
+corrected code 
+
+public class Main {
+	public void display() {
+		System.out.println("No parameters");
+	}
+	public void display(int num) {
+		System.out.println("With parameter: " + num);
+	}
+	public static void main(String[] args) {
+		Main obj=new Main();
+		obj.display();
+		obj.display(5);
+	}
+}

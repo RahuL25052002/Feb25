@@ -1,0 +1,53 @@
+Snippet 9:
+public class Main {
+	public static void main(String[] args) {
+		int class = 10;
+		System.out.println(class);
+	}
+}
+
+
+What error occurs? 
+	Main.java:3: error: not a statement
+                int class = 10;
+                ^
+	Main.java:3: error: ';' expected
+                int class = 10;
+                   ^
+	Main.java:3: error: <identifier> expected
+                int class = 10;
+                         ^
+	Main.java:4: error: <identifier> expected
+                System.out.println(class);
+                                  ^
+	Main.java:4: error: illegal start of type
+                System.out.println(class);
+                                   ^
+	Main.java:4: error: <identifier> expected
+                System.out.println(class);
+                                        ^
+	Main.java:6: error: reached end of file while parsing
+	}
+	 ^
+	7 errors
+ 
+	Means we cannot use Keyword as identifier
+
+
+Why can't reserved keywords be used as identifiers?
+
+	it create ambiguity in that if it work it cannot which is 
+	identifier or the keywords 
+	or it show the code readability in good way thats why we can't use 
+	keyword as identifier
+
+
+
+corrected code
+
+public class Main {
+	public static void main(String[] args) {
+		int r = 10;//we change to r
+		System.out.println(r);
+	}
+}

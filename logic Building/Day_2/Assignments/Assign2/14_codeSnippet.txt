@@ -1,0 +1,21 @@
+Snippet 14:
+public class Main {
+	public static void main(String[] args) {
+		double num = "Hello";
+		System.out.println(num);
+	}
+}
+ What compilation error occurs? 
+	incompatible type error String cannot conver to double 
+Why does Java enforce data type constraints?
+programs are prevented from accessing memory in inappropriate ways.
+
+
+corrected code 
+
+public class Main {
+	public static void main(String[] args) {
+		double num =30000.908977;
+		System.out.println(num);
+	}
+}

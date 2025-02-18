@@ -1,0 +1,30 @@
+public class Main {
+	public static void main(String[] args) {
+		static void displayMessage() {
+			System.out.println("Message");
+		}
+	}
+}
+ What syntax error occurs? 
+
+	 error: illegal start of expression
+                static void displayMessage() {
+                ^
+	Main.java:7: error: class, interface, or enum expected
+	}
+
+
+Can a method be declared inside another method?
+
+	no we cannot define method into another method
+
+
+
+public class Main {
+	public static void main(String[] args) {
+		displayMessage()
+	}
+	static void displayMessage() {
+		System.out.println("Message");
+	}
+}

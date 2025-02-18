@@ -1,0 +1,24 @@
+Snippet 21:
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+		// Missing closing brace here
+}
+
+ What does the compiler say about mismatched braces?
+
+Main.java:1: error: class, interface, or enum expected
+Snippet 21:
+^
+Main.java:6: error: reached end of file while parsing
+}
+
+
+corrected code
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+		// Missing closing brace here
+	}
+}

@@ -1,0 +1,14 @@
+Snippet 6:
+public class Main {
+	public static void main(String[] args) {
+		int x = y + 10;
+		System.out.println(x);
+	}
+}
+ What error occurs?
+	it gave an error of cannot find symbol y 
+
+ Why must variables be declared?
+	Because the value can be have any type ,
+	it can store in those specific data type 
+	for giving variable that size memory

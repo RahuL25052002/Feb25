@@ -1,0 +1,25 @@
+Snippet 4:
+public class Main {
+	public static void main() {
+		System.out.println("Hello, World!");
+	}
+}
+ What happens when you compile and run this code? Why is String[] args needed?
+
+it gave an error as 
+ Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+
+we have to write in a standard way that method is public , static and void 
+
+Why is String[] args needed?
+
+for command line argument it is used that String array
+
+
+public class Main {
+	public static void main(String[]args) {
+		System.out.println("Hello, World!");
+	}
+}

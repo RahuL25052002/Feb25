@@ -1,0 +1,29 @@
+Snippet 11:
+public class Main {
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3};
+		System.out.println(arr[5]);
+	}
+}
+What runtime exception do you encounter? 
+
+	"main" java.lang.ArrayIndexOutOfBoundsException:
+ 	Index 5 out of bounds for length 3
+	it say that you accessing element out of the length
+	of that array
+
+Why does it occur?
+
+	it that you accessing element out of the length
+	of that array and in memory some different program also run 
+	it has different address if we accessing out of that 
+	another data can be accessed by thats why it gave an exception
+	to avoid the accesing data
+
+corrected code
+public class Main {
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3};
+		System.out.println(arr[0]);
+	}
+}

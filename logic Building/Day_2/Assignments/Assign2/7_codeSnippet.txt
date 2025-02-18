@@ -1,0 +1,24 @@
+Snippet 7:
+public class Main {
+	public static void main(String[] args) {
+		int x = "Hello";
+		System.out.println(x);
+	}
+}
+ What compilation error do you see? 
+
+	It gave an error that String cannot be converted to int data (incompatible type)
+
+Why does Java enforce type safety?
+
+	programs are prevented from accessing memory in inappropriate ways.
+
+corrected code:
+
+public class Main {
+	public static void main(String[] args) {
+		int x =3;// i change string value to integer then it will work
+		System.out.println(x);
+	}
+}
+	

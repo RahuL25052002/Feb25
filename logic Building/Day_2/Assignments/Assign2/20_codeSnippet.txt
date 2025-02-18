@@ -1,0 +1,21 @@
+Snippet 20:
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World")
+	}
+}
+ What syntax error occurs?
+	we not write the Semicolon(;) after SOP statement
+	that give this error then 
+
+
+ How does the missing semicolon affect compilation?
+	compiler cannot decide end Of statement where it is
+	it is say that after the statement you compulsory add 
+	semicolon to that statement
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World");
+	}
+}
