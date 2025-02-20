@@ -1,0 +1,36 @@
+Snippet 3:
+public class DoWhileIncorrectCondition {
+	public static void main(String[] args) {
+		int num = 0;
+		do {
+			System.out.println(num);
+			num++;
+		} while (num > 0);
+	}
+}
+// Error to investigate: 
+
+Why does the loop only execute once? 
+	No, it will infinite loop
+What is wrong with the loop condition in the `dowhile`
+loop?
+	it will goes in infinte loop because first num=0;
+	then it goes to do body it print num value and increment by 1
+	and then it goes to condtion here condition is num>0
+	now num is 1 then 1>0 is true then it again goes to do body print 
+	and increment by 1 ... so on 
+	thats why condtion never get false 
+
+corrected code:
+public class Main{
+	public static void main(String[] args) {
+		int num = 0;
+		do {
+			System.out.println(num);
+			num++;
+		} while (num < 0);
+	}
+}
+
+now it will run only once and print 0
+

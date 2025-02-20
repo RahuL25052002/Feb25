@@ -1,0 +1,30 @@
+public class WrongInitializationForLoop {
+	public static void main(String[] args) {
+		for (int i = 10; i >= 0; i++) {
+			System.out.println(i);
+		}
+	}
+}
+
+______________________________________________________________________________________
+
+// Error to investigate: Why does this loop not print numbers in the expected order? What is the problem with the initialization and update statements in the `for` loop?
+
+	because the i value is 10 and in condtion i>=0 means 10>=0 is true
+	ans we increment the value of i so it become 11,12,13....upto infinity 
+	so it goes into the infinite loop so thats why the
+	we have to print from 0 to 10 
+	so we have to initialised i with zero and in condition we have to make i<=10 so it will print from 0 to 10 
+
+______________________________________________________________________________________________
+
+corrected code for print 0 to 10:
+
+public class WrongInitializationForLoop {
+	public static void main(String[] args) {
+		for (int i = 0; i <= 0; i++) {
+			System.out.println(i);
+		}
+	}
+}
+

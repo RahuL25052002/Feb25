@@ -1,0 +1,40 @@
+Snippet 6:
+public class MisplacedForLoopBody {
+	public static void main(String[] args) {
+		for (int i = 0; i < 5; i++)
+			System.out.println(i);
+		System.out.println("Done");
+	}
+}
+
+// Error to investigate: 
+
+Why does "Done" print only once, outside the loop? 
+	because it is outside the loop we dont gave body to for loop so it will consider that it very next to statement to it 
+s	only one statement it will consider that so it can run the loop execute only next statement to it 
+	here compiler find out there is no given body do it think he have to execute only one statement 
+	so thats why it not execute the second statement in loop 
+	when loop ended the next statement also run and code end 
+
+
+How should the loop body be enclosed to	include all statements within the loop?	
+	we have to give the loop body in the loop body every statement will excute in loop wise 
+
+
+corrected code it will excecute all statement in the for loop body have	
+public class MisplacedForLoopBody {
+	public static void main(String[] args) {
+		for (int i = 0; i < 5; i++){
+			System.out.println(i);
+			System.out.println("Done");
+		}
+	}
+}
+
+
+
+
+
+
+
+

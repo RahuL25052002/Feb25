@@ -1,0 +1,34 @@
+Snippet 1:
+public class InfiniteForLoop {
+	public static void main(String[] args) {
+		for (int i = 0; i < 10; i--) {
+			System.out.println(i);
+		}
+}
+}
+// Error to investigate:
+
+ Why does this loop run infinitely?
+	As in the program initialize with zero (0) and in condition
+	i is less than  10  means 0<10 that is true then it goes to body 
+	execute body and going to inc/decrement  here is write i--
+	means it can -1 value from it -1<10 is true so  the
+	here decrement operation is done thats why it goes on  loopp
+		
+
+ How should the loop control variable be adjusted?
+	we have to check condition according to that we have to perform
+	operation  on it 
+
+corrected code
+
+public class InfiniteForLoop {
+	public static void main(String[] args) {
+		for (int i = 0; i < 10; i++) {
+			System.out.println(i);
+		}
+	}
+}
+
+in this output it will print 0 to 9 and then i=10 then condtion get  false
+10<10 loop wiil break 

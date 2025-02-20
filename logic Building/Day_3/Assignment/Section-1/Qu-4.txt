@@ -1,0 +1,29 @@
+Snippet 4:
+public class OffByOneErrorForLoop {
+	public static void main(String[] args) {
+		for (int i = 1; i <= 10; i++) {
+			System.out.println(i);
+		}
+
+		// Expected: 10 iterations with numbers 1 to 10
+		// Actual: Prints numbers 1 to 10, but the task expected only 1 to 9
+	}
+}
+// Error to investigate: What is the issue with the loop boundaries? How should the loop be adjusted to meet the
+expected output?
+
+	as the condtion is i is less than equal to 10 means if the value become 
+	10 is also true na 10<=10 
+	thats why it print 10 also 
+	but we have to check the condtion to change condtion to i<10 
+	means if the value is 10<10 is getting false 
+
+
+corrected code : this code will print 1 to 9
+public class OffByOneErrorForLoop {
+	public static void main(String[] args) {
+		for (int i = 1; i < 10; i++) {
+			System.out.println(i);
+		}
+	}
+}

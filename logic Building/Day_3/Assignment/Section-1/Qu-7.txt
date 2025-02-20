@@ -1,0 +1,34 @@
+Snippet 7:
+public class UninitializedWhileLoop {
+	public static void main(String[] args) {
+		int count;
+		while (count < 10) {
+			System.out.println(count);
+			count++;
+		}
+	}
+}
+// Error to investigate: Why does this code produce a compilation error?
+	because in that code we only declare the variable not initialised so thats why it gave the error if not initialized compiler get confuse how to run the code the value is not initiliased it create an ambiguity code so thats why error we get
+	 
+ 
+What needs to be done to initialize the loop variable properly?
+
+	because in the loop we check the condition here we have to compare with value if variable not initialised it don't have any value so how to compare it so thats why we have initialize variable properly...
+
+
+corrected code:
+	in that, count initialize with 1 
+public class UninitializedWhileLoop {
+	public static void main(String[] args) {
+		int count=1;
+		while (count < 10) {
+			System.out.println(count);
+			count++;
+		}
+	}
+}
+
+
+
+
