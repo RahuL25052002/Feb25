@@ -1,0 +1,29 @@
+Snippet 12:
+public class LoopVariableScope {
+	public static void main(String[] args) {
+		for (int i = 0; i < 5; i++) {
+			int x = i * 2;
+		}
+		System.out.println(x); // Error: 'x' is not accessible here
+	}
+}
+
+
+// Error to investigate: Why does the variable 'x' cause a compilation error? How does scope
+
+=--------> because we try to print in out of scope 
+		it get an error that variable x cannot find symbol
+		because it declare in the scope of for loop
+
+corrected code:
+	now it can access the variable x
+
+public class LoopVariableScope {
+	public static void main(String[] args) {
+		int x=0;
+		for (int i = 0; i < 5; i++) {
+			x = i * 2;
+		}
+		System.out.println(x); // Error: 'x' is not accessible here
+	}
+}

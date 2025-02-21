@@ -1,0 +1,33 @@
+Snippet 8:
+public class OffByOneDoWhileLoop {
+	public static void main(String[] args) {
+		int num = 1;
+		do {
+			System.out.println(num);
+			num--;
+		} while (num > 0);
+	}
+}
+// Error to investigate: 
+Why does this loop print unexpected numbers?
+	because in the d0{} body we decrement the value of num so it goes to -1..
+	and the while condition we  check num>0 means -1>0 it get false
+	and only single 1 is print
+
+
+ What adjustments are needed to print the numbers from 1 to 5?
+
+	first we have to make increment of num ie. num++ and then 
+	in condition we have to write num<=5 then it will give output 1 to 5
+
+corrected code:
+
+public class Main {
+	public static void main(String[] args) {
+		int num = 1;
+		do {
+			System.out.println(num);
+			num++;
+		} while (num <= 5);
+	}
+}

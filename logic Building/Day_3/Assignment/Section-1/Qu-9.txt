@@ -1,0 +1,36 @@
+Snippet 9:
+public class InfiniteForLoopUpdate {
+	public static void main(String[] args) {
+		for (int i = 0; i < 5; i += 2) {
+			System.out.println(i);
+		}
+	}
+}
+// Error to investigate: Why does the loop print unexpected results or run infinitely? How should the loop update
+expression be corrected?
+
+--> 	it is not run infinitely it run o/p:
+	0 
+	2
+	4
+	then terminate loop
+	because in condition check i<5 first i=0 0<5 thats is true
+	secondt it increment by 2 i+=2 ie. i=i+2; means i=2;
+	it check 2<5 ie true then it increment 
+	i=i+2 ie. 2+2=4  4<5 ie also true then it increment 
+	ie 4+2=6  6<5 ie. false then it terminate loop 
+	we have to print 0 t0 5 so we have to change increment and condition
+	so i+=1; and condition i<=5; so it will print from 0 t0 5
+
+updated code :
+
+public class Main {
+	public static void main(String[] args) {
+		for (int i = 0; i<=5; i += 1) {
+			System.out.println(i);
+		}
+	}
+}
+		
+						
+	

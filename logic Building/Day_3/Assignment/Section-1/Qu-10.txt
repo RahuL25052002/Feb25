@@ -1,0 +1,31 @@
+Snippet 10:
+public class IncorrectWhileLoopControl {
+	public static void main(String[] args) {
+		int num = 10;
+		while (num = 10) {
+			System.out.println(num);
+			num--;
+		}
+	}
+}
+// Error to investigate: Why does the loop execute indefinitely? What is wrong with the loop condition?
+
+	as we see there in condition we  assign  value  num=10, where 
+	it  need the Boolean value but it get the integer value,
+	so thats why it get an error expected Boolean got an integer
+	so we have use == or !== or < ,> ,<= and >= sign then we get 
+	the answer correct
+	
+
+
+corrected code :
+	it will run upto the 1 to 10
+public class IncorrectWhileLoopControl {
+	public static void main(String[] args) {
+		int num = 1;
+		while (num <= 10) {
+			System.out.println(num);
+			num++;
+		}
+	}
+}

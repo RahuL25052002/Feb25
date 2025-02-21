@@ -1,9 +1,9 @@
-public class Main {
+public class Main{
 	public static void main(String[] args) {
-		int count;
-		while (count < 10) {
-			System.out.println(count);
-			count++;
+		int x=0;
+		for (int i = 0; i < 5; i++) {
+			x = i * 2;
 		}
+		System.out.println(x); // Error: 'x' is not accessible here
 	}
 }
