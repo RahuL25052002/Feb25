@@ -1,6 +1,6 @@
 class ArrayDemo{
 	public static void main(String[]args){
-		
+		/*
 		int a[][]={
 				{1,2},//jagged array it is
 				{3,4,5,6,7},
@@ -13,7 +13,6 @@ class ArrayDemo{
 			}
 			System.out.println();
 		}
-		/*
 		Array is store value in continous memory allocation
 		where 
 			0  1  2
@@ -34,6 +33,8 @@ class ArrayDemo{
 		in this way it actually store the elements in memory
 		continous address location
 
-		*/		
+		*/	
+
+			
 	}
 }
