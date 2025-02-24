@@ -1,0 +1,39 @@
+Os--
+	is manager of hardware
+it is layer between user and the hardware 
+
+		User	
+		AppS(Application software)
+		OS
+		kernel	
+		hardware
+
+**Kernel is incharge of Hardware it also a part of OS 
+kernel is nothing but command prompt in System ..CP is just utility to interact with kernel
+
+
+
+Basic input output service/system(BIOS):
+	when start your computer the electric spark goes to the ROM (Read only memory) it have encoded code of the BIOS that actually working to check all the Hardware working properly or not
+	then if it gives to yes means all hardware are check computer is ready to on then loader comes load OS from Secondary memory to the Main memory and computer start
+
+what is Booting?
+	Loader load the OS from Secondary memory to main Memory that is called Booting 
+
+	There are two types Booting
+
+Cold Booting:
+	when you first time load the OS from Secondary memory to the main memory 
+
+HOT Booting:
+	when you are running and restart your system that time main memory get clean means all processes get kill and restart again that is HOT Booting..	
+
+
+
+
+function of OS:
+	-Device management
+	-Process management
+	-security
+	-Disk management 
+	-File Management
