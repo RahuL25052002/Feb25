@@ -7,5 +7,4 @@ This repository contains all my code and assignments from the **CDAC (Centre for
 
 ## Technologies Used
 - Java
-
-Stay tuned for updates! 📚✨
+  
