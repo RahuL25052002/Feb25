@@ -1,0 +1,51 @@
+First of all I am going to tell you that invokeStatic, invokeSpecial, invokeVirtual, invokeInterface etc are the assembly instructions which are generate by the compiler after compilation process. As we all knows that we got a .class file format after compilation and we can't read it out. But java provide a tool for that named "javap".
+
+We can read out our .class file assembly instructions by using javap command. By default we can't see private method assembly instructions so we need to use -private with it. Below are the commands to see java compiler generated assembly instructions:
+
+Imaging you have A.java class
+
+class A { public void printValue() { System.out.println("Inside A"); }
+
+public static void callMethod(A a) { a.printValue(); } }
+
+open cmd prompt and go to the folder which contains that java file A.java.
+
+run javac A.java.
+
+Now A.class file is generated which contains assembly instructions but you can't read it.
+
+Now run javap -c A
+
+You can see assembly generation for your method call --> a.printValue();
+
+If printValue( ) method is private you need to use javap -c -private A .
+
+You can make your printValue( ) private / static / public / private static both.
+
+One more thing to keep in mind that first compiler check the object on which the method is getting called. Then find its Class Type and found that method in that class if available or not.
+
+Note : Now keep in mind that if our calling method is static then invokeStatic assembly is generated, if its private then invokeSpecial assembly instruction is generated and if its public then invokeVirtual instruction is generated. public method never mean that every time invokeVirtual instruction is generated. In case of super.printValue() call from the subclass of A is exceptional case. i.e. if A is parent class for B and B contains the same method printValue() then it will generate invokeVirtual(dynamic) but if printValue() in B have super.printValue() as its first statement then invokeStatic is generated even if printValue() of A is public.
+
+Let's try this too:
+
+class B extends A
+{
+public void printValue()
+{
+super.printValue();// invokeStatic
+System.out.println("Inside B");
+}
+
+}
+
+public class Test
+{
+public static void main(String[] arr)
+{
+    A a = new A();
+    B b = new B();
+    A.callMethod(a);// invokeVirtual
+    A.callMethod(b);// invokeVirtual
+}
+}
+--> save it by Test.java --> run javac Test.java --> javap -c -private Test
