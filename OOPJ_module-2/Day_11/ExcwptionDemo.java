@@ -13,8 +13,9 @@ class ExceptionDemo{
 		ExceptionDemo obj=new ExceptionDemo();
 		//	obj.m1();
 		int a=10;
-		try{int res=a/0;}catch(Exception e){
-
+		try{
+			int res=a/0;
+		}catch(Exception e){
 			System.out.println("Not divisible by zero");
 		}
 //		System.out.println(res);
