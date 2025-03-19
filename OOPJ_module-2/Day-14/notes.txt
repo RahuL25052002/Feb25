@@ -1,0 +1,41 @@
+Comparable:
+=====================================================
+	important interface only implement in class
+	use for comparing of objects
+	used to define ordering of objects(sorting);
+	Collection.sort();
+	Arrays.sort();
+	Sorting in ascending order
+	compareTo() : used to do the comparision
+
+	class Employee implements Comparable<Employee>{
+
+	int id;
+	String name;
+	//it is object class method 
+	public int compareTo(Employee o){
+		
+	}
+
+
+
+	Comparator
+	============================
+	it use dto define custom sorting
+	natural ordering : sorting
+
+	-compare (T o1 , T o2) methos is used to for comparison
+	allows mulitple sorting strategies for the class 
+	does not modify the class itself(external sorting logic not required)
+	syntax
+
+	class Employee{
+
+	}
+	class empsal implemetns Comparator<Employee>{
+
+		public int compare(Employee e1, Employee e2){
+			//logic
+		}
+	
+	}
