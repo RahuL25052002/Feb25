@@ -12,29 +12,40 @@ class Employee implements Comparable<Employee>{
 
 		return id+" "+name;
 	}
-	public boolean equals(Object obj0){
+	public boolean equals(Object obj){
 		if(obj==null){
 			return false;
 		}
 
 		if(obj instanceof Employee){
 			Employee e=(Employee)obj;
+			return id==e.id;
 		}
+		return false;
+	}
+	public int compareTo(Employee e){
+		return id-e.id;
 	}
 
 }
 class ComparableDemo{
 
 	public static void main(String[]args){
-		ArrayList<Employee> a=new ArrayList<>();
+		TreeSet<Employee> a=new TreeSet<>();
 		a.add(new Employee(11,"Rahul"));
-		a.add(new Employee(12,"Sai"));
+		a.add(new Employee(42,"Sai"));
 		a.add(new Employee(13,"Nikhil"));
 	 	a.add(new Employee(14,"Mayuri"));
-		a.add(new Employee(15,"Mauli"));
+		a.add(new Employee(25,"Mauli"));
 		a.add(new Employee(16,"Shweta"));
 
 		System.out.println(a);
+
+
+		for(Employee x:a){
+
+			System.out.println(x);
+		}
 	}
 
 }

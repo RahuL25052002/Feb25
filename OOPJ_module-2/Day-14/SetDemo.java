@@ -24,6 +24,13 @@ class SetDemo{
 		s1.add("Apple");
 		s1.add("Apple");
 		s1.add("Grapes");
+		s1.add(null);//it store the null vaalue also
+		System.out.println(s1);
+		Iterator itr=s1.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+			itr.remove();
+		}
 		System.out.println(s1);
 
 	}

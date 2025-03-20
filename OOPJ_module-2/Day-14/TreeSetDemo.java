@@ -20,6 +20,7 @@ class TreeSetDemo{
 		t1.add(90);
 		t1.add(3);
 		t1.add(2);
+	//	t1.add(null);//gives error it cannot store null values
 		System.out.println(t1);
 		
 	}
