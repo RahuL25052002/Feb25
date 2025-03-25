@@ -24,7 +24,7 @@ class EmployeeComparator implements Comparator<Employee>{
 	@Override
 	public int compare(Employee o1, Employee o2) {
 		
-		return o1.empId - o2.empId;
+		return o2.empId - o1.empId;
 	}
 	
 }
@@ -34,7 +34,7 @@ class EmployeeComparator1 implements Comparator<Employee>{
 	@Override
 	public int compare(Employee o1, Employee o2) {
 		
-		return o2.empName.compareTo(o1.empName);
+		return o1.empName.compareTo(o2.empName);
 	}
 	
 }
