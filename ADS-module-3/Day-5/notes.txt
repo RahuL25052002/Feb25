@@ -1,0 +1,138 @@
+Instances of static nested classes have no reference to an instance of the nesting class. It's basically the same as putting them in a separate file but having them as nested class is a good choice if the cohesion with the nesting class is high.
+
+Non-static nested classsed however require an instance of the nesting class to be created and instances are bound to that instance and have access to it's fields.
+
+As example, take this class:
+
+public class Main{
+
+  private String aField = "test";
+
+  public static void main(String... args) {
+
+    StaticExample x1 = new StaticExample();
+    System.out.println(x1.getField());
+
+
+    //does not compile:
+    // NonStaticExample x2 = new NonStaticExample();
+
+    Main m1 = new Main();
+    NonStaticExample x2 = m1.new NonStaticExample();
+    System.out.println(x2.getField());
+
+  }
+
+
+  private static class StaticExample {
+
+    String getField(){
+        //does not compile
+        return aField;
+    }
+  }
+
+  private class NonStaticExample {Instances of static nested classes have no reference to an instance of the nesting class. It's basically the same as putting them in a separate file but having them as nested class is a good choice if the cohesion with the nesting class is high.
+
+Non-static nested classsed however require an instance of the nesting class to be created and instances are bound to that instance and have access to it's fields.
+
+As example, take this class:
+
+public class Main{
+
+  private String aField = "test";
+
+  public static void main(String... args) {
+
+    StaticExample x1 = new StaticExample();
+    System.out.println(x1.getField());
+
+
+    //does not compile:
+    // NonStaticExample x2 = new NonStaticExample();
+
+    Main m1 = new Main();
+    NonStaticExample x2 = m1.new NonStaticExample();
+    System.out.println(x2.getField());
+
+  }
+
+
+  private static class StaticExample {
+
+    String getField(){
+        //does not compile
+        return aField;
+    }
+  }
+
+  private class NonStaticExample {
+    String getField(){
+        return aField;
+    }
+  }
+The static class StaticExample can be instantiated directly but has no access to the instance field of the nesting class Main. The non-static class NonStaticExample requires an instance of Main in order to be instantiated and has access to the instance field aField.
+
+Coming back to your LinkedList example, it's basically a design choice.
+
+Instances of Node do not require access to fields of the LinkedList, but putting them in a separate file also makes no sense, as the Node is an implementation detail of the LinkedList implementation and are of no use outside that class. So making it a static nested class was the most sensible design choice.
+    String getField(){
+        return aField;
+    }
+  }
+The static class StaticExample can be instantiated directly but has no access to the instance field of the nesting class Main. The non-static class NonStaticExample requires an instance of Main in order to be instantiated and has access to the instance field aField.
+
+Coming back to your LinkedList example, it's basically a design choice.
+
+Instances of Node do not require access to fields of the LinkedList, but putting them in a separate file also makes no sense, as the Node is an implementation detail of the LinkedList implementation and are of no use outside that class. So making it a static nested class was the most sensible design choice.
+
+
+
+
+
+1
+
+A basic implementation of linked list in java is:
+
+class Node{
+   int element;
+   Node next;
+ ......
+}
+What I do not understand is how does an object of the class declared within the class itself is able to store the address of another data member. Doesn't declaring Node next enable next itself to have an element part and then again a next. This would happen indefinitely, right? So, how does it work?
+
+javalinked-list
+
+
+@AbdulRizwan: Pls remove the above link as mycstutorials has been permanently shut down. It would be great if you can write from memory what you wanted the OP to read from the link.
+
+
+Doesn't declaring Node next enable next itself to have an element part and then again a next. This would happen indefinitely, right?
+
+Thus is the power of this data structure. You add to it indefinitely without having to resize like in a static array.
+
+If you are wondering, how you would end the list? Set Node next to be null and viola! You have your end node.
+
+Node within a Node? I may be wrong, but Java is able to reference a class instance within the same class because every object is basically a pointer which it knows the size of.
+
+C++ equivalent
+
+class A {
+    A *a;
+}
+
+
+I think his issue was rather misinterpreting Node next as recursively embedding Node within itself, similar to C/C++, rather than declaring a reference to another Node object. 
+
+
+1
+
+In Java:
+
+1) when we declare a variable of a class type, only a reference is created i.e. memory is not allocated for the object. To allocate memory to an object, we use new().
+
+2) when assigning one object to another, only the reference gets assigned. It does NOT copy member variables.
+
+So, in Linked Lists, we link two nodes by assigning the reference of the following node to the current node's "next" field. Though unrelated, but I guess it's important to realise that when compared to an array, a linked list does need extra memory to store pointer variables.
+
+
