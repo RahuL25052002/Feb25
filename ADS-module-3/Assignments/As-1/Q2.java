@@ -39,11 +39,54 @@ class Q2{
 
 	}
 
+	static String longest(String s){
+
+		
+		String arr[]=s.split(" ");
+		int count=0;
+		String ans="";
+		for(String s1:arr){
+			if(s1.length()>count){
+				ans=s1;
+			}
+		}
+		return ans;
+
+	}
+
+	static void countVoCon(String s){
+
+		char arr[]=s.toLowerCase().toCharArray();
+		ArrayList<Character> l=new ArrayList<>();
+		l.add('a');
+		l.add('e');
+		l.add('i');
+		l.add('o');
+		l.add('u');
+		int vowe=0;
+		int cons=0;
+		for(char ch:arr){
+			if(l.contains(ch)){
+				vowe++;
+			}else{
+				if(ch!=' ')
+					cons++;
+			}
+		}
+
+		System.out.println("Vowels: "+vowe+", Consonants: "+cons);
+	}
+
 	public static void main(String[]args){
 		String s1="listen";
 		String s2="silent";
-		boolean ans=isAnagram(s1,s2);
-		System.out.println(ans);
+		boolean ans1=isAnagram(s1,s2);
+		System.out.println(ans1);
+		String s3="Practise makes a man perfect";
+		String ans2=longest(s3);
+		System.out.println(ans2);
+		countVoCon(s3);
+
 
 	}
 
