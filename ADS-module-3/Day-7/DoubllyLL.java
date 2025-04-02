@@ -58,7 +58,9 @@ class DoubllyLL{
 		Node temp=start;
 		Node p=temp;
 		System.out.println("Forward diretion: ");
-		System.out.print("Start:-Null");                        while(temp!=null){                                              System.out.print("<-"+temp.data+"->");
+		System.out.print("Start:-Null");     
+		while(temp!=null){   
+			System.out.print("<-"+temp.data+"->");
                         p=temp;
 			temp=temp.next;
                 }
@@ -103,13 +105,16 @@ class DoubllyLL{
 			return;
 		}
 		if(start.data==k){
+			if(pointer==start)
+				start=null;
 			start=start.next;
 			return;
 
 
 		}
 		if(pointer.data==k){
-			pointer.prev.next=null;
+			pointer=pointer.prev;
+			pointer.next=null;
 			return;
 		}
 
@@ -144,13 +149,14 @@ class DoubllyLLDemo{
 		l.inserAtbetn(1,20);
 		l.insert(40);
 		//l.delNode(20);
+		/*
 		System.out.println("======================================");
 		l.display();
-		 System.out.println("======================================");
+		 System.out.println("======================================");*/
 		l.delNode(20);
 		l.delNode(40);
 		l.delNode(10);
-		l.delNode(20);
+		//System.out.println(l.pointer.data);
 
 		 System.out.println("======================================");
                 l.display();                                             System.out.println("======================================");
