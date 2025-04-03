@@ -159,7 +159,10 @@ class BT{
 		t1. prettyDisplay();
 
 		System.out.println("===================================================");
-		t1.root=deleteNode(t1.root,30);
+
+		System.out.print("Which node you want to delete: ");
+		int del=obj.nextInt();
+		t1.root=deleteNode(t1.root,del);
 		t1. prettyDisplay();
 					
 
