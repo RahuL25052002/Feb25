@@ -1,0 +1,68 @@
+Balanced Tree
+
+balancess search tree
+height balance tree
+
+1. Avl tree
+2. 2-3 tree
+3. 2-3-4 tree
+4. B trees B+ trees
+5. Red-black tree
+
+===========================================================
+
+AVL TREE
+- Adleson -Velsky-Landis three legends
+-height balance tree -search tree
+use a terminology balance factor{0,+-1};-1,0,1
+-balance factore=height of left subtree- height of right subtree-Evry BST properties is applicable to AVL
+-insertion, deletion and search=> O(logn)
+evry leaf node balance factore is (0) zero.
+BF(b)=h(LST)-h(RST)
+
+what to study?
+array
+stack
+queue
+circular queue
+linked list
+DLL
+
+Non-linear
+Trees
+-BT
+-BST
+-AVL
+-Read & black
+
+Graph
+directed and undirected graph
+traversal BFS  and DFS
+
+Spanning  tree
+MST
+weighted MST
+Kruskal and prims
+Shortest path
+dijesktra algorithm 
+flody marshal
+bellman ford
+
+and  prepare time complexity
+
+Linked list is  very important
+
+Deletion/  Doublly linkedlist
+Application  of queue  and stack
+Dynammic of Application of Array
+-Recursion
+-Backtracking
+-brute and force
+-divide and conquer (merge and quick sort)
+-greedy techiniques(min max) heap or priority queue
+-dynammc programming
+
+
+prepare homework questions and hackerrank
+-mcq most probably 3questions 2 hours
+
