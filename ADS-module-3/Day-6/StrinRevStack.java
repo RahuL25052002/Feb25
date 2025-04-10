@@ -38,6 +38,7 @@ class StringRevStack{
 			if(head==top){
 				int data=head.data;
 				head=null;
+				top=null;
 				return data;
 			}
 			Node temp=head;
