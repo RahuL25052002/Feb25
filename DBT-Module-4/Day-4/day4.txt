@@ -1,0 +1,1284 @@
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use  classwork;
+Database changed
+mysql>
+mysql> show tables;
++-------------------------+
+| Tables_in_classwork     |
++-------------------------+
+| customers               |
+| emp                     |
+| orders                  |
+| parts                   |
+| projects                |
+| salespeople             |
+| sdept                   |
+| semp                    |
+| supplier                |
+| supplier_parts_projects |
++-------------------------+
+10 rows in set (0.10 sec)
+
+mysql> select * from emp;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
+|     7 | SAI   | 5000 | Pune   |     10 |
++-------+-------+------+--------+--------+
+6 rows in set (0.04 sec)
+
+mysql> update emp
+    -> set sal=1000 where empno=7;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> set autocommit=0;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> update emp
+    -> set sal=100000 where empno=7;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from emp;
++-------+-------+--------+--------+--------+
+| EMPNO | ENAME | SAL    | CITY   | DEPTNO |
++-------+-------+--------+--------+--------+
+|     1 | ADAMS |   1000 | Mumbai |     10 |
+|     2 | BLAKE |   2000 | Delhi  |     10 |
+|     3 | ALLEN |   2500 | Mumbai |     20 |
+|     4 | KING  |   3000 | Delhi  |     30 |
+|     5 | FORD  |   4000 | Mumbai |     40 |
+|     7 | SAI   | 100000 | Nashik |     10 |
++-------+-------+--------+--------+--------+
+6 rows in set (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from emp;
++-------+-------+--------+--------+--------+
+| EMPNO | ENAME | SAL    | CITY   | DEPTNO |
++-------+-------+--------+--------+--------+
+|     1 | ADAMS |   1000 | Mumbai |     10 |
+|     2 | BLAKE |   2000 | Delhi  |     10 |
+|     3 | ALLEN |   2500 | Mumbai |     20 |
+|     4 | KING  |   3000 | Delhi  |     30 |
+|     5 | FORD  |   4000 | Mumbai |     40 |
+|     7 | SAI   | 100000 | Pune   |     10 |
++-------+-------+--------+--------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+-------+--------+--------+--------+
+| EMPNO | ENAME | SAL    | CITY   | DEPTNO |
++-------+-------+--------+--------+--------+
+|     1 | ADAMS |   1000 | Mumbai |     10 |
+|     2 | BLAKE |   2000 | Delhi  |     10 |
+|     3 | ALLEN |   2500 | Mumbai |     20 |
+|     4 | KING  |   3000 | Delhi  |     30 |
+|     5 | FORD  |   4000 | Mumbai |     40 |
+|     7 | SAI   | 100000 | Pune   |     10 |
++-------+-------+--------+--------+--------+
+6 rows in set (0.00 sec)
+
+mysql> update emp
+    -> set sal=1000 where empno=7;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> commit;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++-------------------------+
+| Tables_in_classwork     |
++-------------------------+
+| customers               |
+| emp                     |
+| orders                  |
+| parts                   |
+| projects                |
+| salespeople             |
+| sdept                   |
+| semp                    |
+| supplier                |
+| supplier_parts_projects |
++-------------------------+
+10 rows in set (0.01 sec)
+
+mysql> create emp1(
+    -> Fname varchar(20),
+    -> Lname varchar(2)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp1(
+Fname varchar(20),
+Lname varchar(2)
+)' at line 1
+mysql> create table emp1(
+    -> Fname varchar(20),
+    -> Lname varchar(2)
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> inser into emp1(fname,lname)
+    -> values('arun','marun').
+    -> ('Tarun','varun'),
+    -> ('yela','gela');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'inser into emp1(fname,lname)
+values('arun','marun').
+('Tarun','varun'),
+('yela',' at line 1
+mysql> insert into emp1(fname,lname)
+    -> values('arun','marun'),
+    -> ('Tarun','varun'),
+    -> ('yela','gela');
+ERROR 1406 (22001): Data too long for column 'Lname' at row 1
+mysql> desc emp1'
+    '> ^C
+mysql> desc emp1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Fname | varchar(20) | YES  |     | NULL    |       |
+| Lname | varchar(2)  | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
+mysql> alter table emp
+    -> add fnm^C
+mysql> alter table emp1
+    -> add lname varchar(20);
+ERROR 1060 (42S21): Duplicate column name 'lname'
+mysql> alter table emp1
+    -> drop column lname;
+Query OK, 0 rows affected (0.23 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table emp1
+    -> add lname varchar(20);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into emp1(fname,lname)
+    -> values('arun','marun'),
+    -> ('Tarun','varun'),
+    -> ('yela','gela');
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select concat(fname ,lname) from emp;
+ERROR 1054 (42S22): Unknown column 'fname' in 'field list'
+mysql> desc emp1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Fname | varchar(20) | YES  |     | NULL    |       |
+| lname | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.05 sec)
+
+mysql> select concat(fname ,lname) from emp1;
++----------------------+
+| concat(fname ,lname) |
++----------------------+
+| arunmarun            |
+| Tarunvarun           |
+| yelagela             |
++----------------------+
+3 rows in set (0.00 sec)
+
+mysql> select concat(concat(fname,' '),lname) from emp1;
++---------------------------------+
+| concat(concat(fname,' '),lname) |
++---------------------------------+
+| arun marun                      |
+| Tarun varun                     |
+| yela gela                       |
++---------------------------------+
+3 rows in set (0.01 sec)
+
+mysql> select upper(fname) from emp;
+ERROR 1054 (42S22): Unknown column 'fname' in 'field list'
+mysql> select upper(fname) from emp1;
++--------------+
+| upper(fname) |
++--------------+
+| ARUN         |
+| TARUN        |
+| YELA         |
++--------------+
+3 rows in set (0.00 sec)
+
+mysql> --This is for display purposes
+    -> ^C
+mysql> select lower(fname) from emp1;
++--------------+
+| lower(fname) |
++--------------+
+| arun         |
+| tarun        |
+| yela         |
++--------------+
+3 rows in set (0.01 sec)
+
+mysql> create table emp2
+    -> (ename varchar(20));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into emp2(ename)
+    -> values('arun tarun'),
+    -> ('karun sarun'),
+    -> ('maran turan');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select lpad(ename,25,' ') from emp2;
++---------------------------+
+| lpad(ename,25,' ')        |
++---------------------------+
+|                arun tarun |
+|               karun sarun |
+|               maran turan |
++---------------------------+
+3 rows in set (0.01 sec)
+
+mysql> select lpad(ename,25,'*') from emp2;
++---------------------------+
+| lpad(ename,25,'*')        |
++---------------------------+
+| ***************arun tarun |
+| **************karun sarun |
+| **************maran turan |
++---------------------------+
+3 rows in set (0.00 sec)
+
+mysql> select rpad(fname,34,'*') from emp2;
+ERROR 1054 (42S22): Unknown column 'fname' in 'field list'
+mysql> select rpad(ename,34,'*') from emp2;
++------------------------------------+
+| rpad(ename,34,'*')                 |
++------------------------------------+
+| arun tarun************************ |
+| karun sarun*********************** |
+| maran turan*********************** |
++------------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> selct  lpad(rpad(ename,20,'*'),20,'*') from emp2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct  lpad(rpad(ename,20,'*'),20,'*') from emp2' at line 1
+mysql> selct  lpad(ename,rpad(ename,20,'*'),'*') from emp2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct  lpad(ename,rpad(ename,20,'*'),'*') from emp2' at line 1
+mysql> select trim(ename) from emp;
++-------------+
+| trim(ename) |
++-------------+
+| ADAMS       |
+| BLAKE       |
+| ALLEN       |
+| KING        |
+| FORD        |
+| SAI         |
++-------------+
+6 rows in set (0.07 sec)
+
+mysql> select substr(ename,3) from emp2;
++-----------------+
+| substr(ename,3) |
++-----------------+
+| un tarun        |
+| run sarun       |
+| ran turan       |
++-----------------+
+3 rows in set (0.01 sec)
+
+mysql> select substr(ename,1) from emp2;
++-----------------+
+| substr(ename,1) |
++-----------------+
+| arun tarun      |
+| karun sarun     |
+| maran turan     |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> select substr(ename,2) from emp2;
++-----------------+
+| substr(ename,2) |
++-----------------+
+| run tarun       |
+| arun sarun      |
+| aran turan      |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> select upper(substr(ename,2)) from emp2;
++------------------------+
+| upper(substr(ename,2)) |
++------------------------+
+| RUN TARUN              |
+| ARUN SARUN             |
+| ARAN TURAN             |
++------------------------+
+3 rows in set (0.01 sec)
+
+mysql> --substr(enmae,3,2) here 2 is the np. of character
+    -> ^C
+mysql> select upper(substr(ename,1,2) from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from emp' at line 1
+mysql> select upper(substr(ename,1,2) from emp2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from emp2' at line 1
+mysql> select upper(substr(ename,1,2)) from emp2;
++--------------------------+
+| upper(substr(ename,1,2)) |
++--------------------------+
+| AR                       |
+| KA                       |
+| MA                       |
++--------------------------+
+3 rows in set (0.00 sec)
+
+mysql> select upper(substr(ename,0,1)) from emp2;
++--------------------------+
+| upper(substr(ename,0,1)) |
++--------------------------+
+|                          |
+|                          |
+|                          |
++--------------------------+
+3 rows in set (0.01 sec)
+
+mysql> select upper(substr(ename,1,1)) from emp2;
++--------------------------+
+| upper(substr(ename,1,1)) |
++--------------------------+
+| A                        |
+| K                        |
+| M                        |
++--------------------------+
+3 rows in set (0.01 sec)
+
+mysql> select upper(substr(ename,1,1)) lower(ename,2) from emp2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(ename,2) from emp2' at line 1
+mysql> show tables;
++-------------------------+
+| Tables_in_classwork     |
++-------------------------+
+| customers               |
+| emp                     |
+| emp1                    |
+| emp2                    |
+| orders                  |
+| parts                   |
+| projects                |
+| salespeople             |
+| sdept                   |
+| semp                    |
+| supplier                |
+| supplier_parts_projects |
++-------------------------+
+12 rows in set (0.14 sec)
+
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| EMPNO  | int         | NO   | PRI | NULL    |       |
+| ENAME  | varchar(50) | YES  |     | NULL    |       |
+| SAL    | int         | YES  |     | NULL    |       |
+| CITY   | varchar(50) | YES  |     | NULL    |       |
+| DEPTNO | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.02 sec)
+
+mysql> select replace(1,'abc') from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') from emp' at line 1
+mysql> select replace(sal,'1','abc') from emp;
++------------------------+
+| replace(sal,'1','abc') |
++------------------------+
+| abc000                 |
+| 2000                   |
+| 2500                   |
+| 3000                   |
+| 4000                   |
+| abc000                 |
++------------------------+
+6 rows in set (0.01 sec)
+
+mysql> select replace(sal,'1','abc') or replace(sal,'4','abc')or replace(sal,'3','abc')or replace(sal,'2','abc')orreplace(sal,'0','adsdc') from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(sal,'0','adsdc') from emp' at line 1
+mysql> select replace(sal,'1','abc'), replace(sal,'4','abc'), replace(sal,'3','abc'), replace(sal,'2','abc'),replace(sal,'0','adsdc') from emp;
++------------------------+------------------------+------------------------+------------------------+--------------------------+
+| replace(sal,'1','abc') | replace(sal,'4','abc') | replace(sal,'3','abc') | replace(sal,'2','abc') | replace(sal,'0','adsdc') |
++------------------------+------------------------+------------------------+------------------------+--------------------------+
+| abc000                 | 1000                   | 1000                   | 1000                   | 1adsdcadsdcadsdc         |
+| 2000                   | 2000                   | 2000                   | abc000                 | 2adsdcadsdcadsdc         |
+| 2500                   | 2500                   | 2500                   | abc500                 | 25adsdcadsdc             |
+| 3000                   | 3000                   | abc000                 | 3000                   | 3adsdcadsdcadsdc         |
+| 4000                   | abc000                 | 4000                   | 4000                   | 4adsdcadsdcadsdc         |
+| abc000                 | 1000                   | 1000                   | 1000                   | 1adsdcadsdcadsdc         |
++------------------------+------------------------+------------------------+------------------------+--------------------------+
+6 rows se^Cet (0.00 sec)
+mysql> ^C
+mysql> ^C
+mysql> select instr(ename,'u') from emp2;
++------------------+
+| instr(ename,'u') |
++------------------+
+|                3 |
+|                4 |
+|                8 |
++------------------+
+3 rows in set (0.01 sec)
+
+mysql> select instr(ename,'z') from emp2;
++------------------+
+| instr(ename,'z') |
++------------------+
+|                0 |
+|                0 |
+|                0 |
++------------------+
+3 rows in set (0.00 sec)
+
+mysql> --!if string is not found it return 0  --!^C
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select length(ename) from emp2;
++---------------+
+| length(ename) |
++---------------+
+|            10 |
+|            11 |
+|            11 |
++---------------+
+3 rows in set (0.09 sec)
+
+mysql> select ascii(ename) from emp2;
++--------------+
+| ascii(ename) |
++--------------+
+|           97 |
+|          107 |
+|          109 |
++--------------+
+3 rows in set (0.00 sec)
+
+mysql> select ascii(substr(ename,3)) from emp;
++------------------------+
+| ascii(substr(ename,3)) |
++------------------------+
+|                     65 |
+|                     65 |
+|                     76 |
+|                     78 |
+|                     82 |
+|                     73 |
++------------------------+
+6 rows in set (0.01 sec)
+
+mysql> select * from emp2;
++-------------+
+| ename       |
++-------------+
+| arun tarun  |
+| karun sarun |
+| maran turan |
++-------------+
+3 rows in set (0.01 sec)
+
+mysql> select ascii(substr(ename,3)) from emp2;
++------------------------+
+| ascii(substr(ename,3)) |
++------------------------+
+|                    117 |
+|                    114 |
+|                    114 |
++------------------------+
+3 rows in set (0.00 sec)
+
+mysql> select ascii('a') from emp;
++------------+
+| ascii('a') |
++------------+
+|         97 |
+|         97 |
+|         97 |
+|         97 |
+|         97 |
+|         97 |
++------------+
+6 rows in set (0.01 sec)
+
+mysql> select ascii('a') from emp2;
++------------+
+| ascii('a') |
++------------+
+|         97 |
+|         97 |
+|         97 |
++------------+
+3 rows in set (0.00 sec)
+
+mysql> select distinct ascii('a') from emp;
++------------+
+| ascii('a') |
++------------+
+|         97 |
++------------+
+1 row in set (0.01 sec)
+
+mysql> select   ascii('x') from dual;
++------------+
+| ascii('x') |
++------------+
+|        120 |
++------------+
+1 row in set (0.01 sec)
+
+mysql> select 'Welcome  to niphad' from dual;
++--------------------+
+| Welcome  to niphad |
++--------------------+
+| Welcome  to niphad |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select substr('New Mumbai',1,4) from dual;
++--------------------------+
+| substr('New Mumbai',1,4) |
++--------------------------+
+| New                      |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select char(65) from dual;
++--------------------+
+| char(65)           |
++--------------------+
+| 0x41               |
++--------------------+
+1 row in set (0.01 sec)
+
+mysql> select char(67) from dual;
++--------------------+
+| char(67)           |
++--------------------+
+| 0x43               |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select  char(65 using utf8) from dual;
++---------------------+
+| char(65 using utf8) |
++---------------------+
+| A                   |
++---------------------+
+1 row in set, 1 warning (0.01 sec)
+
+mysql> select * from emp2;
++-------------+
+| ename       |
++-------------+
+| arun tarun  |
+| karun sarun |
+| maran turan |
++-------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
+|     7 | SAI   | 1000 | Nashik |     10 |
++-------+-------+------+--------+--------+
+6 rows in set (0.01 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('saee');
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     7 | SAI   | 1000 | Nashik |     10 |
++-------+-------+------+--------+--------+
+1 row in set (0.02 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('kdams');
+Empty set (0.00 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('adms');
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
++-------+-------+------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('ad');
+Empty set (0.00 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('adm');
+Empty set (0.00 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('admsssssssss');
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
++-------+-------+------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('adasss');
+Empty set (0.00 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('amdasss');
+Empty set (0.00 sec)
+
+mysql> select * from emp where soundex(ename)=soundex('amdsaass');
+Empty set (0.00 sec)
+
+mysql> create table emp3(
+    -> sal float(7,3)
+    -> );
+Query OK, 0 rows affected, 1 warning (0.13 sec)
+
+mysql> insert into emp3
+    -> values(1234.567),
+    -> (1852.019),
+    -> (1375.615),
+    -> (1749.456);
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select round(sal) from emp3;
++------------+
+| round(sal) |
++------------+
+|       1235 |
+|       1852 |
+|       1376 |
+|       1749 |
++------------+
+4 rows in set (0.01 sec)
+
+mysql> select round(sal) from emp3;
++------------+
+| round(sal) |
++------------+
+|       1235 |
+|       1852 |
+|       1376 |
+|       1749 |
++------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,1) from emp3;
++--------------+
+| round(sal,1) |
++--------------+
+|       1234.6 |
+|         1852 |
+|       1375.6 |
+|       1749.5 |
++--------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,2) from emp3;
++--------------+
+| round(sal,2) |
++--------------+
+|      1234.57 |
+|      1852.02 |
+|      1375.61 |
+|      1749.46 |
++--------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,4) from emp3;
++--------------+
+| round(sal,4) |
++--------------+
+|     1234.567 |
+|     1852.019 |
+|     1375.615 |
+|    1749.4561 |
++--------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,5) from emp3;
++--------------+
+| round(sal,5) |
++--------------+
+|   1234.56702 |
+|   1852.01904 |
+|   1375.61499 |
+|   1749.45605 |
++--------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,7) from emp3;
++--------------+
+| round(sal,7) |
++--------------+
+| 1234.5670166 |
+|  1852.019043 |
+| 1375.6149902 |
+| 1749.4560547 |
++--------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,20) from emp3;
++--------------------+
+| round(sal,20)      |
++--------------------+
+| 1234.5670166015625 |
+| 1852.0190429687502 |
+|  1375.614990234375 |
+| 1749.4560546875002 |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,-2) from emp3;
++---------------+
+| round(sal,-2) |
++---------------+
+|          1200 |
+|          1900 |
+|          1400 |
+|          1700 |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,-3) from emp3;
++---------------+
+| round(sal,-3) |
++---------------+
+|          1000 |
+|          2000 |
+|          1000 |
+|          2000 |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,-4) from emp3;
++---------------+
+| round(sal,-4) |
++---------------+
+|             0 |
+|             0 |
+|             0 |
+|             0 |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,-4) from emp3;
++---------------+
+| round(sal,-4) |
++---------------+
+|             0 |
+|             0 |
+|             0 |
+|             0 |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> select round(sal,-0) from emp3;
++---------------+
+| round(sal,-0) |
++---------------+
+|          1235 |
+|          1852 |
+|          1376 |
+|          1749 |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal,0) from emp3;
++-----------------+
+| truncate(sal,0) |
++-----------------+
+|            1234 |
+|            1852 |
+|            1375 |
+|            1749 |
++-----------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal,1) from emp3;
++-----------------+
+| truncate(sal,1) |
++-----------------+
+|          1234.5 |
+|            1852 |
+|          1375.6 |
+|          1749.4 |
++-----------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal,5) from emp3;
++-----------------+
+| truncate(sal,5) |
++-----------------+
+|      1234.56701 |
+|      1852.01904 |
+|      1375.61499 |
+|      1749.45605 |
++-----------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal) from emp3;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') from emp3' at line 1
+mysql> select truncate(sal,1) from emp3;
++-----------------+
+| truncate(sal,1) |
++-----------------+
+|          1234.5 |
+|            1852 |
+|          1375.6 |
+|          1749.4 |
++-----------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal,-2) from emp3;
++------------------+
+| truncate(sal,-2) |
++------------------+
+|             1200 |
+|             1800 |
+|             1300 |
+|             1700 |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal,-1) from emp3;
++------------------+
+| truncate(sal,-1) |
++------------------+
+|             1230 |
+|             1850 |
+|             1370 |
+|             1740 |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal,-3) from emp3;
++------------------+
+| truncate(sal,-3) |
++------------------+
+|             1000 |
+|             1000 |
+|             1000 |
+|             1000 |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal,-3) from emp3;
++------------------+
+| truncate(sal,-3) |
++------------------+
+|             1000 |
+|             1000 |
+|             1000 |
+|             1000 |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(sal,-2) from emp3;
++------------------+
+| truncate(sal,-2) |
++------------------+
+|             1200 |
+|             1800 |
+|             1300 |
+|             1700 |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> select ceil(sal) from emp3;
++-----------+
+| ceil(sal) |
++-----------+
+|      1235 |
+|      1853 |
+|      1376 |
+|      1750 |
++-----------+
+4 rows in set (0.01 sec)
+
+mysql> select * from emp3;
++----------+
+| sal      |
++----------+
+| 1234.567 |
+| 1852.019 |
+| 1375.615 |
+| 1749.456 |
++----------+
+4 rows in set (0.00 sec)
+
+mysql> select truncate(3.6,0), floor(3.6), floor(-3.6) ,truncate(-3.6,0) from dual;
++-----------------+------------+-------------+------------------+
+| truncate(3.6,0) | floor(3.6) | floor(-3.6) | truncate(-3.6,0) |
++-----------------+------------+-------------+------------------+
+|               3 |          3 |          -4 |               -3 |
++-----------------+------------+-------------+------------------+
+1 row in set (0.00 sec)
+
+mysql> select  * from  emp3;
++----------+
+| sal      |
++----------+
+| 1234.567 |
+| 1852.019 |
+| 1375.615 |
+| 1749.456 |
++----------+
+4 rows in set (0.05 sec)
+
+mysql> select sign(123-123) from dual;
++---------------+
+| sign(123-123) |
++---------------+
+|             0 |
++---------------+
+1 row in set (0.01 sec)
+
+mysql> select sign(123-1255) from dual;
++----------------+
+| sign(123-1255) |
++----------------+
+|             -1 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select sign(1233-2) from dual;
++--------------+
+| sign(1233-2) |
++--------------+
+|            1 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select power(10,3) from dual;
++-------------+
+| power(10,3) |
++-------------+
+|        1000 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> select power(10,3) from emp;
++-------------+
+| power(10,3) |
++-------------+
+|        1000 |
+|        1000 |
+|        1000 |
+|        1000 |
+|        1000 |
+|        1000 |
++-------------+
+6 rows in set (0.01 sec)
+
+mysql> select power(10,1/3) from emp;
++-------------------+
+| power(10,1/3)     |
++-------------------+
+| 2.154434688378294 |
+| 2.154434688378294 |
+| 2.154434688378294 |
+| 2.154434688378294 |
+| 2.154434688378294 |
+| 2.154434688378294 |
++-------------------+
+6 rows in set (0.01 sec)
+
+mysql> select power(10,1/3) from dual;
++-------------------+
+| power(10,1/3)     |
++-------------------+
+| 2.154434688378294 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select floor(power(10,1/3)) from dual;
++----------------------+
+| floor(power(10,1/3)) |
++----------------------+
+|                    2 |
++----------------------+
+1 row in set (0.01 sec)
+
+mysql> select ln(10) from dual;
++-------------------+
+| ln(10)            |
++-------------------+
+| 2.302585092994046 |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> select log(2,3) from dual;
++--------------------+
+| log(2,3)           |
++--------------------+
+| 1.5849625007211563 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select log(10,3) from dual;
++---------------------+
+| log(10,3)           |
++---------------------+
+| 0.47712125471966244 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select log(10,2) from dual;
++---------------------+
+| log(10,2)           |
++---------------------+
+| 0.30102999566398114 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select log(1000,10) from dual;
++---------------------+
+| log(1000,10)        |
++---------------------+
+| 0.33333333333333337 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select log(10,1000) from dual;
++--------------------+
+| log(10,1000)       |
++--------------------+
+| 2.9999999999999996 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> create table emp4(
+    -> hiredate date);
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> insert into emp4
+    -> values('2023-10-15'),
+    -> ('2023-12-31'),
+    -> ('2023-10-15');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select sysdate() from dual;
++---------------------+
+| sysdate()           |
++---------------------+
+| 2025-04-11 18:36:56 |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql> select now() from dual;
++---------------------+
+| now()               |
++---------------------+
+| 2025-04-11 18:42:23 |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql> select sysdate() ,now(), sleep(10), sysdate(), now() from dual;
++---------------------+---------------------+-----------+---------------------+---------------------+
+| sysdate()           | now()               | sleep(10) | sysdate()           | now()               |
++---------------------+---------------------+-----------+---------------------+---------------------+
+| 2025-04-11 18:50:23 | 2025-04-11 18:50:23 |         0 | 2025-04-11 18:50:33 | 2025-04-11 18:50:23 |
++---------------------+---------------------+-----------+---------------------+---------------------+
+1 row in set (10.02 sec)
+
+mysql>
+mysql> select adddate(sysdate(),2) from dual;
++----------------------+
+| adddate(sysdate(),2) |
++----------------------+
+| 2025-04-13 19:21:35  |
++----------------------+
+1 row in set (0.04 sec)
+
+mysql> select adddate(sysdate(),7) from dual;
++----------------------+
+| adddate(sysdate(),7) |
++----------------------+
+| 2025-04-18 19:22:57  |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select adddate(sysdate(),-1) from dual;
++-----------------------+
+| adddate(sysdate(),-1) |
++-----------------------+
+| 2025-04-10 19:23:06   |
++-----------------------+
+1 row in set (0.01 sec)
+
+mysql> select datediff(sysdate(),hiredate) from emp4;
++------------------------------+
+| datediff(sysdate(),hiredate) |
++------------------------------+
+|                          544 |
+|                          467 |
+|                          544 |
++------------------------------+
+3 rows in set (0.04 sec)
+
+mysql> select date_add(hiredate,interval 2 month) from emp4;
++-------------------------------------+
+| date_add(hiredate,interval 2 month) |
++-------------------------------------+
+| 2023-12-15                          |
+| 2024-02-29                          |
+| 2023-12-15                          |
++-------------------------------------+
+3 rows in set (0.01 sec)
+
+mysql> select * from emp4;
++------------+
+| hiredate   |
++------------+
+| 2023-10-15 |
+| 2023-12-31 |
+| 2023-10-15 |
++------------+
+3 rows in set (0.01 sec)
+
+mysql> update emp4
+    -> ^C
+mysql> select date_add(hiredate,interval 1 year) from emp4;
++------------------------------------+
+| date_add(hiredate,interval 1 year) |
++------------------------------------+
+| 2024-10-15                         |
+| 2024-12-31                         |
+| 2024-10-15                         |
++------------------------------------+
+3 rows in set (0.01 sec)
+
+mysql> select date_add(hiredate,interval -1 year) from emp4;
++-------------------------------------+
+| date_add(hiredate,interval -1 year) |
++-------------------------------------+
+| 2022-10-15                          |
+| 2022-12-31                          |
+| 2022-10-15                          |
++-------------------------------------+
+3 rows in set (0.01 sec)
+
+mysql> select last_date(hiredate) from emp4;
+ERROR 1305 (42000): FUNCTION classwork.last_date does not exist
+mysql> select last_day(hiredate) from emp4;
++--------------------+
+| last_day(hiredate) |
++--------------------+
+| 2023-10-31         |
+| 2023-12-31         |
+| 2023-10-31         |
++--------------------+
+3 rows in set (0.01 sec)
+
+mysql> select dayname(sysdate()) from dual;
++--------------------+
+| dayname(sysdate()) |
++--------------------+
+| Friday             |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select upper(dayname(sysdate())) from dual;
++---------------------------+
+| upper(dayname(sysdate())) |
++---------------------------+
+| FRIDAY                    |
++---------------------------+
+1 row in set (0.01 sec)
+
+mysql> select upper(substr(dayname(sysdate()),3)) from dual;
++-------------------------------------+
+| upper(substr(dayname(sysdate()),3)) |
++-------------------------------------+
+| IDAY                                |
++-------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> select upper(substr(dayname(sysdate()),1,3)) from dual;
++---------------------------------------+
+| upper(substr(dayname(sysdate()),1,3)) |
++---------------------------------------+
+| FRI                                   |
++---------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select addtime('2010-01-15 11:00:00','1') from dual;
++------------------------------------+
+| addtime('2010-01-15 11:00:00','1') |
++------------------------------------+
+| 2010-01-15 11:00:01                |
++------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> select addtime('2010-01-15 11:00:00','-1') from dual;
++-------------------------------------+
+| addtime('2010-01-15 11:00:00','-1') |
++-------------------------------------+
+| 2010-01-15 10:59:59                 |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select addtime('2010-01-15 11:00:00','1:00:00') from dual;
++------------------------------------------+
+| addtime('2010-01-15 11:00:00','1:00:00') |
++------------------------------------------+
+| 2010-01-15 12:00:00                      |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select addtime('2010-01-15 11:00:00','1:30:00') from dual;
++------------------------------------------+
+| addtime('2010-01-15 11:00:00','1:30:00') |
++------------------------------------------+
+| 2010-01-15 12:30:00                      |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select addtime('2010-01-15 11:00:00','1:30:54') from dual;
++------------------------------------------+
+| addtime('2010-01-15 11:00:00','1:30:54') |
++------------------------------------------+
+| 2010-01-15 12:30:54                      |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select addtime('2010-01-15 11:00:00','2000-02-23 01:30:54') from dual;
++------------------------------------------------------+
+| addtime('2010-01-15 11:00:00','2000-02-23 01:30:54') |
++------------------------------------------------------+
+| NULL                                                 |
++------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select addtime('2010-01-15 11:00:00','2-01-23 01:30:54') from dual;
++---------------------------------------------------+
+| addtime('2010-01-15 11:00:00','2-01-23 01:30:54') |
++---------------------------------------------------+
+| NULL                                              |
++---------------------------------------------------+
+1 row in set (0.00 sec)

@@ -1,0 +1,485 @@
+
+mysql> desc employees;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| deptno   | int           | YES  |     | NULL    |       |
+| job      | varchar(50)   | YES  |     | NULL    |       |
+| ename    | varchar(50)   | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| hiredate | date          | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+5 rows in set (0.06 sec)
+
+
+//Order By clause is the last clause in the select statement
+
+mysql> select deptno,job,ename,sal,hiredate from employees
+    -> where deptno=10
+    -> order by ename;
++--------+----------+-------+----------+------------+
+| deptno | job      | ename | sal      | hiredate   |
++--------+----------+-------+----------+------------+
+|     10 | Manager  | Alice | 75000.00 | 2020-05-14 |
+|     10 | Salesman | David | 45000.00 | 2022-03-22 |
+|     10 | Salesman | Heidi | 47000.00 | 2021-12-12 |
+|     10 | Analyst  | Karl  | 60000.00 | 2020-10-23 |
+|     10 | Clerk    | Peggy | 30000.00 | 2023-07-07 |
+|     10 | Salesman | Trent | 48000.00 | 2021-11-11 |
++--------+----------+-------+----------+------------+
+
+
+//Order by clause is work for the alias 
+
+
+
+mysql> select ename  ,sal*12 "Annual" from  emp
+    -> order by 2;
++-------+--------+
+| ename | Annual |
++-------+--------+
+| Rahul |  60000 |
+| Sai   |  72000 |
+| NULL  |  84000 |
++-------+--------+
+3 rows in set (0.11 sec)
+
+mysql> select ename  ,sal*12 "Annual" from  employees
+    -> order by 2;
++---------+------------+
+| ename   | Annual     |
++---------+------------+
+| Peggy   |  360000.00 |
+| Peggy   |  360000.00 |
+| Frank   |  372000.00 |
+| Charlie |  384000.00 |
+| Charlie |  384000.00 |
+| Ivan    |  396000.00 |
+| Ivan    |  396000.00 |
+| Sybil   |  408000.00 |
+| Ivan    |  408000.00 |
+| Mallory |  420000.00 |
+| David   |  540000.00 |
+| David   |  540000.00 |
+| David   |  540000.00 |
+| Olivia  |  552000.00 |
+| Olivia  |  552000.00 |
+| Heidi   |  564000.00 |
+| Trent   |  576000.00 |
+| Laura   |  588000.00 |
+| Karl    |  720000.00 |
+| Bob     |  744000.00 |
+| Bob     |  744000.00 |
+| Quinn   |  768000.00 |
+| Grace   |  804000.00 |
+| Grace   |  804000.00 |
+| Alice   |  900000.00 |
+| Alice   |  900000.00 |
+| Niaj    |  936000.00 |
+| Eve     |  960000.00 |
+| Rupert  |  984000.00 |
+| Judy    | 1020000.00 |
++---------+------------+
+30 rows in set (0.01 sec)
+
+mysql> select ename  ,sal*12 "Annual",sal from  employees
+    -> order by 2;
++---------+------------+----------+
+| ename   | Annual     | sal      |
++---------+------------+----------+
+| Peggy   |  360000.00 | 30000.00 |
+| Peggy   |  360000.00 | 30000.00 |
+| Frank   |  372000.00 | 31000.00 |
+| Charlie |  384000.00 | 32000.00 |
+| Charlie |  384000.00 | 32000.00 |
+| Ivan    |  396000.00 | 33000.00 |
+| Ivan    |  396000.00 | 33000.00 |
+| Sybil   |  408000.00 | 34000.00 |
+| Ivan    |  408000.00 | 34000.00 |
+| Mallory |  420000.00 | 35000.00 |
+| David   |  540000.00 | 45000.00 |
+| David   |  540000.00 | 45000.00 |
+| David   |  540000.00 | 45000.00 |
+| Olivia  |  552000.00 | 46000.00 |
+| Olivia  |  552000.00 | 46000.00 |
+| Heidi   |  564000.00 | 47000.00 |
+| Trent   |  576000.00 | 48000.00 |
+| Laura   |  588000.00 | 49000.00 |
+| Karl    |  720000.00 | 60000.00 |
+| Bob     |  744000.00 | 62000.00 |
+| Bob     |  744000.00 | 62000.00 |
+| Quinn   |  768000.00 | 64000.00 |
+| Grace   |  804000.00 | 67000.00 |
+| Grace   |  804000.00 | 67000.00 |
+| Alice   |  900000.00 | 75000.00 |
+| Alice   |  900000.00 | 75000.00 |
+| Niaj    |  936000.00 | 78000.00 |
+| Eve     |  960000.00 | 80000.00 |
+| Rupert  |  984000.00 | 82000.00 |
+| Judy    | 1020000.00 | 85000.00 |
++---------+------------+----------+
+30 rows in set (0.00 sec)
+
+mysql> select ename  ,sal*12 "Annual",sal from  employees
+    -> order by 1,2,"Annual";
++---------+------------+----------+
+| ename   | Annual     | sal      |
++---------+------------+----------+
+| Alice   |  900000.00 | 75000.00 |
+| Alice   |  900000.00 | 75000.00 |
+| Bob     |  744000.00 | 62000.00 |
+| Bob     |  744000.00 | 62000.00 |
+| Charlie |  384000.00 | 32000.00 |
+| Charlie |  384000.00 | 32000.00 |
+| David   |  540000.00 | 45000.00 |
+| David   |  540000.00 | 45000.00 |
+| David   |  540000.00 | 45000.00 |
+| Eve     |  960000.00 | 80000.00 |
+| Frank   |  372000.00 | 31000.00 |
+| Grace   |  804000.00 | 67000.00 |
+| Grace   |  804000.00 | 67000.00 |
+| Heidi   |  564000.00 | 47000.00 |
+| Ivan    |  396000.00 | 33000.00 |
+| Ivan    |  396000.00 | 33000.00 |
+| Ivan    |  408000.00 | 34000.00 |
+| Judy    | 1020000.00 | 85000.00 |
+| Karl    |  720000.00 | 60000.00 |
+| Laura   |  588000.00 | 49000.00 |
+| Mallory |  420000.00 | 35000.00 |
+| Niaj    |  936000.00 | 78000.00 |
+| Olivia  |  552000.00 | 46000.00 |
+| Olivia  |  552000.00 | 46000.00 |
+| Peggy   |  360000.00 | 30000.00 |
+| Peggy   |  360000.00 | 30000.00 |
+| Quinn   |  768000.00 | 64000.00 |
+| Rupert  |  984000.00 | 82000.00 |
+| Sybil   |  408000.00 | 34000.00 |
+| Trent   |  576000.00 | 48000.00 |
++---------+------------+----------+
+30 rows in set (0.01 sec)
+
+
+
+If i only want show Ename data with start with A
+
+mysql> select * from emp
+    -> where ename>='A' and ename<'B';
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
++-------+-------+------+--------+--------+
+2 rows in set (0.01 sec)
+
+mysql> select * from emp
+    -> where ename>='A' and ename<'C';   // this command result will be A B name show 
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
++-------+-------+------+--------+--------+
+3 rows in set (0.00 sec)
+
+
+
+
+
+
+??this will show %A% start with A ,end with A , and anywhere present A it will show
+
+mysql> select * from emp
+    -> where ename like '%A%';
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
++-------+-------+------+--------+--------+
+3 rows in set (0.00 sec)
+
+//not like not showing this remaining will show us
+mysql> select * from emp
+    -> where ename not like '%A';
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------+
+5 rows in set (0.01 sec)
+
+mysql> select * from emp
+    -> where ename not like 'A%';
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+---
+
+
+"_" it will count as character 
+mysql> select * from emp
+    -> where ename like '__A__';
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
++-------+-------+------+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from emp
+    -> where ename like '____';
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------+
+2 rows in set (0.00 sec)
+
+wildcard use for the pattern matching
+
+
+BETWEEN CLAUSE
+
+this below two commands are same purpose it can included the that
+
+mysql> select * from emp
+    -> where sal>=2000 and sal<=4000;// here included int the output
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------+
+4 rows in set (0.01 sec)
+
+mysql> select * from emp
+    -> where sal between 2000 and 4000
+    -> ;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------
+
+
+//this is excluded 2000 and 4000 from output 
+mysql> select * from emp
+    -> where sal not between 2000 and 4000;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
++-------+-------+------+--------+--------+
+1 row in set (0.00 sec)
+
+
+
+// A and B where B is excluded from that output
+
+mysql> select * from emp
+    -> where ename between 'A' and 'B';
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
++-------+-------+------+--------+--------+
+2 rows in set (0.00 sec)
+
+// here c is excluded from that output
+mysql> select * from emp
+    -> where ename between 'A' and 'C';
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
++-------+-------+------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from emp
+    -> where ename>='A' and ename<='K';// k excluded from the output
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------+
+5 rows in set (0.00 sec)
+
+
+
+
+mysql> select * from emp
+    -> where sal deptno(10,30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'deptno(10,30)' at line 2
+mysql> select * from emp
+    -> where sal deptno in(10,30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'deptno in(10,30)' at line 2
+mysql> select * from emp
+    -> where deptno in(10,30);
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     4 | KING  | 3000 | Delhi  |     30 |
++-------+-------+------+--------+--------+
+3 rows in set (0.07 sec)
+
+mysql> select * from emp
+    -> where sal in(1000,4000);
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------+
+2 rows in set (0.01 sec)
+
+mysql> --!You  can update multiple row simultenously but you can update table at one at time
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '--!You  can update multiple row simultenously but you can update table at one at' at line 1
+mysql> select * from emp;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------+
+5 rows in set (0.07 sec)
+
+mysql> set autocommit=0;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into emp
+    -> values(6,'SAI',60000','Pune',40);
+    '> ;
+    '> ^C
+mysql> insert into emp
+    -> values(6,'SAI',60000','Pune',40);
+    '>
+    '>
+    '>
+    '> ^C
+mysql> ^C
+mysql> ^C
+mysql> ^C
+mysql> ^C
+mysql> select * from emp;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
++-------+-------+------+--------+--------+
+5 rows in set (0.01 sec)
+
+mysql> insert into emp
+    -> ^C
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| EMPNO  | int         | NO   | PRI | NULL    |       |
+| ENAME  | varchar(50) | YES  |     | NULL    |       |
+| SAL    | int         | YES  |     | NULL    |       |
+| CITY   | varchar(50) | YES  |     | NULL    |       |
+| DEPTNO | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.11 sec)
+
+mysql> insert into emp
+    -> values(7,'SAI',5000,'Pune',10);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> savepoint abc;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> update emp
+    -> ^C
+mysql> select * from emp;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
+|     7 | SAI   | 5000 | Pune   |     10 |
++-------+-------+------+--------+--------+
+6 rows in set (0.03 sec)
+
+mysql> update emp
+    -> set sal=100000
+    -> where empno=7;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from emp;
++-------+-------+--------+--------+--------+
+| EMPNO | ENAME | SAL    | CITY   | DEPTNO |
++-------+-------+--------+--------+--------+
+|     1 | ADAMS |   1000 | Mumbai |     10 |
+|     2 | BLAKE |   2000 | Delhi  |     10 |
+|     3 | ALLEN |   2500 | Mumbai |     20 |
+|     4 | KING  |   3000 | Delhi  |     30 |
+|     5 | FORD  |   4000 | Mumbai |     40 |
+|     7 | SAI   | 100000 | Pune   |     10 |
++-------+-------+--------+--------+--------+
+6 rows in set (0.00 sec)
+
+mysql> rollback to abc;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from emp;
++-------+-------+------+--------+--------+
+| EMPNO | ENAME | SAL  | CITY   | DEPTNO |
++-------+-------+------+--------+--------+
+|     1 | ADAMS | 1000 | Mumbai |     10 |
+|     2 | BLAKE | 2000 | Delhi  |     10 |
+|     3 | ALLEN | 2500 | Mumbai |     20 |
+|     4 | KING  | 3000 | Delhi  |     30 |
+|     5 | FORD  | 4000 | Mumbai |     40 |
+|     7 | SAI   | 5000 | Pune   |     10 |
++-------+-------+------+--------+--------+
+6 rows in set (0.01 sec)
