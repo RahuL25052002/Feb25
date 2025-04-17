@@ -1,0 +1,174 @@
+mysql> ----------AS-7----------------
+    -> ^C
+mysql>
+mysql>
+mysql> /*Summarizing Data with Aggregate Functions.
+   /*> 1) Write a query that counts all orders for October 3.
+   /*> */
+    -> ^C
+mysql>
+mysql> select onum , count(onum) All_orders_on_10-03 from orders
+    -> where odate='1990-10-03';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-03 from orders
+where odate='1990-10-03'' at line 1
+mysql> select onum , count(onum) "All_orders_on_10-03" from orders
+    -> where odate='1990-10-03';
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'classwork.orders.Onum'; this is incompatible with sql_mode=only_full_group_by
+mysql> select onum , count(orders) All_orders_on_10-03 from orders
+    -> where odate='1990-10-03';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-03 from orders
+where odate='1990-10-03'' at line 1
+mysql> select onum , count(onum) "All_orders_on_10-03" from orders
+    -> where odate='1990-10-03'
+    -> group by odate;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'classwork.orders.Onum' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select onum , count(onum) "All_orders_on_10-03" from orders
+    -> where odate='1990-10-03'
+    -> group by onum;
++------+---------------------+
+| onum | All_orders_on_10-03 |
++------+---------------------+
+| 3001 |                   1 |
+| 3003 |                   1 |
+| 3002 |                   1 |
+| 3005 |                   1 |
+| 3006 |                   1 |
++------+---------------------+
+5 rows in set (0.03 sec)
+
+mysql> select count(*) "All_orders_on_10-03" from orders
+    -> where odate='1990-10-03';
++---------------------+
+| All_orders_on_10-03 |
++---------------------+
+|                   5 |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql>
+mysql>
+mysql> /*
+   /*> 2) Write a query that counts the number of different non-NULL city values in the Customers table.*/
+    -> ^C
+mysql>
+mysql> select count(*)  from customers
+    -> group by city;
++----------+
+| count(*) |
++----------+
+|        2 |
+|        2 |
+|        2 |
+|        1 |
++----------+
+4 rows in set (0.01 sec)
+
+mysql> select city,count(*) from customers
+    -> group by city;
++----------+----------+
+| city     | count(*) |
++----------+----------+
+| London   |        2 |
+| Rome     |        2 |
+| San Jose |        2 |
+| Berlin   |        1 |
++----------+----------+
+4 rows in set (0.01 sec)
+
+mysql> /*
+   /*>
+   /*> 3) Write a query that selects each customer’s smallest order.
+   /*> */
+    -> ^C
+mysql> select cname, min(amt) from orders ,customers
+    -> where orders.cnum=customers.cnum;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'classwork.customers.Cname'; this is incompatible with sql_mode=only_full_group_by
+mysql> select cname, min(amt) from orders ,customers
+    -> where orders.cnum=customers.cnum
+    -> group by cname;
++----------+----------+
+| cname    | min(amt) |
++----------+----------+
+| Cisneros |    18.69 |
+| Hoffman  |   767.19 |
+| Pereira  |  1900.10 |
+| Liu      |  5160.45 |
+| Giovanni |  1713.23 |
+| Grass    |    75.75 |
+| Clemens  |  4723.00 |
++----------+----------+
+7 rows in set (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> /*4) Write a query that selects the first customer, in alphabetical order, whose name begins with G.*/^C
+mysql>
+mysql>
+mysql> select cname from customers
+    -> where cname like 'G%'
+    -> order by cname;
++----------+
+| cname    |
++----------+
+| Giovanni |
+| Grass    |
++----------+
+2 rows in set (0.02 sec)
+
+mysql> select cname from customers
+    -> where cname like 'G%'
+    -> order by cname
+    -> limit 1;
++----------+
+| cname    |
++----------+
+| Giovanni |
++----------+
+1 row in set (0.01 sec)
+
+mysql> /*5) Write a query that selects the highest rating in each city.
+   /*> */^C
+mysql>
+mysql>
+mysql> select city ,max(rating) from customers
+    -> group by city;
++----------+-------------+
+| city     | max(rating) |
++----------+-------------+
+| London   |         100 |
+| Rome     |         200 |
+| San Jose |         300 |
+| Berlin   |         300 |
++----------+-------------+
+4 rows in set (0.01 sec)
+
+mysql> select city ,max(rating) from customers
+    -> group by city
+    -> order by 1;
++----------+-------------+
+| city     | max(rating) |
++----------+-------------+
+| Berlin   |         300 |
+| London   |         100 |
+| Rome     |         200 |
+| San Jose |         300 |
++----------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> /*
+   /*>
+   /*> 6) Write a query that counts the number of salespeople registering orders for each day. (If a salesperson has more than one order on a given day, he or she should be counted only once.).*
+   /*> /
+   /*> ^C
+mysql> select odate ,count(distinct snum) from orders
+    -> group by odate;
++------------+----------------------+
+| odate      | count(distinct snum) |
++------------+----------------------+
+| 1990-10-03 |                    4 |
+| 1990-10-04 |                    2 |
+| 1990-10-05 |                    1 |
+| 1990-10-06 |                    2 |
++------------+----------------------+
+4 rows in set (0.11 sec)

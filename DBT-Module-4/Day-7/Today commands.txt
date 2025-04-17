@@ -1,0 +1,100 @@
+Today commands
+
+mysql> select greatest(sal,3000) from emp6;
++--------------------+
+| greatest(sal,3000) |
++--------------------+
+|               3000 |
+|               3000 |
+|               3000 |
+|               4000 |
+|               5000 |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> select greatest(sal,3000,1,2,3,4,5,6,6,4,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4) from emp6;
++------------------------------------------------------------------------+
+| greatest(sal,3000,1,2,3,4,5,6,6,4,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4) |
++------------------------------------------------------------------------+
+|                                                                   3000 |
+|                                                                   3000 |
+|                                                                   3000 |
+|                                                                   4000 |
+|                                                                   5000 |
++------------------------------------------------------------------------+
+5 rows in set (0.00 sec)
+
+
+mysql> select * from emp7;
++-------+--------+------+--------+------+------+
+| empno | ename  | sal  | deptno | job  | MGR  |
++-------+--------+------+--------+------+------+
+|     1 | Arun   | 8000 |      1 | M    |    4 |
+|     2 | Ali    | 7000 |      1 | C    |    1 |
+|     3 | Kiran  | 3000 |      1 | C    |    1 |
+|     4 | Jack   | 9000 |      2 | M    | NULL |
+|     5 | Thomas | 8000 |      2 | C    |    4 |
++-------+--------+------+--------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> select greatest(ename,'rahul') from emp7;
++-------------------------+
+| greatest(ename,'rahul') |
++-------------------------+
+| rahul                   |
+| rahul                   |
+| rahul                   |
+| rahul                   |
+| Thomas                  |
++-------------------------+
+5 rows in set (0.01 sec)
+
+mysql> select greatest(ename,'A') from emp7;
++---------------------+
+| greatest(ename,'A') |
++---------------------+
+| Arun                |
+| Ali                 |
+| Kiran               |
+| Jack                |
+| Thomas              |
++---------------------+
+5 rows in set (0.00 sec)
+
+mysql> select greatest(ename,'Ar') from emp7;
++----------------------+
+| greatest(ename,'Ar') |
++----------------------+
+| Arun                 |
+| Ar                   |
+| Kiran                |
+| Jack                 |
+| Thomas               |
++----------------------+
+5 rows in set (0.00 sec)
+
+mysql> select greatest(ename,'Arz') from emp7;
++-----------------------+
+| greatest(ename,'Arz') |
++-----------------------+
+| Arz                   |
+| Arz                   |
+| Kiran                 |
+| Jack                  |
+| Thomas                |
++-----------------------+
+5 rows in set (0.00 sec)
+
+mysql> select greatest(ename,'z') from emp7;
++---------------------+
+| greatest(ename,'z') |
++---------------------+
+| z                   |
+| z                   |
+| z                   |
+| z                   |
+| z                   |
++---------------------+
+5 rows in set (0.00 sec)
+
+

@@ -1083,3 +1083,15 @@ mysql> show tables;
 | supplier_parts_projects |
 +-------------------------+
 17 rows in set (0.18 sec)
+
+
+ select deptno,sum(sal) from emp7
+    where job='C'
+   group by deptno
+    having sum(sal)>1000
+    order by 1;
+
+
+select max(sum_sal) from
+   (select sum(sal) sum_sal from emp7
+   group by deptno) abcd;

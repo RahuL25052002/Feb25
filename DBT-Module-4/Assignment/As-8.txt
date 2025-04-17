@@ -1,0 +1,85 @@
+mysql>
+mysql> --------AS-8----------------------
+    -> ^C
+mysql>
+mysql>
+mysql> /*
+   /*> 1) Assume each salesperson has a 12% commission. Write a query on the orders table that will produce the order number, the salesperson number, and the amount of the salesperson’s commission for that order.*/^C
+mysql>
+mysql>
+mysql> select onum,snum,amt from orders , salespeople
+    -> where comm=.12;
+ERROR 1052 (23000): Column 'snum' in field list is ambiguous
+mysql> select onum,salespeople.snum,amt from orders , salespeople
+    -> where comm=.12
+    -> order by comm;
++------+------+---------+
+| onum | snum | amt     |
++------+------+---------+
+| 3001 | 1001 |   18.69 |
+| 3003 | 1001 |  767.19 |
+| 3002 | 1001 | 1900.10 |
+| 3005 | 1001 | 5160.45 |
+| 3006 | 1001 | 1098.16 |
+| 3009 | 1001 | 1713.23 |
+| 3007 | 1001 |   75.75 |
+| 3008 | 1001 | 4723.00 |
+| 3010 | 1001 | 1309.95 |
+| 3011 | 1001 | 9891.88 |
++------+------+---------+
+10 rows in set (0.02 sec)
+
+mysql> select onum,salespeople.snum,amt from orders , salespeople
+    -> where  salespeople.snum=orders.snum
+    -> and comm=.12;
++------+------+---------+
+| onum | snum | amt     |
++------+------+---------+
+| 3003 | 1001 |  767.19 |
+| 3008 | 1001 | 4723.00 |
+| 3011 | 1001 | 9891.88 |
++------+------+---------+
+3 rows in set (0.01 sec)
+
+mysql>
+mysql>
+mysql> /*
+   /*> 2) Write a query on the Customers table that will find the highest rating in each city. Put the output in this form:
+   /*> For the city (city), the highest rating is : (rating).*/
+    -> ^C
+mysql> ^C
+mysql> select city,max(Rating) "The highest rating is:" from customers
+    -> group by city;
++----------+------------------------+
+| city     | The highest rating is: |
++----------+------------------------+
+| London   |                    100 |
+| Rome     |                    200 |
+| San Jose |                    300 |
+| Berlin   |                    300 |
++----------+------------------------+
+4 rows in set (0.02 sec)
+
+mysql> select concat('City ',city,' The highest rating is: ',max(rating)) Result from customers
+    -> group by city;
++------------------------------------------+
+| Result                                   |
++------------------------------------------+
+| City London The highest rating is: 100   |
+| City Rome The highest rating is: 200     |
+| City San Jose The highest rating is: 300 |
+| City Berlin The highest rating is: 300   |
++------------------------------------------+
+4 rows in set (0.02 sec)
+
+mysql> select concat('City (',city,') The highest rating is: ',max(rating)) Result from customers
+    -> group by city;
++--------------------------------------------+
+| Result                                     |
++--------------------------------------------+
+| City (London) The highest rating is: 100   |
+| City (Rome) The highest rating is: 200     |
+| City (San Jose) The highest rating is: 300 |
+| City (Berlin) The highest rating is: 300   |
++--------------------------------------------+
+4 rows in set (0.00 sec)

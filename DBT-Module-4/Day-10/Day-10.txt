@@ -1,0 +1,362 @@
+ create procedure abc()
+    -> begin
+    ->  insert into tempp values(1,'Hello')
+    -> end
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end' at line 4
+mysql> desc tempp;
+    -> //
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| fir   | int      | YES  |     | NULL    |       |
+| sec   | char(15) | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+2 rows in set (0.03 sec)
+
+mysql> create procedure abc()
+    -> begin
+    ->  insert into tempp values(1,'Hello')
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end' at line 4
+mysql> delimiter ;
+mysql> select * from emp;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     3 | ALLEN |  2500 | Mumbai |     20 |
+|     4 | KING  |  3000 | Delhi  |     30 |
+|     5 | FORD  |  4000 | Mumbai |     40 |
+|     7 | SAI   | 10000 | Nashik |     10 |
++-------+-------+-------+--------+--------+
+6 rows in set (0.06 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> delimiter //
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc()
+    -> begin
+    ->  insert into tempp values(1,'Hello');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> call abc();
+    -> //
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from empp;
+    ->
+    -> //
++------+-------+------+
+| eid  | ename | sal  |
++------+-------+------+
+|    1 | A     | 5000 |
+|    2 | B     | 6000 |
+|    3 | C     | 7000 |
+|    4 | D     | 8000 |
+|    5 | E     | 9000 |
++------+-------+------+
+5 rows in set (0.03 sec)
+
+mysql> select * from tempp;
+    -> //
++------+-------+
+| fir  | sec   |
++------+-------+
+|    1 | Hello |
++------+-------+
+1 row in set (0.00 sec)
+
+mysql> create procedure abc()
+    -> begin
+    -> declare x int,
+    -> set x=10;
+    -> insert into tempp(x,'Second')
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',
+set x=10;
+insert into tempp(x,'Second')
+end' at line 3
+mysql> create procedure abc()
+    -> begin
+    -> declare x int;
+    -> set x=10;
+    -> insert into tempp values(x,'Second');
+    -> end;
+    -> //
+ERROR 1304 (42000): PROCEDURE abc already exists
+mysql> drop procedure abc();
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '()' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> drop procedure abc//
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create procedure abc()
+    -> begin
+    -> declare x int;
+    -> set x=10;
+    -> insert into tempp values(x,'Second');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql>
+mysql> select * from tempp;//
++------+-------+
+| fir  | sec   |
++------+-------+
+|    1 | Hello |
++------+-------+
+1 row in set (0.00 sec)
+
+mysql> call abc();
+    -> //
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tempp;//
++------+--------+
+| fir  | sec    |
++------+--------+
+|    1 | Hello  |
+|   10 | Second |
++------+--------+
+2 rows in set (0.00 sec)
+
+mysql> create procedure abc2()
+    -> begin
+    -> declare char(15) default 'CDAC';
+    -> insert into tempp values(1,x);
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'char(15) default 'CDAC';
+insert into tempp values(1,x);
+end' at line 3
+mysql> create procedure abc2()
+    -> begin
+    -> declare x char(15) default 'CDAC';
+    -> insert into tempp values(1,x);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> select * from tempp;
+    -> //
++------+--------+
+| fir  | sec    |
++------+--------+
+|    1 | Hello  |
+|   10 | Second |
++------+--------+
+2 rows in set (0.03 sec)
+
+mysql> call abc2();
+    -> //
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from tempp;//
++------+--------+
+| fir  | sec    |
++------+--------+
+|    1 | Hello  |
+|   10 | Second |
+|    1 | CDAC   |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql> create procedure abc3()
+    -> begin
+    -> declare x char(15) default 'KING';
+    -> declare y float default 3000;
+    -> declare z float default 0.4;
+    -> declare hra float ;
+    -> set hra=y*z;
+    -> insert into tempp values(y,x);
+    -> insert into tempp values(hra,'HRA');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from tempp;
+    -> //
++------+--------+
+| fir  | sec    |
++------+--------+
+|    1 | Hello  |
+|   10 | Second |
+|    1 | CDAC   |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql> call abc3();
+    -> //
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from tempp;//
++------+--------+
+| fir  | sec    |
++------+--------+
+|    1 | Hello  |
+|   10 | Second |
+|    1 | CDAC   |
+| 3000 | KING   |
+| 1200 | HRA    |
++------+--------+
+5 rows in set (0.00 sec)
+
+mysql> call abc3();//
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from tempp;//
++------+--------+
+| fir  | sec    |
++------+--------+
+|    1 | Hello  |
+|   10 | Second |
+|    1 | CDAC   |
+| 3000 | KING   |
+| 1200 | HRA    |
+| 3000 | KING   |
+| 1200 | HRA    |
++------+--------+
+7 rows in set (0.00 sec)
+
+mysql> truncate table tempp;
+    -> //
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> select * from tempp;//
+Empty set (0.01 sec)
+
+mysql> call abc3();//
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tempp;//
++------+------+
+| fir  | sec  |
++------+------+
+| 3000 | KING |
+| 1200 | HRA  |
++------+------+
+2 rows in set (0.00 sec)
+
+mysql> create procedure abc4(x char(15) , y int,z float)
+    -> begin
+    ->          declare hra float;
+    ->          set hra=y*z;
+    ->          insert into tempp values(y,x);
+    ->          insert into tempp values(hra,'HRA');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> call abc4('Ram',5000,04);
+    -> //
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from tempp;//
++-------+------+
+| fir   | sec  |
++-------+------+
+|  3000 | KING |
+|  1200 | HRA  |
+|  5000 | Ram  |
+| 20000 | HRA  |
++-------+------+
+4 rows in set (0.00 sec)
+
+mysql> create procedure abc5()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp
+    ->  where ename='KING';
+    ->  insert into tempp values(x,'KING');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> call abc5();
+    -> //
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tempp//
++-------+------+
+| fir   | sec  |
++-------+------+
+|  3000 | KING |
+|  1200 | HRA  |
+|  5000 | Ram  |
+| 20000 | HRA  |
+|  3000 | KING |
++-------+------+
+5 rows in set (0.00 sec)
+
+
+34 rows in set (0.06 sec)
+
+mysql> show procedure status where name like 'a%';
+    -> //
++-----------+------+-----------+----------+-----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| Db        | Name | Type      | Language | Definer         | Modified            | Created             | Security_type | Comment | character_set_client | collation_connection | Database Collation |
++-----------+------+-----------+----------+-----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| classwork | abc  | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:03:22 | 2025-04-17 18:03:22 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| classwork | abc2 | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:19:18 | 2025-04-17 18:19:18 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| classwork | abc3 | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:23:03 | 2025-04-17 18:23:03 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| classwork | abc4 | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:28:54 | 2025-04-17 18:28:54 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| classwork | abc5 | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:39:47 | 2025-04-17 18:39:47 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++-----------+------+-----------+----------+-----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+5 rows in set (0.01 sec)
+
+mysql> show create procedure abc;
+    -> //
++-----------+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+--------------------+
+| Procedure | sql_mode                                                                                                              | Create Procedure                                                                                                              | character_set_client | collation_connection | Database Collation |
++-----------+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+--------------------+
+| abc       | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION | CREATE DEFINER=`rahul`@`localhost` PROCEDURE `abc`()
+begin
+declare x int;
+set x=10;
+insert into tempp values(x,'Second');
+end | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++-----------+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+--------------------+
+1 row in set (0.01 sec)
+
+mysql>
