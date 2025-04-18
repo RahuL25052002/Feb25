@@ -1,0 +1,1083 @@
+mysql> use classwork;
+Database changed
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> delimiter //
+mysql>
+mysql>
+mysql>
+mysql> -- I change first delimiter --
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> create procedure abcd()
+    -> begin
+    ->  declare x int default 1;
+    ->  pqr_loop: loop
+    ->          if x > 10 then
+    ->                  leave pqr_loop;
+    ->          end if;
+    ->          set x=x+1;
+    ->          if mod(x,2) !=0 then
+    ->                  iterate pqr_loop;
+    ->          else
+    ->                  insert into tempp values(x,'inside loop');
+    ->          end if;
+    ->  end loop;
+    -> end;//
+Query OK, 0 rows affected (0.12 sec)
+
+mysql>
+mysql> call abcd();
+    -> //
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from tempp;//
++-------+---------------+
+| fir   | sec           |
++-------+---------------+
+|  3000 | KING          |
+|  1200 | HRA           |
+|  5000 | Ram           |
+| 20000 | HRA           |
+|  3000 | KING          |
+|  3000 | LOW SAL       |
+|  3000 | LOW SAL       |
+|     1 | in while loop |
+|     2 | in while loop |
+|     3 | in while loop |
+|     4 | in while loop |
+|     5 | in while loop |
+|     6 | in while loop |
+|     7 | in while loop |
+|     8 | in while loop |
+|     9 | in while loop |
+|     2 | inside loop   |
+|     4 | inside loop   |
+|     6 | inside loop   |
+|     8 | inside loop   |
+|    10 | inside loop   |
++-------+---------------+
+21 rows in set (0.01 sec)
+
+mysql> -- CURSORS---VVIMP
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> create table emp_1(
+    -> empno int,
+    -> ename varchar(25),
+    -> sal float,
+    -> deptno int);
+    -> //
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> delimiter ;
+mysql> insert into emp_1 values(1,'A',5000,1),
+    -> (2,'B',6000,1),
+    -> (3,'C',7000,1),
+    -> (4,'D',9000,2),
+    -> (5,'E',8000,2);
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> create table tempp1(
+    -> fir int,
+    -> sec vachar(25));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vachar(25))' at line 3
+mysql>
+mysql>
+mysql> create table tempp1(
+    -> fir int,
+    -> sec vachar(25);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vachar(25)' at line 3
+mysql> create table tempp1(
+    -> fir int,
+    -> sec vachar(25)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vachar(25)
+)' at line 3
+mysql>
+mysql> create table tempp1(
+    -> fir int,
+    -> sec varchar(25)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> update emp_1
+    -> modify column sal int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column sal int' at line 2
+mysql> update emp_1
+    -> ^C
+mysql> ^C
+mysql> alter table emp_1
+    -> modify column sal int;
+Query OK, 5 rows affected (0.08 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql>
+mysql> desc emp_1;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| empno  | int         | YES  |     | NULL    |       |
+| ename  | varchar(25) | YES  |     | NULL    |       |
+| sal    | int         | YES  |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.04 sec)
+
+mysql> desc temp1;
+ERROR 1146 (42S02): Table 'classwork.temp1' doesn't exist
+mysql> desc tempp1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| fir   | int         | YES  |     | NULL    |       |
+| sec   | varchar(25) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> create procedure abc21()
+    -> begin
+    ->  declare a int,
+    ->  declare b varchar(25);^C
+mysql> create procedure abc21()
+    -> begin
+    ->  declare a int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql> delimiter //
+mysql>
+mysql> create procedure abc21()
+    -> begin
+    ->  declare a int;
+    ->  declare b varchar(25);
+    ->  declare c int;
+    ->  declare d int;
+    ->  declare x int default 1;
+    ->  declare c1 cursor for select * from emp_1;
+    ->  open c1;
+    ->  while x<5 do
+    ->          fetch c1 into a,b,c,d;
+    ->          insert into tempp1 values(a,b);
+    ->          set x=x+1;
+    ->  end while;
+    ->  close c1;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.13 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> /*  FROM ABOVE EXAMPLE DECLARE C1 CURSOR FOR SELECT * FROM EMP_1
+   /*> ITS ONLY THE DECLARTION IT DOES NOT CONTAIN ANY DATA AT THIS POINT */
+    -> ^C
+mysql> ^C
+mysql> ^C
+mysql> ^C
+mysql> -- AFTER OPEN C1 IT EXCEUTE SELECT STATEMENT AND POPULATE C1 CURSOR WITH DATA AND RUN IN THE SERVER --
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql>
+mysql> call abc21();//
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from tempp1//
++------+------+
+| fir  | sec  |
++------+------+
+|    1 | A    |
+|    2 | B    |
+|    3 | C    |
+|    4 | D    |
++------+------+
+4 rows in set (0.01 sec)
+
+mysql> -- THE LAST E NOT COME BECAUSE IN THE PROCDURE LOOP RUN 4 TIMES THATS WHY BECAUSE I DECLARE X 1 AND X<5 CHECK .. LOOP CHECK ONLY 5 TIMES AND EXCUTED ONLY 4 TIMES
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- CLOSE C1 CLOSE THE THE CURSOR C1 AND FREE THE SERVER RAM
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- fetch c1 into ..... IT WILL FETCH THE NEXT ROW--
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> create procedure abc22()
+    -> begin
+    ->  declare a int;
+    ->  declare b varchar(25);
+    ->  declare c int;
+    ->  declare d int;
+    ->  declare x int default 1;
+    ->  declare c1 cursor for select * from emp_1;
+    ->  open c1;
+    ->  while x<10 do
+    ->          fetch c1 into a,b,c,d;
+    ->          insert into tempp1 values(a,b);
+    ->          set x=x+1;
+    ->  end while;
+    ->  close c1;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.22 sec)
+
+mysql> call abc22();//
+ERROR 1329 (02000): No data - zero rows fetched, selected, or processed
+mysql>
+mysql> -- its give the error which we cant run loop more then cursor having rowsss
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc23()
+    -> begin
+    ->  declare a int,
+    ->  declare b varchar(25);
+    -> ^C
+mysql> create procedure abc23()
+    -> begin
+    ->  declare a int;
+    ->  declare b varchar(25);
+    ->  declare c int;
+    ->  declare d int;
+    ->  declare y in default 0;
+    ->  declare c1 cursor for select * from emp_1;
+    ->  declare continue handler for not found set y=1;
+    ->  open c1;
+    ->  cursor_c1_loop:loop
+    ->          fetch c1 into a,b,c,d;
+    ->          if y=1 then
+    ->          leave cursor_c1_loop
+    ->          end if;
+    ->          insert intp tempp1 values(a,b);
+    ->  end loop cursor_c1_loop;
+    ->  close c1;
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in default 0;
+        declare c1 cursor for select * from emp_1;
+        declare continue hand' at line 7
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc23()
+    ->     begin
+    ->    declare a int;
+    ->  declare b varchar(25);
+    ->       declare c int;
+    ->       declare d int;
+    ->       declare y int default 0;
+    ->       declare c1 cursor for select * from emp_1;
+    ->      declare continue handler for not found set y=1;
+    ->       open c1;
+    ->       cursor_c1_loop:loop
+    ->               fetch c1 into a,b,c,d;
+    ->               if y=1 then
+    ->              leave cursor_c1_loop
+    ->              end if;
+    ->              insert intp tempp1 values(a,b);
+    ->       end loop cursor_c1_loop;
+    ->      close c1;
+    ->   end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end if;
+             insert intp tempp1 values(a,b);
+      end loop cursor_c1_lo' at line 15
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc23()
+    -> begin
+    ->       declare a int;
+    ->       declare b varchar(25);
+    ->       declare c int;
+    ->       declare d int;
+    ->       declare y int default 0;
+    ->       declare c1 cursor for select * from emp_1;
+    ->       declare continue handler for not found set y=1;
+    ->       open c1;
+    ->       cursor_c1_loop:loop
+    ->               fetch c1 into a,b,c,d;
+    ->               if y=1 then
+    ->                  leave cursor_c1_loop;
+    ->               end if;
+    ->              insert intp tempp1 values(a,b);
+    ->      end loop cursor_c1_loop;
+    ->      close c1;
+    -> end;//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tempp1 values(a,b);
+     end loop cursor_c1_loop;
+     close c1;
+end' at line 16
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc23()
+    -> begin
+    ->       declare a int;
+    ->       declare b varchar(25);
+    ->       declare c int;
+    ->       declare d int;
+    ->       declare y int default 0;
+    ->       declare c1 cursor for select * from emp_1;
+    ->       declare continue handler for not found set y=1;
+    ->       open c1;
+    ->       cursor_c1_loop:loop
+    ->               fetch c1 into a,b,c,d;
+    ->               if y=1 then
+    ->                  leave cursor_c1_loop;
+    ->               end if;
+    ->              insert into tempp1 values(a,b);
+    ->      end loop cursor_c1_loop;
+    ->      close c1;
+    -> end;//
+Query OK, 0 rows affected (0.09 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> call abc23();//
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql>
+mysql> select * from tempp1;//
++------+------+
+| fir  | sec  |
++------+------+
+|    1 | A    |
+|    2 | B    |
+|    3 | C    |
+|    4 | D    |
+|    1 | A    |
+|    2 | B    |
+|    3 | C    |
+|    4 | D    |
+|    5 | E    |
+|    1 | A    |
+|    2 | B    |
+|    3 | C    |
+|    4 | D    |
+|    5 | E    |
++------+------+
+14 rows in set (0.01 sec)
+
+mysql>
+mysql>
+mysql> truncate table tempp1;//
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> call abc23();//
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> select * from tempp1;//
++------+------+
+| fir  | sec  |
++------+------+
+|    1 | A    |
+|    2 | B    |
+|    3 | C    |
+|    4 | D    |
+|    5 | E    |
++------+------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> -- GLOBAL  VARIABLLE
+Query OK, 0 rows affected (0.05 sec)
+
+mysql>
+mysql> set @x=10;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select @x from dual;
+    -> //
++------+
+| @x   |
++------+
+|   10 |
++------+
+1 row in set (0.02 sec)
+
+mysql> set @x=@x+1;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select @x from dual;//
++------+
+| @x   |
++------+
+|   11 |
++------+
+1 row in set (0.00 sec)
+
+mysql> delimiter ;
+mysql> select @x from dual;
++------+
+| @x   |
++------+
+|   11 |
++------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> set @y='RAHUL NIKALE';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select y from dual;
+ERROR 1054 (42S22): Unknown column 'y' in 'field list'
+mysql> select @y from dual;
++--------------+
+| @y           |
++--------------+
+| RAHUL NIKALE |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select @y NAME from dual;
++--------------+
+| NAME         |
++--------------+
+| RAHUL NIKALE |
++--------------+
+1 row in set (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> --       GLOBAL VARIABLES CAN ALSO USE FOR STORING THE OUTPUT
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> SET @x=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delimeter //
+    -> ^C
+mysql> create procedure abc24(y int)
+    -> begin
+    ->  declare z float default 0.4;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql> delimiter //
+mysql> create procedure abc24(y int)
+    -> begin
+    ->  declare z float default 0.4;
+    ->  set @x=y*z;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>
+mysql>
+mysql> call abc24(20000);
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select @x from dual;
+    -> //
++------------------+
+| @x               |
++------------------+
+| 8000.00011920929 |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> select @x HRA from dual;
+    -> //
++------------------+
+| HRA              |
++------------------+
+| 8000.00011920929 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> select concat('HRA',@x) from dual;
+    -> //
++---------------------+
+| concat('HRA',@x)    |
++---------------------+
+| HRA8000.00011920929 |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql>
+mysql>
+mysql> create procedure abc25(in y int)
+    -> begin
+    ->  insert into tempp1 values(y,'INside abc25');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> call abc25(5);//
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tempp1//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|    1 | A            |
+|    2 | B            |
+|    3 | C            |
+|    4 | D            |
+|    5 | E            |
+|    5 | INside abc25 |
++------+--------------+
+6 rows in set (0.01 sec)
+
+mysql> set @x=10//
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> call abc25(@x)//
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tempp1//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|    1 | A            |
+|    2 | B            |
+|    3 | C            |
+|    4 | D            |
+|    5 | E            |
+|    5 | INside abc25 |
+|   10 | INside abc25 |
++------+--------------+
+7 rows in set (0.01 sec)
+
+mysql> set @x=10;
+    -> //
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> call abc25(2*@x+5)//
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from temmp1//
+ERROR 1146 (42S02): Table 'classwork.temmp1' doesn't exist
+mysql>
+mysql>
+mysql> select * from tempp1//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|    1 | A            |
+|    2 | B            |
+|    3 | C            |
+|    4 | D            |
+|    5 | E            |
+|    5 | INside abc25 |
+|   10 | INside abc25 |
+|   25 | INside abc25 |
++------+--------------+
+8 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> create procedure pqr()
+    -> begin
+    ->  declare x int default 10;
+    ->  call abc25(5);
+    ->  cal abc25(x);
+    -> ^C
+mysql> create procedure pqr()
+    -> begin
+    ->  declare x int default 10;
+    ->  call abc25(5);
+    ->  call abc25(x);
+    ->  call abc(2*x+5);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> call pqr()//
+ERROR 1318 (42000): Incorrect number of arguments for PROCEDURE classwork.abc; expected 0, got 1
+mysql>
+mysql>
+mysql>
+mysql> drop procedure pqr//
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create procedure pqr()
+    -> begin
+    ->  declare x int default 10;
+    ->  call abc25(5);
+    ->  call abc25(x);
+    ->  call abc(2*x+5);
+    -> end;^C
+mysql> create procedure pqr()
+    -> begin
+    ->  declare x int default 10;
+    ->  call abc25(5);
+    ->  call abc25(x);
+    ->  call abc25(2*x+5);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> call pqr()//
+Query OK, 1 row affected (0.02 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from tempp1;//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|    1 | A            |
+|    2 | B            |
+|    3 | C            |
+|    4 | D            |
+|    5 | E            |
+|    5 | INside abc25 |
+|   10 | INside abc25 |
+|   25 | INside abc25 |
+|    5 | INside abc25 |
+|   10 | INside abc25 |
+|    5 | INside abc25 |
+|   10 | INside abc25 |
+|   25 | INside abc25 |
++------+--------------+
+13 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> truncate table tempp1//
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> call pqr()//
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from tempp1;//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|    5 | INside abc25 |
+|   10 | INside abc25 |
+|   25 | INside abc25 |
++------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> create procedure abc26(out y int)
+    -> begin
+    ->  SET y=100;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql>
+mysql> create procedure pqr1()
+    -> begin
+    ->  declare x int default 10;
+    ->  insert into tempp1 values(x,'before abc');
+    ->  call abc26(x);
+    ->  insert into tempp1 values(x,'After abc');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql>
+mysql> call pqr1();//
+Query OK, 1 row affected (0.02 sec)
+
+mysql>
+mysql>
+mysql> select * from tempp1;//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|    5 | INside abc25 |
+|   10 | INside abc25 |
+|   25 | INside abc25 |
+|   10 | before abc   |
+|  100 | After abc    |
++------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> -- OUT PARAMTERR call by refrence variable
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> -- means it can share the address in the parameter
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc27(inout y int)
+    -> begin
+    ->  set y=y*y*;
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ';
+end' at line 3
+mysql> create procedure abc27(inout y int)
+    -> begin
+    ->  set y=y*y*y;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create procedure pqr2()
+    -> begin
+    ->  declare x int default 10;
+    ->  insert into tempp1 values(x,'before abc');
+    ->  call abc27(x);
+    ->  insert into tempp1 values(x,'After abc');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> call pqr2()//
+Query OK, 1 row affected (0.02 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from tempp1;//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|    5 | INside abc25 |
+|   10 | INside abc25 |
+|   25 | INside abc25 |
+|   10 | before abc   |
+|  100 | After abc    |
+|   10 | before abc   |
+| 1000 | After abc    |
++------+--------------+
+7 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> truncate table tempp1//
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> select * from tempp1;//
+Empty set (0.01 sec)
+
+mysql> call pqr2()//
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from tempp1;//
++------+------------+
+| fir  | sec        |
++------+------------+
+|   10 | before abc |
+| 1000 | After abc  |
++------+------------+
+
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> ///////  FUNCIONS
+ERROR:
+No query specified
+
+ERROR:
+No query specified
+
+ERROR:
+No query specified
+
+    ->
+    -> ^C
+mysql> create function abcde()
+    -> returns int
+    -> deterministic
+    -> begin
+    ->  return 10;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.19 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> create procedure pqrs()
+    -> begin
+    ->  declare x int;
+    ->  set x=abcde();
+    ->  insert into tempp1 values(x,'after abcde');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> call pqrs();//
+Query OK, 1 row affected (0.05 sec)
+
+mysql>
+mysql>
+mysql> select * from tempp1//
++------+-------------+
+| fir  | sec         |
++------+-------------+
+|   10 | before abc  |
+| 1000 | After abc   |
+|   10 | after abcde |
++------+-------------+
+3 rows in set (0.02 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create function abcde1()
+    -> return ^C
+mysql> ^C
+mysql> create function abcde1(x int)
+    -> return int
+    -> d^C
+mysql> create function abcde1(x int)
+    -> returns int
+    -> deterministic
+    ->
+    -> begin
+    ->  return x*x;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.21 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> create procedure pqrs1()
+    -> begin
+    ->  declare x int;
+    ->  set x=abc(10);
+    ->  insert into tempp1 values(x,'After abcde1');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.08 sec)
+
+mysql>
+mysql>
+mysql> call pqrs1();
+    -> //
+ERROR 1305 (42000): FUNCTION classwork.abc does not exist
+mysql> drop procedure pqrs1//
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql>
+mysql> create procedure pqrs1()
+    -> begin
+    ->  declare x int;
+    ->  set x=abcde1(10);
+    ->  insert into tempp1 values(x,'After abcde1');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> call pqrs1()//
+Query OK, 1 row affected (0.03 sec)
+
+mysql>
+mysql> select * from tempp1//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|   10 | before abc   |
+| 1000 | After abc    |
+|   10 | after abcde  |
+|  100 | After abcde1 |
++------+--------------+
+4 rows in set (0.03 sec)
+
+mysql> select abcde1(sal) from emp;
+    -> //
++-------------+
+| abcde1(sal) |
++-------------+
+|     1000000 |
+|     4000000 |
+|     6250000 |
+|     9000000 |
+|    16000000 |
+|   100000000 |
+|        NULL |
+|   196000000 |
++-------------+
+8 rows in set (0.07 sec)
+
+mysql> select * from emp;//
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     3 | ALLEN |  2500 | Mumbai |     20 |
+|     4 | KING  |  3000 | Delhi  |     30 |
+|     5 | FORD  |  4000 | Mumbai |     40 |
+|     7 | SAI   | 10000 | Nashik |     10 |
+|     8 | Mayur |  NULL | NULL   |   NULL |
+|    10 | Ra    | 14000 | Nashik |     20 |
++-------+-------+-------+--------+--------+
+8 rows in set (0.00 sec)
+
+mysql> -- STORED FUNCTION CAN BE CALLED IN SELECT STATEMENT
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> -- STORED FUNCTION CAN BE CALLED IN SQL COMMANDS
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> SELECT ABCDE1(19) FROM DUAL;
+    -> //
++------------+
+| ABCDE1(19) |
++------------+
+|        361 |
++------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT ABCDE1(19)  SQUREFROM DUAL;
+    -> ^C
+mysql> SELECT ABCDE1(19)  SQURE FROM DUAL;
+    -> //
++-------+
+| SQURE |
++-------+
+|   361 |
++-------+
+1 row in set (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> CREATE function abcde2(y int)
+    -> returns boolean
+    -> deterministic
+    -> begin
+    ->  if y>5000 then
+    ->          return true;
+    ->  else
+    ->          return false;
+    ->  end if;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.19 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> create procedure pqrs2()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp where ename='King';
+    ->  if abcde2(x) then
+    ->          insert into tempp1 values(x,'> 5000');
+    ->  else
+    ->          insert into tempp1 values(x,'<=5000');
+    ->  end if;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> call pqrs2();
+    -> //
+Query OK, 1 row affected (0.08 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> select * from tempp1//
++------+--------------+
+| fir  | sec          |
++------+--------------+
+|   10 | before abc   |
+| 1000 | After abc    |
+|   10 | after abcde  |
+|  100 | After abcde1 |
+| 3000 | <=5000       |
++------+--------------+
+5 rows in set (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+
+
+
+
+
