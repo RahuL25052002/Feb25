@@ -360,3 +360,688 @@ end | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
 1 row in set (0.01 sec)
 
 mysql>
+
+
+
+
+mysql>
+mysql> ------YESTERDAY---REVISION---------------------
+    ->
+    ->
+    -> ^C
+mysql> show tables;
++-------------------------+
+| Tables_in_classwork     |
++-------------------------+
+| customers               |
+| dept                    |
+| dept2                   |
+| depthead                |
+| emp                     |
+| emp1                    |
+| emp10                   |
+| emp2                    |
+| emp3                    |
+| emp4                    |
+| emp5                    |
+| emp6                    |
+| emp7                    |
+| emp8                    |
+| emp9                    |
+| empp                    |
+| empp2                   |
+| empp3                   |
+| orders                  |
+| parts                   |
+| pro                     |
+| projects                |
+| salespeople             |
+| sdept                   |
+| semp                    |
+| supplier                |
+| supplier_parts_projects |
+| tempp                   |
++-------------------------+
+28 rows in set (0.18 sec)
+
+mysql> select * from emp;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     3 | ALLEN |  2500 | Mumbai |     20 |
+|     4 | KING  |  3000 | Delhi  |     30 |
+|     5 | FORD  |  4000 | Mumbai |     40 |
+|     7 | SAI   | 10000 | Nashik |     10 |
++-------+-------+-------+--------+--------+
+6 rows in set (0.01 sec)
+
+mysql> create view EMP_VIEW
+    -> as
+    -> select * from emp
+    -> where deptno=10;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from view;
+ERROR 1146 (42S02): Table 'classwork.view' doesn't exist
+mysql> select * from emp_view;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     7 | SAI   | 10000 | Nashik |     10 |
++-------+-------+-------+--------+--------+
+3 rows in set (0.01 sec)
+
+mysql> drop view emp_view;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from emp_view;
+ERROR 1146 (42S02): Table 'classwork.emp_view' doesn't exist
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> ----SO WE CAN DROP VIEW ALSO BY ABOVE EXAMPLE REFER
+    ->
+    -> ^C
+mysql>
+mysql> CREATE view Emp_col_2
+    -> as
+    -> select empno , ename from emp;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from emp_col_2;
++-------+-------+
+| empno | ename |
++-------+-------+
+|     1 | ADAMS |
+|     2 | BLAKE |
+|     3 | ALLEN |
+|     4 | KING  |
+|     5 | FORD  |
+|     7 | SAI   |
++-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> --       SO WITH THE HELP OF VIEW WE CAN RESTRICT THE COLUMN ACCESS TO ANOTHER USER
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql> -- We can do insert operation on view also
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into emp_col_2
+    -> values(8,'Mayur');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from emp_col_2;
++-------+-------+
+| empno | ename |
++-------+-------+
+|     1 | ADAMS |
+|     2 | BLAKE |
+|     3 | ALLEN |
+|     4 | KING  |
+|     5 | FORD  |
+|     7 | SAI   |
+|     8 | Mayur |
++-------+-------+
+7 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from emp;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     3 | ALLEN |  2500 | Mumbai |     20 |
+|     4 | KING  |  3000 | Delhi  |     30 |
+|     5 | FORD  |  4000 | Mumbai |     40 |
+|     7 | SAI   | 10000 | Nashik |     10 |
+|     8 | Mayur |  NULL | NULL   |   NULL |
++-------+-------+-------+--------+--------+
+7 rows in set (0.00 sec)
+
+mysql> update emp_col_2
+    -> set sal=9000
+    -> where empno=8;
+ERROR 1054 (42S22): Unknown column 'sal' in 'field list'
+mysql> insert into emp_sal_2
+    -> values(9,'Ram',5000,'Delhi',20);
+ERROR 1146 (42S02): Table 'classwork.emp_sal_2' doesn't exist
+mysql> insert into emp_col_2
+    -> values(9,'Ram',5000,'Delhi',20);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into emp_col_2
+    -> values(9,'Ram',5000,'Delhi',20);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> ---so we dclare view emp_col-2 but we can't enter max col value because it cant allowed that
+    '>
+    '> ^C
+mysql>
+mysql> create view v1
+    -> as
+    -> select deptno,sum(sal) from emp
+    -> group by deptno;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql>
+mysql> select * from v1;
++--------+----------+
+| deptno | sum(sal) |
++--------+----------+
+|     10 |    13000 |
+|     20 |     2500 |
+|     30 |     3000 |
+|     40 |     4000 |
+|   NULL |     NULL |
++--------+----------+
+5 rows in set (0.01 sec)
+
+mysql> insert into v1 values(20,45000);
+ERROR 1471 (HY000): The target table v1 of the INSERT is not insertable-into
+mysql>
+mysql> --WE CANT INSERT VALUE INTO FAKE COLUMN OR COMPUTED COLUMN
+    -> ^C
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> --FOR SHOWING FULL VIEW
+    -> ^C
+mysql> -- FOR SHOWING VIEW
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW FULL TABLES;
++-------------------------+------------+
+| Tables_in_classwork     | Table_type |
++-------------------------+------------+
+| customers               | BASE TABLE |
+| dept                    | BASE TABLE |
+| dept2                   | BASE TABLE |
+| depthead                | BASE TABLE |
+| emp                     | BASE TABLE |
+| emp1                    | BASE TABLE |
+| emp10                   | BASE TABLE |
+| emp2                    | BASE TABLE |
+| emp3                    | BASE TABLE |
+| emp4                    | BASE TABLE |
+| emp5                    | BASE TABLE |
+| emp6                    | BASE TABLE |
+| emp7                    | BASE TABLE |
+| emp8                    | BASE TABLE |
+| emp9                    | BASE TABLE |
+| emp_col_2               | VIEW       |
+| empp                    | BASE TABLE |
+| empp2                   | BASE TABLE |
+| empp3                   | BASE TABLE |
+| orders                  | BASE TABLE |
+| parts                   | BASE TABLE |
+| pro                     | BASE TABLE |
+| projects                | BASE TABLE |
+| salespeople             | BASE TABLE |
+| sdept                   | BASE TABLE |
+| semp                    | BASE TABLE |
+| supplier                | BASE TABLE |
+| supplier_parts_projects | BASE TABLE |
+| tempp                   | BASE TABLE |
+| v1                      | VIEW       |
++-------------------------+------------+
+30 rows in set (0.01 sec)
+
+mysql> -- FOR BELOW COMMAND IS ABOUT SEE SELECT STATEMENT OF VIEW
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW CREATE VIEW V1;
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+
+| View | Create View                                                                                                                                                                                  | character_set_client | collation_connection |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+
+| v1   | CREATE ALGORITHM=UNDEFINED DEFINER=`rahul`@`localhost` SQL SECURITY DEFINER VIEW `v1` AS select `emp`.`DEPTNO` AS `deptno`,sum(`emp`.`SAL`) AS `sum(sal)` from `emp` group by `emp`.`DEPTNO` | cp850                | cp850_general_ci     |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+
+1 row in set (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create view v2
+    -> as
+    -> select * from emp
+    -> where dptno=1;
+ERROR 1054 (42S22): Unknown column 'dptno' in 'where clause'
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create view v2
+    -> as
+    -> select * from emp
+    -> where deptno=1;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from v2;
+Empty set (0.00 sec)
+
+mysql> drop view v2;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create view v2
+    -> as
+    -> select * from emp
+    -> where deptno=10;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from v2;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     7 | SAI   | 10000 | Nashik |     10 |
++-------+-------+-------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> insert into v2 values(10,'Ra',14000,
+    -> 'Nashik',20);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from v2;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     7 | SAI   | 10000 | Nashik |     10 |
++-------+-------+-------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     3 | ALLEN |  2500 | Mumbai |     20 |
+|     4 | KING  |  3000 | Delhi  |     30 |
+|     5 | FORD  |  4000 | Mumbai |     40 |
+|     7 | SAI   | 10000 | Nashik |     10 |
+|     8 | Mayur |  NULL | NULL   |   NULL |
+|    10 | Ra    | 14000 | Nashik |     20 |
++-------+-------+-------+--------+--------+
+8 rows in set (0.00 sec)
+
+mysql> select * from v2;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     7 | SAI   | 10000 | Nashik |     10 |
++-------+-------+-------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> /* I INSERT THE ANOTHER VALUE IN VIEW MEANS DEPTNO=20
+   /*> IT WORK BUT NOT SHOW IN THE VIEW WHEN I SELECT THAT
+   /*> THE CHANGES HAPPEN IN THE MAIN TABLE (EMP) TABLE IN THAT THE CHANGES ARE MADE
+   /*>
+   /*> */
+    -> ^C
+mysql> DESC V2;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| EMPNO  | int         | NO   |     | NULL    |       |
+| ENAME  | varchar(50) | YES  |     | NULL    |       |
+| SAL    | int         | YES  |     | NULL    |       |
+| CITY   | varchar(50) | YES  |     | NULL    |       |
+| DEPTNO | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.02 sec)
+
+mysql> DESC V1;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| deptno   | int           | YES  |     | NULL    |       |
+| sum(sal) | decimal(32,0) | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> DESC EMP_COL_2;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| empno | int         | NO   |     | NULL    |       |
+| ename | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> show procedure status where name like 'a%';
++-----------+------+-----------+----------+-----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| Db        | Name | Type      | Language | Definer         | Modified            | Created             | Security_type | Comment | character_set_client | collation_connection | Database Collation |
++-----------+------+-----------+----------+-----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| classwork | abc  | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:03:22 | 2025-04-17 18:03:22 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| classwork | abc2 | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:19:18 | 2025-04-17 18:19:18 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| classwork | abc3 | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:23:03 | 2025-04-17 18:23:03 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| classwork | abc4 | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:28:54 | 2025-04-17 18:28:54 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| classwork | abc5 | PROCEDURE | SQL      | rahul@localhost | 2025-04-17 18:39:47 | 2025-04-17 18:39:47 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++-----------+------+-----------+----------+-----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+5 rows in set (0.03 sec)
+
+mysql> select * from emp;
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     3 | ALLEN |  2500 | Mumbai |     20 |
+|     4 | KING  |  3000 | Delhi  |     30 |
+|     5 | FORD  |  4000 | Mumbai |     40 |
+|     7 | SAI   | 10000 | Nashik |     10 |
+|     8 | Mayur |  NULL | NULL   |   NULL |
+|    10 | Ra    | 14000 | Nashik |     20 |
++-------+-------+-------+--------+--------+
+8 rows in set (0.01 sec)
+
+mysql> create procedure abc7()
+    -> begin
+    ->  declare x int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql> delimiter //
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc7()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp;
+    ->  IF x>5000 then
+    ->  insert into tempp values(x,'HIGH SAL');
+    ->  else
+    ->  insert into tempp values(x,'LOW SAL');
+    -> endif
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end' at line 10
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc7()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp;
+    ->  IF x>5000 then
+    ->  insert into tempp values(x,'HIGH SAL');
+    ->  else
+    ->  insert into tempp values(x,'LOW SAL');
+    -> endif;
+    -> ^C
+mysql> create procedure abc7()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp;
+    ->  IF x>5000 then
+    ->  insert into tempp values(x,'HIGH SAL');
+    ->  else
+    ->  insert into tempp values(x,'LOW SAL');
+    -> end if;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> select * from tempp;
+    -> //
++-------+------+
+| fir   | sec  |
++-------+------+
+|  3000 | KING |
+|  1200 | HRA  |
+|  5000 | Ram  |
+| 20000 | HRA  |
+|  3000 | KING |
++-------+------+
+5 rows in set (0.01 sec)
+
+mysql> call abc7();
+    -> //
+ERROR 1172 (42000): Result consisted of more than one row
+mysql> drop procedure abc7();
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '()' at line 1
+mysql> drop procedure abc7;
+    -> //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create procedure abc7()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp;
+    ->  IF x>5000 then
+    ->  insert into tempp values(x,'HIGH SAL');
+    ->  else
+    ->  insert into tempp values(x,'LOW SAL');
+    -> end if;
+    -> end;
+    -> ^C
+mysql> create procedure abc7()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp where ename='KING';
+    ->  IF x>5000 then
+    ->  insert into tempp values(x,'HIGH SAL');
+    ->  else
+    ->  insert into tempp values(x,'LOW SAL');
+    -> end if;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> call abc7();
+    -> //
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tempp;
+    -> //
++-------+---------+
+| fir   | sec     |
++-------+---------+
+|  3000 | KING    |
+|  1200 | HRA     |
+|  5000 | Ram     |
+| 20000 | HRA     |
+|  3000 | KING    |
+|  3000 | LOW SAL |
++-------+---------+
+6 rows in set (0.00 sec)
+
+mysql> -- ELSE IS OPTIONAL IN THE IF STATEMENT
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> create procedure abc8()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp where ename='KING';
+    ->  IF x>5000 then
+    ->  insert into tempp values(x,'HIGH SAL');
+    -> end if;
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> call abc8();
+    -> //
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from tempp;
+    -> //
++-------+---------+
+| fir   | sec     |
++-------+---------+
+|  3000 | KING    |
+|  1200 | HRA     |
+|  5000 | Ram     |
+| 20000 | HRA     |
+|  3000 | KING    |
+|  3000 | LOW SAL |
++-------+---------+
+6 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create procedure abc10()
+    -> begin
+    ->  declare x int;
+    ->  case
+    -> ^C
+mysql> create procedure abc10()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp where ename='KING';
+    ->  case
+    ->  when x > 5000 then
+    ->          insert into tempp values(x,'High sal');
+    ->  when x<5000 then
+    ->          insert into tempp values(x,'LOW SAL');
+    ->  else
+    ->          insert into tempp values(x,'medium sal');
+    ->  end case;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> call abc10();
+    -> //
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from tempp;
+    -> //
++-------+---------+
+| fir   | sec     |
++-------+---------+
+|  3000 | KING    |
+|  1200 | HRA     |
+|  5000 | Ram     |
+| 20000 | HRA     |
+|  3000 | KING    |
+|  3000 | LOW SAL |
+|  3000 | LOW SAL |
++-------+---------+
+7 rows in set (0.01 sec)
+
+mysql> select * from emp;
+    ->
+    -> //
++-------+-------+-------+--------+--------+
+| EMPNO | ENAME | SAL   | CITY   | DEPTNO |
++-------+-------+-------+--------+--------+
+|     1 | ADAMS |  1000 | Mumbai |     10 |
+|     2 | BLAKE |  2000 | Delhi  |     10 |
+|     3 | ALLEN |  2500 | Mumbai |     20 |
+|     4 | KING  |  3000 | Delhi  |     30 |
+|     5 | FORD  |  4000 | Mumbai |     40 |
+|     7 | SAI   | 10000 | Nashik |     10 |
+|     8 | Mayur |  NULL | NULL   |   NULL |
+|    10 | Ra    | 14000 | Nashik |     20 |
++-------+-------+-------+--------+--------+
+8 rows in set (0.01 sec)
+
+mysql> create procedure abc11()
+    -> begin
+    ->  declare x int;
+    ->  select sal into x from emp where ename='FORD';
+    ->  case
+    ->  when x > 4000 then
+    ->          insert into tempp values(x,'High sal');
+    ->  when x<4000 then
+    ->          insert into tempp values(x,'LOW SAL');
+    -> end case;
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> call abc11();
+    -> //
+ERROR 1339 (20000): Case not found for CASE statement
+mysql>
+mysql>
+mysql> -- IF CONDN NOT SATISFIED AND YOU NOT WRITE THE
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- ELESE CASE THEN CASE GIVE AN ERROR WHILE YOU CALL THE PROCEDURE
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> -- EXAMPLE OF WHILE LOOP IN THE PL
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create procedure abc12()
+    -> begin
+    ->  declare x int default 1;
+    ->  while <10 do
+    ->          insert into tempp values(x,'in while loop');
+    ->          set x=x+1;
+    ->  end while;
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<10 do
+                insert into tempp values(x,'in while loop');
+                set x=x+1;
+        end while;
+e' at line 4
+mysql> create procedure abc12()
+    -> begin
+    ->  declare x int default 1;
+    ->  while x<10 do
+    ->          insert into tempp values(x,'in while loop');
+    ->          set x=x+1;
+    ->  end while;
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.15 sec)
+
+mysql> call abc12();
+    -> //
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from tempp;//
++-------+---------------+
+| fir   | sec           |
++-------+---------------+
+|  3000 | KING          |
+|  1200 | HRA           |
+|  5000 | Ram           |
+| 20000 | HRA           |
+|  3000 | KING          |
+|  3000 | LOW SAL       |
+|  3000 | LOW SAL       |
+|     1 | in while loop |
+|     2 | in while loop |
+|     3 | in while loop |
+|     4 | in while loop |
+|     5 | in while loop |
+|     6 | in while loop |
+|     7 | in while loop |
+|     8 | in while loop |
+|     9 | in while loop |
++-------+---------------+
+16 rows in set (0.01 sec)

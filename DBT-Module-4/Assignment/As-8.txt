@@ -83,3 +83,47 @@ mysql> select concat('City (',city,') The highest rating is: ',max(rating)) Resu
 | City (Berlin) The highest rating is: 300   |
 +--------------------------------------------+
 4 rows in set (0.00 sec)
+
+   /*> 3) Write a query that lists customers in descending order of rating. Output the rating field first, followed by the customer’s name and number.
+ 
+
+mysql> select rating,cname,cnum from customers
+    -> group by rating
+    -> order by 2;
+    -> //
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'classwork.customers.Cname' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select rating,cname,cnum from customers
+    -> order by 2;
+    -> //
++--------+----------+------+
+| rating | cname    | cnum |
++--------+----------+------+
+|    300 | Cisneros | 2008 |
+|    100 | Clemens  | 2006 |
+|    200 | Giovanni | 2002 |
+|    300 | Grass    | 2004 |
+|    100 | Hoffman  | 2001 |
+|    200 | Liu      | 2003 |
+|    100 | Pereira  | 2007 |
++--------+----------+------+
+7 rows in set (0.01 sec)
+
+mysql>
+mysql> /*
+   /*>
+   /*> 4) Write a query that totals the orders for each day and places the results in descending order.*/
+    ->
+    -> ^C
+mysql>
+mysql> select odate,count(odate) "Total_Order" from orders
+    -> group by odate;
+    -> //
++------------+-------------+
+| odate      | Total_Order |
++------------+-------------+
+| 1990-10-03 |           5 |
+| 1990-10-04 |           2 |
+| 1990-10-05 |           1 |
+| 1990-10-06 |           2 |
++------------+-------------+
+4 rows in set (0.01 sec)
