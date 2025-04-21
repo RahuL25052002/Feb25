@@ -1,0 +1,370 @@
+mysql>
+mysql> -------Excercise 1----------------------------
+    ->
+    -> ^C
+mysql> /*1. Write a program that computes the perimeter and the area of a rectangle. Define your own values for the length and width. (Assuming that L and W are the length and width of the rectangle, Perimeter = 2*(L+W) and Area = L*W.*/
+    ->
+    ->
+    -> ^C
+mysql> create table Rect(
+    -> per int,
+    -> area float);
+    -> //
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> create procedure rect_pro()
+    -> begin
+    ->  declare length int default 5;
+    ->  declare bredth int default 6;
+    ->  declare per int;
+    ->  declare area float;
+    ->  set per=2*(length+breadth);
+    ->  set area=length*breadth;
+    ->  insert into Rect values(per,area);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql> call rect_pro();
+    -> //
+ERROR 1054 (42S22): Unknown column 'breadth' in 'field list'
+mysql> drop procedure rect_pro;
+    -> //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql>
+mysql>
+mysql> create procedure rect_pro()
+    -> begin
+    ->  declare length int default 5;
+    ->  declare breadth int default 6;
+    ->  declare per int;
+    ->  declare area float;
+    ->  set per=2*(length+breadth);
+    ->  set area=length*breadth;
+    ->  insert into Rect values(per,area);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql> call rect_pro();//
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from rect;
+    -> //
++------+------+
+| per  | area |
++------+------+
+|   22 |   30 |
++------+------+
+1 row in set (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> /* 2. Write a program that declares an integer variable called num, assigns a value to it, and computes and inserts into the tempp table the value of the variable itself, its square, and its cube.*/
+    -> ^C
+mysql> create table q_2(
+    -> Val int,
+    -> squ int,
+    -> cub int);
+    -> //
+Query OK, 0 rows affected (0.32 sec)
+
+mysql>
+mysql>
+mysql> create procedure val_squ_cube()
+    -> begin
+    ->  declare ^C
+mysql> create procedure val_squ_cube(x int)
+    -> begin
+    ->  insert into q_2 values(x,x*x,x*x*x);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>
+mysql> call val_squ_cube(3)//
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from q_2//
++------+------+------+
+| Val  | squ  | cub  |
++------+------+------+
+|    3 |    9 |   27 |
++------+------+------+
+1 row in set (0.02 sec)
+
+mysql>
+mysql> /*3. Convert a temperature in Fahrenheit (F) to its equivalent in Celsius (C) and vice versa. The required formulae are:- C= (F-32)*5/9
+   /*> F= 9/5*C + 32*/
+    ->
+    -> --
+    -> ^C
+mysql> create table temperature(
+    -> deg float,
+    -> fah float
+    -> );
+    -> //
+Query OK, 0 rows affected (0.26 sec)
+
+mysql>
+mysql>
+mysql> create procedure farenhittodegree(float f)
+    -> begin
+    ->  declare cel float;
+    ->  set cel=(f-32)*(5/9);
+    ->  insert into temperature values(cel,f);
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'float f)
+begin
+        declare cel float;
+        set cel=(f-32)*(5/9);
+        insert into temperat' at line 1
+mysql> create procedure farenhittodegree(float f)
+    -> begin
+    ->  declare cel float;
+    ->  set cel=(f-32)*5/9;
+    ->  insert into temperature values(cel,f);
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'float f)
+begin
+        declare cel float;
+        set cel=(f-32)*5/9;
+        insert into temperatur' at line 1
+mysql> create procedure farenhittodegree(in float f)
+    -> begin
+    ->  declare cel float;
+    ->  set cel=(f-32)*5/9;
+    ->  insert into temperature values(cel,f);
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'float f)
+begin
+        declare cel float;
+        set cel=(f-32)*5/9;
+        insert into temperatur' at line 1
+mysql>
+mysql>
+mysql> create procedure farenhittodegree(f float)
+    -> begin
+    ->  declare cel float;
+    ->  set cel=(f-32)*5/9;
+    ->  insert into temperature values(cel,f);
+    -> end//
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>
+mysql>
+mysql> call farenhittodegree(104)//
+Query OK, 1 row affected (0.06 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from temperature//
++------+------+
+| deg  | fah  |
++------+------+
+|   40 |  104 |
++------+------+
+1 row in set (0.02 sec)
+
+mysql> create procedure degreetofa(d float)
+    -> begin
+    ->  declare f float;
+    ->  set f=9/5*d+32;
+    ->  insert into temperature values(d,f);
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> call degreetofa(40)//
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+mysql> select * from temperature//
++------+------+
+| deg  | fah  |
++------+------+
+|   40 |  104 |
+|   40 |  104 |
++------+------+
+2 rows in set (0.00 sec)
+
+mysql> /*
+   /*>
+   /*> 4. Convert a number of inches into yards, feet, and inches. For example, 124 inches equals 3 yards, 1 foot, and 4 inches.*/
+    ->
+    -> ^C
+mysql> DELIMITER //
+mysql>
+mysql> CREATE PROCEDURE convert_inches(IN total_inches INT)
+    -> BEGIN
+    ->     DECLARE yards INT;
+    ->     DECLARE feet INT;
+    ->     DECLARE inches INT;
+    ->
+    ->     SET yards = total_inches DIV 36;
+    ->     SET feet = (total_inches MOD 36) DIV 12;
+    ->     SET inches = (total_inches MOD 36) MOD 12;
+    ->
+    ->     SELECT CONCAT(
+    ->         total_inches, ' inches = ',
+    ->         yards, ' yard(s), ',
+    ->         feet, ' foot/feet, ',
+    ->         inches, ' inch(es)'
+    ->     ) AS result;
+    -> END //
+Query OK, 0 rows affected (0.23 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> CALL convert_inches(124);
++-------------------------------------------------+
+| result                                          |
++-------------------------------------------------+
+| 124 inches = 3 yard(s), 1 foot/feet, 4 inch(es) |
++-------------------------------------------------+
+1 row in set (0.03 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> /*
+   /*> 5. Write a program that enables a user to input an integer. The program should then state whether the integer is evenly divisible by 5.*/
+    -> ^C
+mysql>
+mysql> create procedure eve_div_5(int y)
+    -> begin
+    ->  if mod(y,5)=0 then
+    ->          select concat(y,' is divisible by 5') as Result;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int y)
+begin
+        if mod(y,5)=0 then
+                select concat(y,' is divisible by 5') as Resu' at line 1
+mysql>          select concat(y,' is divisible by 5') as Result;^C
+mysql> ^C
+mysql> delimiter //
+mysql>
+mysql> create procedure eve_div_5(int y)
+    -> begin
+    ->  if mod(y,5)=0 then
+    ->          select concat(y,' is divisible by 5') as Result;
+    ->  else
+    ->          select concat(y,' is not divisible by 5') as Result;
+    ->  end if;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int y)
+begin
+        if mod(y,5)=0 then
+                select concat(y,' is divisible by 5') as Resu' at line 1
+mysql> create procedure eve_div_5(y int)
+    -> begin
+    ->  if mod(y,5)=0 then
+    ->          select concat(y,' is divisible by 5') as Result;
+    ->  else
+    ->          select concat(y,' is not divisible by 5') as Result;
+    ->  end if;
+    -> end//
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql> call eve_div_5(5)//
++---------------------+
+| Result              |
++---------------------+
+| 5 is divisible by 5 |
++---------------------+
+1 row in set (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> call eve_div_5(6)//
++-------------------------+
+| Result                  |
++-------------------------+
+| 6 is not divisible by 5 |
++-------------------------+
+1 row in set (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> call eve_div_5(10)//
++----------------------+
+| Result               |
++----------------------+
+| 10 is divisible by 5 |
++----------------------+
+1 row in set (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> /*
+   /*> 6. Your block should read in two real numbers and tell whether the product of the two numbers is equal to or greater than 100.*.
+   /*> /
+   /*> ^C
+mysql>
+mysql> create procedure grt(x int , y int)
+    -> begin
+    ->  declare product=x*y;
+    ->  if x>=100 then
+    ->          select concat('The product of ',x,' and ',y,' is greter than 100') as result;
+    ->  else
+    ->          select concat('The product of ',x,' and ',y,' is not greter than 100') as result;
+    ->  end if;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=x*y;
+        if x>=100 then
+                select concat('The product of ',x,' and ',y,' is greter ' at line 3
+mysql> create procedure grt(x int , y int)
+    -> begin
+    ->  declare product=x*y;
+    ->  if product >=100 then
+    ->          select concat('The product of ',x,' and ',y,' is greter than 100') as result;
+    ->  else
+    ->          select concat('The product of ',x,' and ',y,' is not greter than 100') as result;
+    ->  end if;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=x*y;
+        if product >=100 then
+                select concat('The product of ',x,' and ',y,' is ' at line 3
+mysql> create procedure grt(x int , y int)
+    -> begin
+    ->  declare product int;
+    ->  set product=x*y;
+    ->  if product >=100 then
+    ->          select concat('The product of ',x,' and ',y,' is greter than 100') as result;
+    ->  else
+    ->          select concat('The product of ',x,' and ',y,' is not greter than 100') as result;
+    ->  end if;
+    -> end//
+Query OK, 0 rows affected (0.16 sec)
+
+mysql>
+mysql>
+mysql> call grt(2,3)//
++-----------------------------------------------+
+| result                                        |
++-----------------------------------------------+
+| The product of 2 and 3 is not greter than 100 |
++-----------------------------------------------+
+1 row in set (0.03 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> call grt(100,3)//
++---------------------------------------------+
+| result                                      |
++---------------------------------------------+
+| The product of 100 and 3 is greter than 100 |
++---------------------------------------------+
+1 row in set (0.01 sec)

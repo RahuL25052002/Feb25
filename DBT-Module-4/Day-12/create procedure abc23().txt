@@ -1,0 +1,19 @@
+create procedure abc23()
+begin
+      declare a int;
+      declare b varchar(25);
+      declare c int;
+      declare d int;
+      declare y int default 0;
+      declare c1 cursor for select * from emp_1;
+      declare continue handler for not found set y=1;
+      open c1;
+      cursor_c1_loop:loop
+              fetch c1 into a,b,c,d;
+              if y=1 then
+             	leave cursor_c1_loop;
+              end if;
+             insert into tempp1 values(a,b);
+     end loop cursor_c1_loop;
+     close c1;
+end;

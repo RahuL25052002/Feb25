@@ -1,0 +1,843 @@
+mysql>
+mysql>
+mysql> create database SchoolManagement;
+Query OK, 1 row affected (0.12 sec)
+
+mysql> create table student(
+    -> sid int,
+    -> sname varchar(55),
+    -> dob date,
+    -> class char(4)
+    -> ,teacher_id int
+    -> );
+ERROR 1046 (3D000): No database selected
+mysql>
+mysql> use SchoolManagement;
+Database changed
+mysql>
+mysql> create table student(
+    -> sid int,
+    -> sname varchar(55),
+    -> dob date,
+    -> class char(4),
+    -> teacher_id int);
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| sid        | int         | YES  |     | NULL    |       |
+| sname      | varchar(55) | YES  |     | NULL    |       |
+| dob        | date        | YES  |     | NULL    |       |
+| class      | char(4)     | YES  |     | NULL    |       |
+| teacher_id | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.04 sec)
+
+mysql> create  table teacher(
+    -> tid int,
+    -> tname varchar(55),
+    -> class char(4),
+    -> subject varchar(15),
+    -> dept int);
+Query OK, 0 rows affected (0.21 sec)
+
+mysql>
+mysql>
+mysql> create table dept(
+    -> deptno int,
+    -> dname varchar(25),
+    -> /c
+    -> \c
+mysql> create table dept(
+    -> deptno int,
+    -> dname varchar(25));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> alter table teacher  add column sal float;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> create table subject(
+    -> sno int,
+    -> subname varchar(25),
+    -> tid int);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> create table class(
+    -> \c
+mysql>
+mysql> create table staff(
+    -> stafId int,
+    -> stname varchar(25),
+    -> deptno int);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>
+mysql> show tables;
++----------------------------+
+| Tables_in_schoolmanagement |
++----------------------------+
+| dept                       |
+| staff                      |
+| student                    |
+| subject                    |
+| teacher                    |
++----------------------------+
+5 rows in set (0.07 sec)
+
+mysql> desc dept;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| deptno | int         | YES  |     | NULL    |       |
+| dname  | varchar(25) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.18 sec)
+
+mysql> alter table dept add primary key(deptno);
+Query OK, 0 rows affected (0.24 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc staff;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| stafId | int         | YES  |     | NULL    |       |
+| stname | varchar(25) | YES  |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> alter table staff add primary key(stafid);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| sid        | int         | YES  |     | NULL    |       |
+| sname      | varchar(55) | YES  |     | NULL    |       |
+| dob        | date        | YES  |     | NULL    |       |
+| class      | char(4)     | YES  |     | NULL    |       |
+| teacher_id | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> alter table student add primary key(sid);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc subject;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| sno     | int         | YES  |     | NULL    |       |
+| subname | varchar(25) | YES  |     | NULL    |       |
+| tid     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> desc teacher;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| tid     | int         | YES  |     | NULL    |       |
+| tname   | varchar(55) | YES  |     | NULL    |       |
+| class   | char(4)     | YES  |     | NULL    |       |
+| subject | varchar(15) | YES  |     | NULL    |       |
+| dept    | int         | YES  |     | NULL    |       |
+| sal     | float       | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table subject add primary key(sno);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table teacher add primary key(tid);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| sid        | int         | NO   | PRI | NULL    |       |
+| sname      | varchar(55) | YES  |     | NULL    |       |
+| dob        | date        | YES  |     | NULL    |       |
+| class      | char(4)     | YES  |     | NULL    |       |
+| teacher_id | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.14 sec)
+
+mysql> desc teacher;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| tid     | int         | NO   | PRI | NULL    |       |
+| tname   | varchar(55) | YES  |     | NULL    |       |
+| class   | char(4)     | YES  |     | NULL    |       |
+| subject | varchar(15) | YES  |     | NULL    |       |
+| dept    | int         | YES  |     | NULL    |       |
+| sal     | float       | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table student add foreign key(teacher_id) references from teacher(tid);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from teacher(tid)' at line 1
+mysql> alter table student add foreign key(teacher_id) references on teacher(tid);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on teacher(tid)' at line 1
+mysql> alter table student add foreign key(teacher_id) references teacher(tid);
+Query OK, 0 rows affected (0.27 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc dept;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| deptno | int         | NO   | PRI | NULL    |       |
+| dname  | varchar(25) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
+mysql> alter table teacher add foreign key(dept) references dept(deptno);
+Query OK, 0 rows affected (0.18 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ^C
+mysql> desc subject;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| sno     | int         | NO   | PRI | NULL    |       |
+| subname | varchar(25) | YES  |     | NULL    |       |
+| tid     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table subject add foreign key(tid) references teacher(tid);
+Query OK, 0 rows affected (0.19 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| sid        | int         | NO   | PRI | NULL    |       |
+| sname      | varchar(55) | YES  |     | NULL    |       |
+| dob        | date        | YES  |     | NULL    |       |
+| class      | char(4)     | YES  |     | NULL    |       |
+| teacher_id | int         | YES  | MUL | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.06 sec)
+
+mysql> insert into student(sid,sname,dob,class,teacher_id)
+    -> values(1,'Rahul','2002-05-25','12th',2),
+    -> (2,'Mayur','2002-05-28','12th',1),
+    -> (3,'Sai','2002-04-20','12th',2),
+    -> (4,'Nikhil','2003-11-23','11th',3),
+    -> (5,'Krushna','2005-08-22','9th',4);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`schoolmanagement`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`tid`))
+mysql> desc teacher;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| tid     | int         | NO   | PRI | NULL    |       |
+| tname   | varchar(55) | YES  |     | NULL    |       |
+| class   | char(4)     | YES  |     | NULL    |       |
+| subject | varchar(15) | YES  |     | NULL    |       |
+| dept    | int         | YES  | MUL | NULL    |       |
+| sal     | float       | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.03 sec)
+
+mysql> desc dept;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| deptno | int         | NO   | PRI | NULL    |       |
+| dname  | varchar(25) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> insert into dept(
+    -> \c
+mysql>
+mysql> insert into dept
+    -> values(1,'Science'),
+    -> (2,'Arts'),
+    -> (3,'Commerse'),
+    -> (4,'IT'),
+    -> (5,'Plain');
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> desc teacher;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| tid     | int         | NO   | PRI | NULL    |       |
+| tname   | varchar(55) | YES  |     | NULL    |       |
+| class   | char(4)     | YES  |     | NULL    |       |
+| subject | varchar(15) | YES  |     | NULL    |       |
+| dept    | int         | YES  | MUL | NULL    |       |
+| sal     | float       | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into teacher(tid,tname,class,subject,dept,sal)
+    -> values(1,'A','12th','Math',1,5000),
+    -> (2,'B','12th','Chemistry',2,6000),
+    -> (3,'c','11th','finance',3,5000),
+    -> (4,'D','9th','history',5,4000),
+    -> (5,'E','12th','It',4,3300);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> insert into student(sid,sname,dob,class,teacher_id)
+    -> values(1,'Rahul','2002-05-25','12th',2),
+    -> (2,'Mayur','2002-05-28','12th',1),
+    -> (3,'Sai','2002-04-20','12th',2),
+    -> (4,'Nikhil','2003-11-23','11th',3),
+    -> (5,'Krushna','2005-08-22','9th',4);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++-----+---------+------------+-------+------------+
+| sid | sname   | dob        | class | teacher_id |
++-----+---------+------------+-------+------------+
+|   1 | Rahul   | 2002-05-25 | 12th  |          2 |
+|   2 | Mayur   | 2002-05-28 | 12th  |          1 |
+|   3 | Sai     | 2002-04-20 | 12th  |          2 |
+|   4 | Nikhil  | 2003-11-23 | 11th  |          3 |
+|   5 | Krushna | 2005-08-22 | 9th   |          4 |
++-----+---------+------------+-------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from teacher;
++-----+-------+-------+-----------+------+------+
+| tid | tname | class | subject   | dept | sal  |
++-----+-------+-------+-----------+------+------+
+|   1 | A     | 12th  | Math      |    1 | 5000 |
+|   2 | B     | 12th  | Chemistry |    2 | 6000 |
+|   3 | c     | 11th  | finance   |    3 | 5000 |
+|   4 | D     | 9th   | history   |    5 | 4000 |
+|   5 | E     | 12th  | It        |    4 | 3300 |
++-----+-------+-------+-----------+------+------+
+5 rows in set (0.01 sec)
+
+mysql> select * from subject;
+Empty set (0.00 sec)
+
+mysql> select * from dept;
++--------+----------+
+| deptno | dname    |
++--------+----------+
+|      1 | Science  |
+|      2 | Arts     |
+|      3 | Commerse |
+|      4 | IT       |
+|      5 | Plain    |
++--------+----------+
+5 rows in set (0.00 sec)
+
+mysql> show tables;
++----------------------------+
+| Tables_in_schoolmanagement |
++----------------------------+
+| dept                       |
+| staff                      |
+| student                    |
+| subject                    |
+| teacher                    |
++----------------------------+
+5 rows in set (0.02 sec)
+
+mysql> desc staff;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| stafId | int         | NO   | PRI | NULL    |       |
+| stname | varchar(25) | YES  |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into staff
+    -> values(1,'A',1),
+    -> (2,'B',2),
+    -> (3,'c',3),
+    -> (4,'D',5),
+    -> (5,'E',4);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> desc subject;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| sno     | int         | NO   | PRI | NULL    |       |
+| subname | varchar(25) | YES  |     | NULL    |       |
+| tid     | int         | YES  | MUL | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> select * from tid;
+ERROR 1146 (42S02): Table 'schoolmanagement.tid' doesn't exist
+mysql> select * from teacher;
++-----+-------+-------+-----------+------+------+
+| tid | tname | class | subject   | dept | sal  |
++-----+-------+-------+-----------+------+------+
+|   1 | A     | 12th  | Math      |    1 | 5000 |
+|   2 | B     | 12th  | Chemistry |    2 | 6000 |
+|   3 | c     | 11th  | finance   |    3 | 5000 |
+|   4 | D     | 9th   | history   |    5 | 4000 |
+|   5 | E     | 12th  | It        |    4 | 3300 |
++-----+-------+-------+-----------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> insert into subject
+    -> values(1,'Math',1),
+    -> (2,'chemistry',2),
+    -> (3,'finance',3),
+    -> (4,'History',4),
+    -> (5,'It',5);
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> select * from student;
++-----+---------+------------+-------+------------+
+| sid | sname   | dob        | class | teacher_id |
++-----+---------+------------+-------+------------+
+|   1 | Rahul   | 2002-05-25 | 12th  |          2 |
+|   2 | Mayur   | 2002-05-28 | 12th  |          1 |
+|   3 | Sai     | 2002-04-20 | 12th  |          2 |
+|   4 | Nikhil  | 2003-11-23 | 11th  |          3 |
+|   5 | Krushna | 2005-08-22 | 9th   |          4 |
++-----+---------+------------+-------+------------+
+5 rows in set (0.10 sec)
+
+mysql> select sname ,class from student
+    -> where sid=1 or sid=3 or sid=5;
++---------+-------+
+| sname   | class |
++---------+-------+
+| Rahul   | 12th  |
+| Sai     | 12th  |
+| Krushna | 9th   |
++---------+-------+
+3 rows in set (0.03 sec)
+
+mysql> select * from student
+    -> limit 4;
++-----+--------+------------+-------+------------+
+| sid | sname  | dob        | class | teacher_id |
++-----+--------+------------+-------+------------+
+|   1 | Rahul  | 2002-05-25 | 12th  |          2 |
+|   2 | Mayur  | 2002-05-28 | 12th  |          1 |
+|   3 | Sai    | 2002-04-20 | 12th  |          2 |
+|   4 | Nikhil | 2003-11-23 | 11th  |          3 |
++-----+--------+------------+-------+------------+
+4 rows in set (0.01 sec)
+
+mysql> select * from student
+    -> limit 5;
++-----+---------+------------+-------+------------+
+| sid | sname   | dob        | class | teacher_id |
++-----+---------+------------+-------+------------+
+|   1 | Rahul   | 2002-05-25 | 12th  |          2 |
+|   2 | Mayur   | 2002-05-28 | 12th  |          1 |
+|   3 | Sai     | 2002-04-20 | 12th  |          2 |
+|   4 | Nikhil  | 2003-11-23 | 11th  |          3 |
+|   5 | Krushna | 2005-08-22 | 9th   |          4 |
++-----+---------+------------+-------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from teacher;
++-----+-------+-------+-----------+------+------+
+| tid | tname | class | subject   | dept | sal  |
++-----+-------+-------+-----------+------+------+
+|   1 | A     | 12th  | Math      |    1 | 5000 |
+|   2 | B     | 12th  | Chemistry |    2 | 6000 |
+|   3 | c     | 11th  | finance   |    3 | 5000 |
+|   4 | D     | 9th   | history   |    5 | 4000 |
+|   5 | E     | 12th  | It        |    4 | 3300 |
++-----+-------+-------+-----------+------+------+
+5 rows in set (0.01 sec)
+
+mysql> select tname ,sal from teacher
+    -> group by sal;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'schoolmanagement.teacher.tname' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select tname ,sal from teacher
+    -> group by sal,tname;
++-------+------+
+| tname | sal  |
++-------+------+
+| A     | 5000 |
+| B     | 6000 |
+| c     | 5000 |
+| D     | 4000 |
+| E     | 3300 |
++-------+------+
+5 rows in set (0.02 sec)
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| sid        | int         | NO   | PRI | NULL    |       |
+| sname      | varchar(55) | YES  |     | NULL    |       |
+| dob        | date        | YES  |     | NULL    |       |
+| class      | char(4)     | YES  |     | NULL    |       |
+| teacher_id | int         | YES  | MUL | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.11 sec)
+
+mysql> alter table student add column marks int;
+Query OK, 0 rows affected (0.16 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update student
+    -> set marks=80
+    -> where sid=1;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student
+    -> set marks=76
+    -> where sid=2;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student
+    -> set marks=96
+    -> where sid=3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student
+    -> set marks=46
+    -> where sid=4;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student
+    -> set marks=67
+    -> where sid=5;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| sid        | int         | NO   | PRI | NULL    |       |
+| sname      | varchar(55) | YES  |     | NULL    |       |
+| dob        | date        | YES  |     | NULL    |       |
+| class      | char(4)     | YES  |     | NULL    |       |
+| teacher_id | int         | YES  | MUL | NULL    |       |
+| marks      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> select sname,max(marks) from student
+    -> order by desc
+    -> limit 1 offset 1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc
+limit 1 offset 1' at line 2
+mysql> select sname,max(marks) from student
+    -> order by marks desc
+    -> limit 1 offset 1;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'schoolmanagement.student.sname'; this is incompatible with sql_mode=only_full_group_by
+mysql> select sname,max(marks) from student
+    -> group by sname
+    -> \c
+mysql>
+mysql>
+mysql> select sname,marks from student
+    -> order by marks desc
+    -> limit 1 offset 1;
++-------+-------+
+| sname | marks |
++-------+-------+
+| Rahul |    80 |
++-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
++-----+---------+------------+-------+------------+-------+
+| sid | sname   | dob        | class | teacher_id | marks |
++-----+---------+------------+-------+------------+-------+
+|   1 | Rahul   | 2002-05-25 | 12th  |          2 |    80 |
+|   2 | Mayur   | 2002-05-28 | 12th  |          1 |    76 |
+|   3 | Sai     | 2002-04-20 | 12th  |          2 |    96 |
+|   4 | Nikhil  | 2003-11-23 | 11th  |          3 |    46 |
+|   5 | Krushna | 2005-08-22 | 9th   |          4 |    67 |
++-----+---------+------------+-------+------------+-------+
+5 rows in set (0.01 sec)
+
+mysql>
+mysql>
+mysql> create view stud_view
+    -> as
+    -> select sid, sname from student;
+Query OK, 0 rows affected (0.20 sec)
+
+mysql>
+mysql> select * from stude_view;
+ERROR 1146 (42S02): Table 'schoolmanagement.stude_view' doesn't exist
+mysql> select * from stud_view;
++-----+---------+
+| sid | sname   |
++-----+---------+
+|   1 | Rahul   |
+|   2 | Mayur   |
+|   3 | Sai     |
+|   4 | Nikhil  |
+|   5 | Krushna |
++-----+---------+
+5 rows in set (0.03 sec)
+
+mysql> update stude_view
+    -> set sname='Ram'
+    -> where sid=5;
+ERROR 1146 (42S02): Table 'schoolmanagement.stude_view' doesn't exist
+mysql> update stud_view
+    -> set sname='Ram'
+    -> where sid=5;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from student;
++-----+--------+------------+-------+------------+-------+
+| sid | sname  | dob        | class | teacher_id | marks |
++-----+--------+------------+-------+------------+-------+
+|   1 | Rahul  | 2002-05-25 | 12th  |          2 |    80 |
+|   2 | Mayur  | 2002-05-28 | 12th  |          1 |    76 |
+|   3 | Sai    | 2002-04-20 | 12th  |          2 |    96 |
+|   4 | Nikhil | 2003-11-23 | 11th  |          3 |    46 |
+|   5 | Ram    | 2005-08-22 | 9th   |          4 |    67 |
++-----+--------+------------+-------+------------+-------+
+5 rows in set (0.01 sec)
+
+mysql> select * from teacher;
++-----+-------+-------+-----------+------+------+
+| tid | tname | class | subject   | dept | sal  |
++-----+-------+-------+-----------+------+------+
+|   1 | A     | 12th  | Math      |    1 | 5000 |
+|   2 | B     | 12th  | Chemistry |    2 | 6000 |
+|   3 | c     | 11th  | finance   |    3 | 5000 |
+|   4 | D     | 9th   | history   |    5 | 4000 |
+|   5 | E     | 12th  | It        |    4 | 3300 |
++-----+-------+-------+-----------+------+------+
+5 rows in set (0.05 sec)
+
+mysql> select sname , tname from teacher left join student on
+    -> (teacher.tid=student.teacher_id);
++--------+-------+
+| sname  | tname |
++--------+-------+
+| Mayur  | A     |
+| Rahul  | B     |
+| Sai    | B     |
+| Nikhil | c     |
+| Ram    | D     |
+| NULL   | E     |
++--------+-------+
+6 rows in set (0.03 sec)
+
+mysql> create  table temp
+    -> as
+    -> select sname from student;
+Query OK, 5 rows affected (0.17 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> select * from temp;
++--------+
+| sname  |
++--------+
+| Rahul  |
+| Mayur  |
+| Sai    |
+| Nikhil |
+| Ram    |
++--------+
+5 rows in set (0.00 sec)
+
+mysql> drop table temp;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from temp;
+ERROR 1146 (42S02): Table 'schoolmanagement.temp' doesn't exist
+mysql> creare table tempp(
+    -> fir int,
+    -> sec varchar(20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creare table tempp(
+fir int,
+sec varchar(20)' at line 1
+mysql> creare table tempp(
+    -> fir int,
+    -> sec varchar(20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creare table tempp(
+fir int,
+sec varchar(20)' at line 1
+mysql> creare table tempp(
+    -> fir int,
+    -> sec varchar(20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creare table tempp(
+fir int,
+sec varchar(20))' at line 1
+mysql> create table tempp(
+    -> fir int,
+    -> sec varchar(20));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql>
+mysql>
+mysql> create procedure abc(y int)
+    -> begin
+    ->  declare x int default 10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql>
+mysql> delimiter //
+mysql>
+mysql>
+mysql> create procedure abc(y int)
+    -> begin
+    ->  declare x int default 10;
+    ->  declare z int;
+    ->  set z=x*z;
+    ->  insert into tempp(z,'added');
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''added');
+end' at line 6
+mysql> create procedure abc(y int)
+    -> begin
+    ->  declare x int default 10;
+    ->  declare z int;
+    ->  set z=x*y;
+    ->  insert into tempp(z,'added');
+    -> end;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''added');
+end' at line 6
+mysql> create procedure abc(y int)
+    -> begin
+    ->  declare x int default 10;
+    ->  declare z int;
+    ->  set z=x*y;
+    ->  insert into tempp values(z,'added');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql>
+mysql> call abc(10);
+    -> //
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from tempp//
++------+-------+
+| fir  | sec   |
++------+-------+
+|  100 | added |
++------+-------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> create procedure disc_calc(ori int, dis float)
+    -> begin
+    ->  declare d float;
+    ->  set d=ori-(ori*dis/100);
+    ->  insert into temmp values(1,'discount');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> call disc_calc(100,10)//
+ERROR 1146 (42S02): Table 'schoolmanagement.temmp' doesn't exist
+mysql> drop procedure dis_calc;
+    -> //
+ERROR 1305 (42000): PROCEDURE schoolmanagement.dis_calc does not exist
+mysql>
+mysql> drop procedure disc_calc;
+    -> //
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> create table temmp(
+    -> dis float,
+    -> sc varchar(20));
+    -> //
+Query OK, 0 rows affected (0.08 sec)
+
+mysql>
+mysql> create procedure dis_cal(ori int,dis float)
+    -> begin
+    ->  declare d float;
+    ->  set d=ori-(ori*dis/100);
+    ->  insert into temmp values(d,'Discount');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql> call dis_cal(100,10)//
+Query OK, 1 row affected (0.03 sec)
+
+mysql>
+mysql> select * from temmp//
++------+----------+
+| dis  | sc       |
++------+----------+
+|   90 | Discount |
++------+----------+
+1 row in set (0.02 sec)
+
+mysql>
+mysql>
+mysql> create procedure display()
+    -> begin
+    ->  declare x int default 0;
+    ->  declare y int default 10;
+    ->  while x<y do
+    ->          if mod(x,2)=0
+    -> then insert into tempp values(x,'added');
+    ->          else
+    ->
+    ->  end;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end;
+end' at line 10
+mysql> create procedure display()
+    -> begin
+    ->  declare x int default 0;
+    ->  declare y int default 10;
+    ->  while x<y do
+    ->          if mod(x,2)=0
+    -> then insert into tempp values(x,'added');
+    ->          else
+    -> set x=x+1;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 10
+mysql> create procedure display()
+    -> begin
+    ->  declare x int default 0;
+    ->  declare y int default 10;
+    ->  while x<y do
+    ->          if mod(x,2)=0 then
+    ->                  insert into tempp values(x,'added');
+    ->  end loop;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'loop;
+end' at line 8
+mysql>

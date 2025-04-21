@@ -1,0 +1,18 @@
+create  procedure cur_exp()
+     begin
+      declare a int;
+      declare b varchar(25);
+      declare c int;
+      declare d int;
+      declare x int default 1;
+      declare y int;
+      declare c1 cursor for select * from emp_1;
+      select count(*) into y from emp_1;
+      open c1;
+              while x< y do
+              fetch c1 into a,b,c,d;
+              insert into tempp1 values(a,b);
+              set x=x+1;
+              end while;
+      close c1;
+end;

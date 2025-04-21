@@ -1,0 +1,650 @@
+mysql>
+mysql>
+mysql> ================DAY_12==========================
+    -> ^C
+mysql>
+mysql>
+mysql> create table emp_2(
+    -> ename varchar(25),
+    -> sal int,
+    -> deptno int);
+Query OK, 0 rows affected (0.24 sec)
+
+mysql>
+mysql> create table deptot(
+    -> deptno int,
+    -> saltot int);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> create table tempp_1(
+    ->
+    -> fir int,
+    -> sec varchar(25));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> insert into emp_2 values
+    -> ('A',5000,1),
+    -> ('B',5000,1),
+    -> ('C',5000,1),
+    -> ('D',3000,2),
+    -> ('E',3000,2);
+Query OK, 5 rows affected (0.06 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql>
+mysql> insert into deptot values
+    -> (1,15000),
+    -> (2,6000);
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql>
+mysql> select * from emp_2;
++-------+------+--------+
+| ename | sal  | deptno |
++-------+------+--------+
+| A     | 5000 |      1 |
+| B     | 5000 |      1 |
+| C     | 5000 |      1 |
+| D     | 3000 |      2 |
+| E     | 3000 |      2 |
++-------+------+--------+
+5 rows in set (0.02 sec)
+
+mysql> select * from deptot;
++--------+--------+
+| deptno | saltot |
++--------+--------+
+|      1 |  15000 |
+|      2 |   6000 |
++--------+--------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create trigger abc
+    -> before insert
+    -> on emp_2 for each row
+    -> begin
+    ->  insert into tempp_1 values(1,'inserted');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5
+mysql> delimiter //
+mysql>
+mysql>
+mysql> create trigger abc
+    -> before insert
+    -> on emp_2 for each row
+    -> begin
+    ->  insert into tempp_1 values(1,'inserted');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.08 sec)
+
+mysql>
+mysql>
+mysql> insert into emp_1 values('f',3000,2);
+    -> //
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> desc emp_1//
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| empno  | int         | YES  |     | NULL    |       |
+| ename  | varchar(25) | YES  |     | NULL    |       |
+| sal    | int         | YES  |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.11 sec)
+
+mysql> insert into emp_1 values(6,'f',3000,2);
+    -> //
+Query OK, 1 row affected (0.03 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from tempp_1;//
+Empty set (0.01 sec)
+
+mysql> call abc//
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from tempp_1;//
+Empty set (0.00 sec)
+
+mysql> insert into emp_1 values(6,'f',3000,2);
+    -> //
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tempp_1;//
+Empty set (0.00 sec)
+
+mysql> select * from emp_2;
+    -> //
++-------+------+--------+
+| ename | sal  | deptno |
++-------+------+--------+
+| A     | 5000 |      1 |
+| B     | 5000 |      1 |
+| C     | 5000 |      1 |
+| D     | 3000 |      2 |
+| E     | 3000 |      2 |
++-------+------+--------+
+5 rows in set (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> set autocommit=1;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> commit//
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from emp_2;
+    -> //
++-------+------+--------+
+| ename | sal  | deptno |
++-------+------+--------+
+| A     | 5000 |      1 |
+| B     | 5000 |      1 |
+| C     | 5000 |      1 |
+| D     | 3000 |      2 |
+| E     | 3000 |      2 |
++-------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> create trigger tr_demo
+    -> before insert
+    -> on emp_2 for each row
+    -> begin
+    ->  insert into tempp_1 values(1,'inserted');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> insert into emp_2 values(6,'F',5000,2);
+    -> //
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from emp_2//
++-------+------+--------+
+| ename | sal  | deptno |
++-------+------+--------+
+| A     | 5000 |      1 |
+| B     | 5000 |      1 |
+| C     | 5000 |      1 |
+| D     | 3000 |      2 |
+| E     | 3000 |      2 |
++-------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> insert into emp_2 values('F',5000,2);
+    -> //
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+mysql> select * from temmp_1;//
+ERROR 1146 (42S02): Table 'classwork.temmp_1' doesn't exist
+mysql> select * from tempp_1;//
++------+----------+
+| fir  | sec      |
++------+----------+
+|    1 | inserted |
+|    1 | inserted |
++------+----------+
+2 rows in set (0.00 sec)
+
+mysql> insert into emp_2 values('F',5000,2);
+    -> //
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tempp_1;//
++------+----------+
+| fir  | sec      |
++------+----------+
+|    1 | inserted |
+|    1 | inserted |
+|    1 | inserted |
+|    1 | inserted |
++------+----------+
+4 rows in set (0.00 sec)
+
+mysql> insert into emp_2 values('F',5000,2);dr
+    -> ^C
+mysql> drop trigger abc;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql>
+mysql> insert into emp_2 values('F',5000,2);dr
+    -> ^C
+mysql> insert into emp_2 values('F',5000,2);
+    -> //
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from tempp_1;//
++------+----------+
+| fir  | sec      |
++------+----------+
+|    1 | inserted |
+|    1 | inserted |
+|    1 | inserted |
+|    1 | inserted |
+|    1 | inserted |
++------+----------+
+5 rows in set (0.00 sec)
+
+mysql> truncate table tempp_1//
+Query OK, 0 rows affected (0.08 sec)
+
+mysql>
+mysql> show triggers;
+    -> //
++---------+--------+-------+------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+| Trigger | Event  | Table | Statement                                            | Timing | Created                | sql_mode                                                                                                              | Definer         | character_set_client | collation_connection | Database Collation |
++---------+--------+-------+------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+| tr_demo | INSERT | emp_2 | begin
+        insert into tempp_1 values(1,'inserted');
+end | BEFORE | 2025-04-19 15:05:56.67 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION | rahul@localhost | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++---------+--------+-------+------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+1 row in set (0.24 sec)
+
+mysql> show triggers from classwork//
++---------+--------+-------+------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+| Trigger | Event  | Table | Statement                                            | Timing | Created                | sql_mode                                                                                                              | Definer         | character_set_client | collation_connection | Database Collation |
++---------+--------+-------+------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+| tr_demo | INSERT | emp_2 | begin
+        insert into tempp_1 values(1,'inserted');
+end | BEFORE | 2025-04-19 15:05:56.67 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION | rahul@localhost | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++---------+--------+-------+------------------------------------------------------+--------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+1 row in set (0.01 sec)
+
+mysql> select * from information_schema.triggers;
+    -> //
++-----------------+----------------+----------------------------+--------------------+----------------------+---------------------+--------------------+--------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------------+----------------------------+----------------------------+--------------------------+--------------------------+------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+----------------------+----------------------+--------------------+
+| TRIGGER_CATALOG | TRIGGER_SCHEMA | TRIGGER_NAME               | EVENT_MANIPULATION | EVENT_OBJECT_CATALOG | EVENT_OBJECT_SCHEMA | EVENT_OBJECT_TABLE | ACTION_ORDER | ACTION_CONDITION | ACTION_STATEMENT                                                                                                                                                                                                                                                                                                       | ACTION_ORIENTATION | ACTION_TIMING | ACTION_REFERENCE_OLD_TABLE | ACTION_REFERENCE_NEW_TABLE | ACTION_REFERENCE_OLD_ROW | ACTION_REFERENCE_NEW_ROW | CREATED                | SQL_MODE                                                                                                                         | DEFINER             | CHARACTER_SET_CLIENT | COLLATION_CONNECTION | DATABASE_COLLATION |
++-----------------+----------------+----------------------------+--------------------+----------------------+---------------------+--------------------+--------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------------+----------------------------+----------------------------+--------------------------+--------------------------+------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+----------------------+----------------------+--------------------+
+| def             | sys            | sys_config_insert_set_user | INSERT             | def                  | sys                 | sys_config         |            1 |             NULL | BEGIN
+    IF @sys.ignore_sys_config_triggers != true AND NEW.set_by IS NULL THEN
+        SET NEW.set_by = USER();
+    END IF;
+END                                                                                                                                                                                      | ROW                | BEFORE        |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-08 10:32:48.08 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION            | mysql.sys@localhost | utf8mb4              | utf8mb4_0900_ai_ci   | utf8mb4_0900_ai_ci |
+| def             | sys            | sys_config_update_set_user | UPDATE             | def                  | sys                 | sys_config         |            1 |             NULL | BEGIN
+    IF @sys.ignore_sys_config_triggers != true AND NEW.set_by IS NULL THEN
+        SET NEW.set_by = USER();
+    END IF;
+END                                                                                                                                                                                      | ROW                | BEFORE        |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-08 10:32:48.08 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION            | mysql.sys@localhost | utf8mb4              | utf8mb4_0900_ai_ci   | utf8mb4_0900_ai_ci |
+| def             | sakila         | ins_film                   | INSERT             | def                  | sakila              | film               |            1 |             NULL | BEGIN
+    INSERT INTO film_text (film_id, title, description)
+        VALUES (new.film_id, new.title, new.description);
+  END                                                                                                                                                                                          | ROW                | AFTER         |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-08 10:32:59.63 | STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_ENGINE_SUBSTITUTION | root@localhost      | utf8mb4              | utf8mb4_0900_ai_ci   | utf8mb4_0900_ai_ci |
+| def             | sakila         | upd_film                   | UPDATE             | def                  | sakila              | film               |            1 |             NULL | BEGIN
+    IF (old.title != new.title) OR (old.description != new.description) OR (old.film_id != new.film_id)
+    THEN
+        UPDATE film_text
+            SET title=new.title,
+                description=new.description,
+                film_id=new.film_id
+        WHERE film_id=old.film_id;
+    END IF;
+  END | ROW                | AFTER         |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-08 10:32:59.66 | STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_ENGINE_SUBSTITUTION | root@localhost      | utf8mb4              | utf8mb4_0900_ai_ci   | utf8mb4_0900_ai_ci |
+| def             | sakila         | del_film                   | DELETE             | def                  | sakila              | film               |            1 |             NULL | BEGIN
+    DELETE FROM film_text WHERE film_id = old.film_id;
+  END                                                                                                                                                                                                                                                     | ROW                | AFTER         |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-08 10:32:59.68 | STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_ENGINE_SUBSTITUTION | root@localhost      | utf8mb4              | utf8mb4_0900_ai_ci   | utf8mb4_0900_ai_ci |
+| def             | sakila         | customer_create_date       | INSERT             | def                  | sakila              | customer           |            1 |             NULL | SET NEW.create_date = NOW()                                                                                                                                                                                                                                                                                            | ROW                | BEFORE        |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-08 10:33:01.92 | STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_ENGINE_SUBSTITUTION | root@localhost      | utf8mb4              | utf8mb4_0900_ai_ci   | utf8mb4_0900_ai_ci |
+| def             | sakila         | payment_date               | INSERT             | def                  | sakila              | payment            |            1 |             NULL | SET NEW.payment_date = NOW()                                                                                                                                                                                                                                                                                           | ROW                | BEFORE        |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-08 10:33:03.61 | STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_ENGINE_SUBSTITUTION | root@localhost      | utf8mb4              | utf8mb4_0900_ai_ci   | utf8mb4_0900_ai_ci |
+| def             | sakila         | rental_date                | INSERT             | def                  | sakila              | rental             |            1 |             NULL | SET NEW.rental_date = NOW()                                                                                                                                                                                                                                                                                            | ROW                | BEFORE        |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-08 10:33:04.94 | STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_ENGINE_SUBSTITUTION | root@localhost      | utf8mb4              | utf8mb4_0900_ai_ci   | utf8mb4_0900_ai_ci |
+| def             | classwork      | tr_demo                    | INSERT             | def                  | classwork           | emp_2              |            1 |             NULL | begin
+        insert into tempp_1 values(1,'inserted');
+end                                                                                                                                                                                                                                                                   | ROW                | BEFORE        |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-19 15:05:56.67 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION            | rahul@localhost     | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++-----------------+----------------+----------------------------+--------------------+----------------------+---------------------+--------------------+--------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------------+----------------------------+----------------------------+--------------------------+--------------------------+------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+----------------------+----------------------+--------------------+
+9 rows in set (0.01 sec)
+
+mysql> select * from information_schema.triggers
+    -> where trigger_schema='classwork';//
++-----------------+----------------+--------------+--------------------+----------------------+---------------------+--------------------+--------------+------------------+------------------------------------------------------+--------------------+---------------+----------------------------+----------------------------+--------------------------+--------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+| TRIGGER_CATALOG | TRIGGER_SCHEMA | TRIGGER_NAME | EVENT_MANIPULATION | EVENT_OBJECT_CATALOG | EVENT_OBJECT_SCHEMA | EVENT_OBJECT_TABLE | ACTION_ORDER | ACTION_CONDITION | ACTION_STATEMENT                                     | ACTION_ORIENTATION | ACTION_TIMING | ACTION_REFERENCE_OLD_TABLE | ACTION_REFERENCE_NEW_TABLE | ACTION_REFERENCE_OLD_ROW | ACTION_REFERENCE_NEW_ROW | CREATED                | SQL_MODE                                                                                                              | DEFINER         | CHARACTER_SET_CLIENT | COLLATION_CONNECTION | DATABASE_COLLATION |
++-----------------+----------------+--------------+--------------------+----------------------+---------------------+--------------------+--------------+------------------+------------------------------------------------------+--------------------+---------------+----------------------------+----------------------------+--------------------------+--------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+| def             | classwork      | tr_demo      | INSERT             | def                  | classwork           | emp_2              |            1 |             NULL | begin
+        insert into tempp_1 values(1,'inserted');
+end | ROW                | BEFORE        |                       NULL |                       NULL | OLD                      | NEW                      | 2025-04-19 15:05:56.67 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION | rahul@localhost | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++-----------------+----------------+--------------+--------------------+----------------------+---------------------+--------------------+--------------+------------------+------------------------------------------------------+--------------------+---------------+----------------------------+----------------------------+--------------------------+--------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+----------------------+----------------------+--------------------+
+1 row in set (0.01 sec)
+mysql>
+mysql>
+mysql> show tables//
++-------------------------+
+| Tables_in_classwork     |
++-------------------------+
+| customers               |
+| dept                    |
+| dept2                   |
+| depthead                |
+| deptot                  |
+| emp                     |
+| emp1                    |
+| emp10                   |
+| emp2                    |
+| emp3                    |
+| emp4                    |
+| emp5                    |
+| emp6                    |
+| emp7                    |
+| emp8                    |
+| emp9                    |
+| emp_1                   |
+| emp_2                   |
+| emp_col_2               |
+| empp                    |
+| empp2                   |
+| empp3                   |
+| orders                  |
+| parts                   |
+| pro                     |
+| projects                |
+| q_2                     |
+| rect                    |
+| salespeople             |
+| sdept                   |
+| semp                    |
+| supplier                |
+| supplier_parts_projects |
+| temperature             |
+| tempp                   |
+| tempp1                  |
+| tempp_1                 |
+| v1                      |
+| v2                      |
++-------------------------+
+39 rows in set (0.04 sec)
+
+mysql> select * from emp_2;
+    -> //
++-------+------+--------+
+| ename | sal  | deptno |
++-------+------+--------+
+| A     | 5000 |      1 |
+| B     | 5000 |      1 |
+| C     | 5000 |      1 |
+| D     | 3000 |      2 |
+| E     | 3000 |      2 |
+| F     | 5000 |      2 |
+| F     | 5000 |      2 |
+| F     | 5000 |      2 |
++-------+------+--------+
+8 rows in set (0.01 sec)
+
+mysql> select * from emp_1;
+    -> //
++-------+-------+-------+--------+
+| empno | ename | sal   | deptno |
++-------+-------+-------+--------+
+|     1 | A     |  5000 |      1 |
+|     2 | B     |  6000 |      1 |
+|     3 | C     |  7000 |      1 |
+|     4 | D     |  9000 |      2 |
+|     5 | E     |  8000 |      2 |
+|     6 | F     | 10000 |      2 |
+|     7 | G     | 11000 |      1 |
+|     8 | H     | 10000 |      2 |
+|     6 | f     |  3000 |      2 |
+|     6 | f     |  3000 |      2 |
++-------+-------+-------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select * from emp_2;//
++-------+------+--------+
+| ename | sal  | deptno |
++-------+------+--------+
+| A     | 5000 |      1 |
+| B     | 5000 |      1 |
+| C     | 5000 |      1 |
+| D     | 3000 |      2 |
+| E     | 3000 |      2 |
+| F     | 5000 |      2 |
+| F     | 5000 |      2 |
+| F     | 5000 |      2 |
++-------+------+--------+
+8 rows in set (0.00 sec)
+
+mysql> select * from tempp_2;//
+ERROR 1146 (42S02): Table 'classwork.tempp_2' doesn't exist
+mysql> select * from tempp_1;//
+Empty set (0.03 sec)
+
+mysql> select * from tempp_1;//
+Empty set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> create trigger del_trig_cal
+    -> before delete
+    -> on emp_1 for each row
+    -> begin
+    ->  insert into tempp_1 values(1,'deleted');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> --       MAINTAIN LOGS(AUDIT TRAILS) OF DELETIONS
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- INSERT INTO TEMP VALUES(1,'DELETED',SYSDATE(),NOW(),USER());
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> -- AFTER DELETE TRIGGER IS RECOMMENDED
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- OLD.SAL , OLD.DEPTNO ARE MYSQL CREATED VARIABLES
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- INSERT INTO TEMPP VALUES(OLD.SAL,OLD.ENAME);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+    ->
+    -> ^C
+mysql> delete from emp_1
+    -> where deptno=2//
+Query OK, 6 rows affected (0.03 sec)
+
+mysql>
+mysql> selected * from emp_1//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selected * from emp_1' at line 1
+mysql> select * from emp_1//
++-------+-------+-------+--------+
+| empno | ename | sal   | deptno |
++-------+-------+-------+--------+
+|     1 | A     |  5000 |      1 |
+|     2 | B     |  6000 |      1 |
+|     3 | C     |  7000 |      1 |
+|     7 | G     | 11000 |      1 |
++-------+-------+-------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from tempp_1//
++------+---------+
+| fir  | sec     |
++------+---------+
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> drop trigger del_trig_cal//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> create trigger del_trig_cal
+    -> before delete
+    -> on emp_1 for each row
+    -> begin
+    ->  insert into tempp_1 values(old.empno,old.ename);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> select * from emp_1//
++-------+-------+-------+--------+
+| empno | ename | sal   | deptno |
++-------+-------+-------+--------+
+|     1 | A     |  5000 |      1 |
+|     2 | B     |  6000 |      1 |
+|     3 | C     |  7000 |      1 |
+|     7 | G     | 11000 |      1 |
++-------+-------+-------+--------+
+4 rows in set (0.00 sec)
+
+mysql> insert into emp_1 values(4,'D',6000,2);
+    -> //
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into emp_1 values(5,'E',6000,2);
+    -> //
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+mysql> delete from emp_1
+    -> where deptno=2//
+Query OK, 2 rows affected (0.02 sec)
+
+mysql>
+mysql> select * from tempp_1//
++------+---------+
+| fir  | sec     |
++------+---------+
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    4 | D       |
+|    5 | E       |
++------+---------+
+8 rows in set (0.00 sec)
+
+mysql> -- uses
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- MAINATAIN HISTORY TABLES IN THE EVENT OF DELETE
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- AFTER DELETE TRIGGER IS RECOMMENDED
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql>
+mysql> create trigger tri_upd_de
+    -> before update
+    -> on emp_1
+    -> for each row
+    -> begin
+    ->  insert into tempp_1 values(1,'updated');
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql>
+mysql>
+mysql> update emp_1
+    -> set sal=6000
+    -> where deptno=1;
+    -> //
+Query OK, 3 rows affected (0.01 sec)
+Rows matched: 4  Changed: 3  Warnings: 0
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select * from tempp_1//
++------+---------+
+| fir  | sec     |
++------+---------+
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    1 | deleted |
+|    4 | D       |
+|    5 | E       |
+|    1 | updated |
+|    1 | updated |
+|    1 | updated |
+|    1 | updated |
++------+---------+
+12 rows in set (0.00 sec)
+
+mysql> select * from emp_1//
++-------+-------+------+--------+
+| empno | ename | sal  | deptno |
++-------+-------+------+--------+
+|     1 | A     | 6000 |      1 |
+|     2 | B     | 6000 |      1 |
+|     3 | C     | 6000 |      1 |
+|     7 | G     | 6000 |      1 |
++-------+-------+------+--------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> -- maintain logs( audir trails) of updations
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> -- AFTER UPDATE TRIGGER IS RECOMMENDED
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*
+   /*>  ON DELETE CASCADE BEFORE DELETE
+   /*> ON UPDATE CASCADE ( BEFORE AND  AFTER UPDATE )
+   /*>
+   /*>  */
+    -> ^C
+mysql>
+mysql>  /*  CASCADING TRIGGERS CAUSES A 2ND TRIGGER TO EXECUTE , IS TURN CAUSES A 3RD TRIGGER TO EXECUTE, AND SO ON
+   /*>
+   /*> IN MYSQL NO UPPER LIMIT ON THE NUMBER OF LEVELS FOR CASCADING TRIGGERS
+   /*> ^A
