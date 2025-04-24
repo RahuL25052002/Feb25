@@ -1,0 +1,48 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body {
+    background-image: linear-gradient(to right, #1d2b64, #f8cdda);
+}
+#sign-container{
+  
+    margin: 100px auto;
+    padding-top: 20px;
+    width: 400px;
+    height: 350px;
+    background-color: #90AEAD; 
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    visibility: initial;
+}
+input {
+    margin-bottom: 20px;
+    border: 0;
+    width: 50%;
+    height: 25px;
+    border-radius: px;
+}
+
+#btn{
+    color: white;
+    background-color:#244855;
+    border: 0;
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    transition: 90ms;
+}
+
+#btn:hover{
+    color:black;
+    background-color: white;
+}
+
+.form-fill{
+    border-radius: 5px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    outline: 0;
+}

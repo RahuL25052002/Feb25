@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    h1, h2 {
+      color: #2d5f5d;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="email"], input[type="date"], input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    .form-row > div {
+      flex: 1;
+    }
+    .section {
+      margin-top: 40px;
+    }
+    .inline-inputs input {
+      width: 50px;
+      margin-right: 10px;
+    }
+    .signature {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+    .footer {
+      margin-top: 30px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Registration <span style="color: teal;">Form</span></h1>
+  <p>This space is where you can share information on the section, such as: topic, discussion points, goals and activities.</p>
+  <div style="text-align: right;">
+    <label>DATE OF REGISTRATION</label>
+    <div class="inline-inputs">
+      <input type="text" maxlength="2"> /
+      <input type="text" maxlength="2"> /
+      <input type="text" maxlength="4">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Personal Information</h2>
+    <div class="form-row">
+      <div><label>Full Name :</label><input type="text"></div>
+      <div><label>Place Of Birth :</label><input type="text"></div>
+    </div>
+
+    <div class="form-row">
+      <div><label>Nickname :</label><input type="text"></div>
+      <div><label>Nationality :</label><input type="text"></div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label>Date of Birth :</label>
+        <div class="inline-inputs">
+          <input type="text" maxlength="2"> /
+          <input type="text" maxlength="2"> /
+          <input type="text" maxlength="4">
+        </div>
+      </div>
+      <div><label>Domicile :</label><input type="text"></div>
+    </div>
+
+    <div class="form-row">
+      <div><label>Email :</label><input type="email"></div>
+      <div><label>CP Domicile :</label><input type="text"></div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label>Gender :</label>
+        <label><input type="radio" name="gender"> Male</label>
+        <label><input type="radio" name="gender"> Female</label>
+      </div>
+      <div><label>Start Time :</label><input type="text"></div>
+    </div>
+
+    <div class="form-row">
+      <div><label>Marital Status :</label><input type="text"></div>
+      <div><label>Post Code :</label><input type="text"></div>
+    </div>
+
+    <div class="form-row">
+      <div><label>Country :</label><input type="text"></div>
+      <div><label>Phone :</label><input type="text"></div>
+    </div>
+
+    <div><label>National ID No :</label><input type="text"></div>
+  </div>
+
+  <div class="section">
+    <h2>Address</h2>
+    <div><label>Present Address :</label><input type="text"></div>
+    
+    <div class="form-row">
+      <div><label>The City :</label><input type="text"></div>
+      <div><label>Present State :</label><input type="text"></div>
+    </div>
+
+    <div class="form-row">
+      <div><label>Zip Code :</label><input type="text"></div>
+      <div><label>Student Trustee :</label><input type="text"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Address <span style="color: teal;">School</span> :</h2>
+    <p><strong>A:</strong> 123 Anywhere St., Any City, ST 12345</p>
+    <p><strong>P:</strong> +123-456-7890</p>
+    <p><strong>E:</strong> hello@reallygreatsite.com</p>
+  </div>
+
+  <div class="signature">
+    <p>Register Signature</p>
+    <p>Officer Signature</p>
+  </div>
+
+  <div class="footer">
+    <strong>THANK YOU <span style="color: teal;">FOR REGISTRATION</span></strong>
+    <p>Write your instructions here. You can add details or examples to help your reader along!</p>
+  </div>
+
+</body>
+</html>
