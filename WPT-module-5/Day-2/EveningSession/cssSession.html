@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StylingCode</title>
+    <style>
+/*        h1{
+            color: red;
+        }
+        
+        #IdSelector{
+            color: tomato;
+        }
+        .classSelector{
+            color: green;
+        }
+        *{
+            color: aqua;
+        }*/
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #box{
+            
+            background-color: yellow;
+            
+            width: 500px;
+            height: 220px;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 15px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            /*
+            it work as clockwise means first top-right-bottom-left likewise
+            padding:40px 20px
+            */
+        }
+
+        #btn{
+
+        }
+    </style>
+    <!--Tag selector in that we give on some css property so
+    it will affect on every h1 tag by the above example -->
+
+    <!--2. Id Selector we have to use the # in selecotr
+        we can give or styling uniquely by giving the id
+        -->
+    <!--3 class selector
+        we can give . for the selector in class        
+    -->
+</head>
+<body>
+    <h1>Welcome to Home Bro</h1>    
+    <h1>Welcome to Home Bro</h1>  <!--Its appers on every tag -->  
+
+    <div  id="IdSelector"><!--It have give for uniquely id -->
+        <h2>We can learn about the Id Selector</h2>
+    </div>
+
+    <div>
+        <h2>We can learn about the Id Selector</h2>
+    </div>
+
+
+    <!--Class selector for common styling for tags or elemenets
+    we can make use of class selecotr 
+    - we apply (.) on class selector
+    -->
+    <p class="classSelector">This is Para 1</p>
+    <p class="classSelector"> This is Para 2</p>
+
+    <span class="classSelector">This is span 1</span>
+    <span class="classSelector">This is span 2</span>
+
+
+
+
+    <div  align="center"  id="box">
+        <h1>Welcome to app</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, 
+            adipisicing elit. Eligendi at, repudiandae
+            dicta deserunt nemo adipisci nostrum maiores, 
+            consectetur repellat, officiis minima. Illum
+            earum ea iure qui quibusdam itaque et? Illum?
+        </p>
+        <button id="btn">Click</button>
+    </div>
+</body>
+</html>
