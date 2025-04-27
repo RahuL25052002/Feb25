@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array function</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        var arr=[1,2,3,4,5,6,77,13,14];
+        arr.forEach((currentElement/*current array ele*/,index/*index of element*/)=>{
+            console.log("Index: ",index)
+            console.log(currentElement);
+            
+        })
+
+        var arr=[10,20,30,40,50,60,70,80,90,100];
+        var arguForEach=(currentElement,index)=>{
+            console.log("Index: ",index)  
+            console.log(currentElement);
+          
+        }
+        arr.forEach(arguForEach)
+
+
+
+
+        //Even array
+
+        var arr=[1,2,3,4,3,2,3,4,90,89,6,4,2345,543,490]
+        var evenarr=[];
+        arr.forEach((val)=>{
+            if(val%2==0){
+                evenarr.push(val)
+            }
+        })
+        console.log(evenarr)
+
+
+
+        //below all are the same 
+       var evenar=arr.filter((val)=>{
+        if(val%2==0){
+            return true;
+        }else{
+            return false;
+        }
+       });
+       console.log(evenar)
+       var evenar=arr.filter((val)=>{
+        return val%2==0;
+       });
+       console.log(evenar)
+       var evenar=arr.filter((val)=>val%2==0);
+       console.log(evenar)
+       var evenar=arr.filter(val=>val%2==0);
+       console.log(evenar)
+
+
+
+
+
+
+       var arr=[12,4,43,4,322,321,3,421,3,399]
+       console.log(arr)
+       var newArr=arr.map((val)=>{
+            return val*2;
+       })
+       console.log(newArr)
+
+    </script>
+</body>
+</html>

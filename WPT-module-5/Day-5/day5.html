@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        //... spread operator
+
+        a=[10,20,30];
+        b=[3,4,5];
+        c=[...a,b];
+        console.log(c);
+        // document.write(c);
+
+        sid=101;
+        sname='manoj';
+
+        student={
+            id:sid,
+            name:sname
+        }
+        console.log(student);
+
+        student1={
+            sid,sname//sid variable become key and its content become value
+        }
+        console.log(student1)
+
+        x=8,y=4;
+        obj={x,y}
+        console.log(obj)
+
+
+        o1={
+            id:1,
+            name:"Rahul"
+        }
+        o2={
+            marks:87,
+            phone:"3432321343"
+        }
+        o3={
+            ...o1,...o2
+        }
+        console.log(o3);
+
+        x='id'
+        obj2={
+            [x]:198//with the help subscipt operator we can extract the value of x
+        }
+        console.log(obj2);
+
+        
+
+
+
+    </script>
+</body>
+</html>

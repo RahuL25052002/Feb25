@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function-and-variations</title>
+</head>
+<body>
+    
+    <script>
+
+
+        function show(){
+            console.log("insdie function show");
+        }
+        var obj=show;
+        console.log(obj);
+        obj();//it get act like function
+
+        function demo(arg){// we can pass a function as argument to another function
+
+            console.log("arg is: ",arg);
+        }
+        console.log(show)//it can show the all code of the show()function
+        // demo(show());
+        demo(show);// show is call back function
+        // console.log(demo(show));
+
+        demo(
+            function de(){
+                console.log("Rahul dont take stress of mock")
+            }
+        )
+        demo(
+            function de(){
+                console.log("Rahul dont take stress of mock")
+            }()
+        )
+        demo(
+            function(){//in javascript withot any name we can define
+                // because its an argument and we cant access outsie the function thats why
+                //it can work  without any name and also called annonymous function(A funtion without a name)
+                console.log("Rahul dont take stress of mock")
+            }()
+        );
+
+        // de();// no we cant access outside becasse its an argument
+
+
+        var sum=function(a,b){
+            var c=a+b;
+            return c;
+        }
+        console.log(sum(2,3));
+
+        // ther is new syntax has been introdued in order to write 
+        // annonyms function
+
+        var sum=(a,b)=>{// arroow function to write the annonymous function
+            return a+b;
+        }
+        console.log(sum(2,9));
+
+        var sum1=(a,b)=>a+b;// if we have only one statement
+        // dont have to give body defiantion return
+    
+        let re=sum1(50,40);
+        console.log(re)
+
+
+        function increment(n){
+            return n+5;
+        }
+
+        const rs=increment(12);
+        console.log(rs)
+
+        // using arrow function
+        const inc=(n)=>n+5;
+        console.log(inc(900));
+        const inc1=n=>n+5;// if we have one argument then dont need to give parenthesis
+        console.log(inc1(1));
+
+
+
+
+        //Array functions :::::::::
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

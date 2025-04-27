@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+        /*
+        function func-name(argument){
+        //
+        return value;
+        }
+
+        */
+       //define a function
+        function add(x,y){
+            z=x+y;
+            return z;
+        }
+
+        p=add(2,6);//call a function
+
+        console.log(p);
+
+        function checkEligibility(age){
+            if(age>=18){
+                console.log("Eligible")
+            }else{
+                console.log("Tu to baccha hai abhi")
+            }
+        }
+
+        checkEligibility(1);
+        // in js function are also considered as object
+
+        obj=function show(){
+            console.log("Hello world")
+        }
+        console.log(obj);
+        obj();
+        
+
+        // a=3;
+        // function SH(){
+        //     a=5;
+        //     console.log(a);
+        // }
+        // SH();
+        // console.log(a);
+
+        function sho(){
+            var a=3;// it got an local scope 
+            // console.log(a); 
+        }
+        // console.log(a);////so we cant use or acces in outside of the loop
+
+        // console.log(b);// hoisting : every time before the js code execution the 
+        //engine will search for declration statement and it will space all the 
+        // statement at top of the code 
+        var b=5;//it become globaal varibale also
+        console.log(b);
+        var b=6;//we can redclare variable using var keyword
+        console.log(b);
+        // console.log(c);
+        const c=7;
+        console.log(c);
+        // var c=5;// we cant declare because it already declare by using const variable
+        // c=3; // we cannt assign new value also
+        // console.log(c);
+
+
+
+        //let keyword
+
+        function dis(){
+            if(true){
+                let a=8;
+                // let a=4;//redclaration also  not possible of let variable
+                console.log(a);
+            }
+            // console.log(a);  give an error because it not in block scope 
+            // console.log(m);// hoisting is done but we cannt  access the let varaible 
+            //without initialization of that particular let variable
+            let  m=9;
+            console.log(m);
+
+            //The three keyword : var,let and const
+        }
+        dis();
+    </script>
+</body>
+</html>

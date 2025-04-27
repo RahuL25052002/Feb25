@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #myPara {
+      font-family: Arial, sans-serif;
+      color: black;
+      transition: all 0.3s ease;
+    }
+    .newStyle {
+      font-family: 'Georgia', serif;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+<p id="myPara">
+  Discipline is a vital aspect of life. When a person leads a disciplined life, they pave a smooth path to success...
+</p>
+
+<button onclick="changeStyle()">Change Style</button>
+
+<script>
+  function changeStyle() {
+    const el=document.getElementById("myPara");
+    el.classList.toggle("newStyle");
+  }
+</script>
+
+</body>
+</html>

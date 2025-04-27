@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        .container{
+            background-color: red;
+            padding:20px;
+            font-size: 100;
+            color: black;
+            margin: 100;
+        }
+    </style>
+</head>
+<script>
+    function populateDiv(){
+        // alert("HIi")
+        const a=document.getElementById("fir").value;
+        const b=document.getElementById("sec").value;
+        const ele=document.getElementById("final-sum");
+        ele.innerHTML=parseInt(a)+parseInt(b);
+        // console.log(ele)
+    }
+</script>
+<body>
+    <div>
+        <input  type="text" placeholder="Enter num1" id="fir"><br><br>
+        <input type="text" name="" placeholder="Enter num2" id="sec"><br><br>
+        <button onclick="populateDiv()">calculate sum</button><br><br>
+        <div id="final-sum"></div>
+
+        <!-- <div class="container">
+            hii there 1
+        </div>
+
+        <div class="container">hii there 2</div> -->
+    </div>
+</body>
+</html>
