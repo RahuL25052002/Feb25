@@ -1,0 +1,205 @@
+What is SQL?
+
+What is MySQL? How is it different from SQL?
+
+What are the different types of SQL commands?
+
+What is a primary key?
+
+What is a foreign key?
+
+What is a unique key?
+
+What is a NULL value in SQL?
+
+What is the difference between WHERE and HAVING clauses?
+
+What is the difference between CHAR and VARCHAR?
+
+What are indexes in SQL?
+
+What is a composite key?
+
+What is normalization? Why is it important?
+
+What are the different normal forms?
+
+What is denormalization?
+
+What are constraints in SQL?
+
+What is the difference between DELETE, TRUNCATE, and DROP?
+
+What is the difference between INNER JOIN and OUTER JOIN?
+
+What are the types of joins in SQL?
+
+What is a self-join?
+
+What is a cross join?
+
+What is the difference between UNION and UNION ALL?
+
+What is an alias in SQL?
+
+What is a subquery?
+
+What is a correlated subquery?
+
+What is a view in SQL?
+
+What is a stored procedure?
+
+What is a trigger?
+
+What is a transaction?
+
+What are ACID properties?
+
+What is a clustered index vs non-clustered index?
+
+📘 Intermediate
+What is the default port for MySQL?
+
+What is the difference between NOW() and CURRENT_TIMESTAMP?
+
+What is the difference between IN and EXISTS?
+
+What is the difference between BETWEEN and IN?
+
+How do you fetch only unique values?
+
+What is the use of the GROUP BY clause?
+
+How do you sort records in SQL?
+
+How can you find the second highest salary from a table?
+
+How can you find duplicate records in a table?
+
+How can you delete duplicate records but keep one?
+
+What is the use of IFNULL() in MySQL?
+
+What is AUTO_INCREMENT in MySQL?
+
+How do you create a new table using an existing table’s structure?
+
+What is the LIMIT clause in MySQL?
+
+What are the different storage engines in MySQL?
+
+What is the default storage engine in MySQL 8?
+
+How can you improve the performance of a slow SQL query?
+
+What is indexing and how does it affect performance?
+
+What is the difference between LEFT JOIN and RIGHT JOIN?
+
+How do you copy data from one table to another?
+
+📙 Advanced
+What is sharding in databases?
+
+What is partitioning in MySQL?
+
+What is the difference between vertical and horizontal partitioning?
+
+What is a materialized view? Does MySQL support it?
+
+How does MySQL handle transactions?
+
+What is deadlock? How can you prevent it?
+
+What is a stored function vs a stored procedure?
+
+What is replication in MySQL? Types?
+
+What is the difference between master-slave and master-master replication?
+
+What is the role of binary logs in MySQL?
+
+What are common causes of database corruption?
+
+How do you backup a MySQL database?
+
+How do you restore a backup in MySQL?
+
+What is mysqldump?
+
+What is the difference between logical and physical backup?
+
+What is a full-text search in MySQL?
+
+How does MySQL implement full-text search?
+
+What is an execution plan? How do you analyze one?
+
+What is a covering index?
+
+What are common MySQL optimization techniques?
+
+📒 Tricky/Scenario Based
+How would you design a database for an e-commerce site?
+
+How would you design a database for a social network (like Facebook)?
+
+What happens if you try to insert a NULL into a primary key column?
+
+How would you handle "many-to-many" relationships?
+
+How would you enforce one-to-one relationships in SQL?
+
+If a table has millions of rows, how would you speed up a SELECT query?
+
+How would you find and fix performance bottlenecks in a MySQL server?
+
+What are orphan records? How do you find them?
+
+How would you implement soft delete?
+
+What is the difference between a hard delete and a soft delete?
+
+🛠 Commands / Practical
+Write an SQL query to retrieve the top 5 employees with the highest salary.
+
+Write an SQL query to find customers who have not placed any orders.
+
+Write an SQL query to update the salary of employees by 10%.
+
+Write an SQL query to fetch records created in the last 7 days.
+
+Write an SQL query to fetch the first three characters of a name.
+
+Write an SQL query to find employees hired in a particular year.
+
+Write an SQL query to calculate the total order amount per customer.
+
+Write an SQL query to swap two column values in a table.
+
+Write an SQL query to remove the duplicate emails from a user table.
+
+Write a query to create a new table with columns: id, name, email.
+
+🧠 Conceptual Deep Dive
+What is the difference between logical data independence and physical data independence?
+
+What is a surrogate key?
+
+What is a natural key?
+
+What are the drawbacks of using stored procedures?
+
+What are temporary tables in SQL? How are they different from permanent tables?
+
+What is the difference between DECLARE, SET, and SELECT in variable assignments?
+
+What is schema in SQL?
+
+How does isolation level affect database transactions?
+
+What are the different isolation levels in SQL?
+
+What is the difference between pessimistic and optimistic locking?
+

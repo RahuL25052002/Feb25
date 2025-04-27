@@ -1,0 +1,3 @@
+select sal from employee
+order by  sal desc
+limit 1 offset 4

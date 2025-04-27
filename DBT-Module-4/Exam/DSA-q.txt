@@ -1,0 +1,88 @@
+Good question! 🚀  
+When it comes to **Algorithms and Data Structures** in interviews (especially for software roles), interviewers usually ask about **three things**:
+
+1. **Understanding** — Do you know the basic concepts?
+2. **Problem Solving** — Can you apply them to solve coding problems?
+3. **Optimization** — Can you write efficient code (time/space complexity)?
+
+---
+
+Here’s a detailed breakdown of what they often **ask**:
+
+# 📚 What They Ask About Algorithms & Data Structures:
+
+## 📗 Data Structures Basics
+
+- What is an array? When would you use it?
+- What is a linked list? Singly vs Doubly Linked List?
+- What is a stack? Applications?
+- What is a queue? Types: normal queue, circular queue, deque, priority queue?
+- What is a hash table (or hashmap)? How does it work internally?
+- What is a binary tree? What are different types of binary trees?
+- What is a binary search tree (BST)? Properties?
+- What is a heap? Max-Heap vs Min-Heap?
+- What is a graph? Directed vs undirected graphs? Representation (adjacency list/matrix)?
+- What is a trie (prefix tree)?
+- What are sets and maps?
+
+---
+
+## 📘 Algorithms Basics
+
+- What is sorting? What are the common sorting algorithms?
+  - Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort
+- Time complexities of sorting algorithms?
+- What is searching? Binary search vs linear search?
+- What is recursion? Give examples.
+- What is backtracking? Give examples (like solving a maze, N-Queens).
+- What is dynamic programming (DP)? Basic examples?
+- What is divide and conquer?
+- What is greedy algorithm? Examples?
+- What is memoization?
+- What is the difference between BFS and DFS in a graph?
+
+---
+
+## 🧠 Problem Solving
+
+They often **give you a real coding problem** based on:
+
+- Arrays (e.g., find two numbers that add up to target — "Two Sum")
+- Strings (e.g., longest substring without repeating characters)
+- Linked Lists (e.g., reverse a linked list, detect a cycle)
+- Trees (e.g., find the height of a tree, inorder traversal)
+- Graphs (e.g., detect a cycle in a graph, shortest path)
+- Stacks/Queues (e.g., implement a min-stack, parentheses matching)
+- Hashing (e.g., count the number of unique elements)
+- Dynamic Programming (e.g., Fibonacci number optimization, coin change problem)
+- Sliding Window problems (e.g., maximum sum subarray)
+- Binary Search problems (e.g., find element in a rotated sorted array)
+
+---
+
+## 📋 Bonus: Common Quick Theory Questions
+
+- What is Big-O notation? Give examples.
+- What is the time complexity of searching in a BST?
+- What is the space complexity of DFS?
+- Difference between iterative and recursive approaches?
+- How would you optimize a recursive solution?
+- How would you detect and handle collisions in a hash table?
+- How would you find shortest path in a graph (Dijkstra's Algorithm)?
+- Explain merge sort and quick sort.
+
+---
+
+# 🏆 Summary:
+**In short**, you need to know:
+- **Definitions** — what is it, how does it work
+- **Applications** — when and why to use it
+- **Code** — how to implement it
+- **Complexity** — how efficient it is
+
+---
+
+If you want, I can also make you a **full practice sheet** with **top 50 DSA questions** that interviewers love to ask, and even **mark difficulty level** (easy/medium/hard). 🚀
+
+Would you like me to prepare that too? 🎯  
+(Trust me, it’ll be super helpful if you're prepping seriously!)
