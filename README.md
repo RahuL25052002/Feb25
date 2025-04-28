@@ -8,3 +8,7 @@ This repository contains all my code and assignments from the **CDAC (Centre for
 ## Technologies Used
 - Java
 - SQL
+- HTML
+- CSS
+- Javascript
+  
