@@ -1,0 +1,123 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Overall page style */
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0fff0; /* Light green background */
+    color: #2e7d32;       /* Dark green text */
+  }
+  
+  /* Navbar (Top bar) */
+  .navbar {
+    background: #4caf50; /* Green background */
+    padding: 1rem 2rem;
+    display: flex; /* Place items side-by-side */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    position: fixed; /* Stays at top even when scrolling */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Stays on top of other elements */
+  }
+  
+  /* Logo inside navbar */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Logo image */
+  .logo img {
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  /* Navigation links */
+  .nav-links {
+    list-style: none; /* Remove bullets */
+    display: flex; /* Place links in a row */
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+    position: relative; /* Needed for dropdown menu */
+  }
+  
+  /* Link styles */
+  .nav-links a {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth color change */
+  }
+  
+  /* When hovering on a link */
+  .nav-links a:hover {
+    color: #dcedc8; /* Lighter green when hovered */
+  }
+  
+  /* Dropdown menu (hidden at start) */
+  .dropdown {
+    display: none;
+    position: absolute;
+    background: #66bb6a; /* Lighter green background */
+    top: 30px;
+    list-style: none;
+    padding: 10px;
+  }
+  
+  /* Dropdown links */
+  .dropdown a {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Show dropdown when hovering on parent link */
+  .nav-links li:hover .dropdown {
+    display: block;
+  }
+  
+  /* Hamburger menu (for mobile) - hidden for now */
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Hero Section (Main welcome area) */
+  .hero {
+    padding: 150px 20px 50px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  /* Footer */
+  footer {
+    background: #388e3c; /* Dark green */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Footer links */
+  footer a {
+    color: #c8e6c9; /* Light green */
+    text-decoration: underline;
+  }
+  

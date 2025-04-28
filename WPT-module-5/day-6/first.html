@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js-call-functions</title>
+</head>
+<body>
+    
+
+    <script>
+
+        class student{
+            // constructor(){//default constructor can we called that
+            //     this.id=11;
+            //     this.name='Rakesh'
+            // }
+/*
+            constructor(x,y){
+                this.id=x;
+                this.name=y;
+            }
+//first.html:24 Uncaught SyntaxError: A class may only have one constructor
+*/
+            constructor(id,name){
+                this.id=id;
+                this.name=name;
+            }
+
+            display(){
+                /*console.log(id,name);
+                first.html:31 Uncaught ReferenceError: id is not defined
+    at student.display (first.html:31:29)
+    at first.html:39:12*/
+                console.log(this.id,this.name);
+            }
+
+        }
+
+        // var s1=new student();
+        var s1=new student(1,'Mayuri')
+        var s2=new student(2,'Rahul')
+        console.log(s2.id+" "+s2.name)
+        s1.display();
+        s2.display();//call a display method
+    </script>
+
+    
+</body>
+</html>

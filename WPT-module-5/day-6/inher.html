@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // class A{
+
+        //     constructor(){
+        //         this.x=23;
+        //         this.y=23;
+        //     }
+        //     show(){
+        //         console.log("Hello A");
+        //     }
+        // }
+
+        // class B extends A{
+        //     constructor(){
+        //         super();
+        //         this.z=30;
+        //     }
+
+        // }
+        // var aobj=new A(34,35)
+        // var bobj=new B();
+        // bobj.show();
+        // console.log(bobj.x,bobj.y,bobj.z)
+
+        var obj={
+            x:5,
+            y:function(){
+                // console.log("Hello");
+                console.log(this)
+                console.log(this.x)
+                console.log(this.y)
+            },
+            z:()=>{
+                console.log(this)// always refer to the window object
+            }
+        }
+
+        obj.y();
+        obj.z();
+    </script>
+</body>
+</html>

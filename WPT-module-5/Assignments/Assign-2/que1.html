@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Paragraph Style Change Demo</title>
   <style>
+   
     #myPara {
-      font-family: Arial, sans-serif;
       color: black;
-      transition: all 0.3s ease;
+      font-size: 18px;
+      padding: 20px;
+      transition: all 0.5s ease;
+      text-align: center;
     }
+
     .newStyle {
-      font-family: 'Georgia', serif;
-      color: darkblue;
+      font-family: 'Courier New', monospace;
+      color: black;
+      background-color:pink;
+      text-align: center;
+      font-size: 28px;
+      border: 4px solid;
+     
     }
   </style>
 </head>
@@ -19,12 +30,12 @@
   Discipline is a vital aspect of life. When a person leads a disciplined life, they pave a smooth path to success...
 </p>
 
-<button onclick="changeStyle()">Change Style</button>
+<button onclick="changeStyle()" style="padding: 10px 20px; font-size: 16px;">Change Style</button>
 
 <script>
   function changeStyle() {
-    const el=document.getElementById("myPara");
-    el.classList.toggle("newStyle");
+    const el = document.getElementById("myPara");
+    el.classList.toggle("newStyle");//by its we toggle that
   }
 </script>
 

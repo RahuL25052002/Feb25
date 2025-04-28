@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // //sum -1 , fact-3 , square-2
+      // console.log("Calculating sum...")
+      // setTimeout(() => {
+      //     var x=2;
+      //     var y=7;
+      //     var z=x+y;
+      //     console.log("Sum is ",z);
+      // }, 1000);
+
+      // console.log("Calculating factorial...")
+      // setTimeout(() => {
+      //     var num=5;
+      //     var f=1;
+      //     for(i=1;i<=num;i++){
+      //         f=f*1;
+      //     }
+      //     console.log("fact is ",f);
+      // }, 3000);
+
+      // console.log("Calculating square...");
+      // setTimeout(() => {
+      //     var n=6;
+      //     var sq=n*n;
+      //     console.log("Square is",sq);
+      // }, 2000);
+
+      // setTimeout(()=>{//this function is called as call back function
+      //     console.log("Hello")
+      //     setTimeout(()=>{//its depend on outer call back function
+      //         console.log("Be ready for next task");
+      //     },1000)
+      //     console.log("im getting afraind of javascript now")
+      // },3000)
+      // // console.log("Bye")
+      // setTimeout(()=>{//this function is called as call back function
+      //     console.log("Hii")
+      // },1000)
+
+      // setTimeout(()=>{//this function is called as call back function
+      //     console.log("bye")
+      // },2000)
+
+      /*
+        setTimeout(()=>{//this function is called as call back function
+            console.log("Hello")
+            setTimeout(()=>{//its depend on outer call back function
+                console.log("Be ready for next task");
+                setTimeout(()=>{//this function is called as call back function
+                    console.log("bye")
+                },2000)
+            },1000)
+            console.log("im getting afraind of javascript now")
+
+        },3000)
+
+        */
+
+        //this below code has to write because we made that
+        // synchronus nature
+
+      console.log("Calculating sum...");
+      setTimeout(() => {
+        var x = 2;
+        var y = 3;
+        var z = x + y;
+        console.log("Sum is ", z);
+
+        console.log("Calculating fact...");
+        setTimeout(() => {
+          var f = 1;
+          for (i = 1; i <= z; i++) {
+            f = f * i;
+          }
+          console.log("fact is ", f);
+          console.log("Calculating square...");
+          setTimeout(() => {
+            var sq = f * f;
+            console.log("Square is", sq);
+          }, 2000);
+        }, 3000);
+      }, 1000);
+    </script>
+  </body>
+</html>

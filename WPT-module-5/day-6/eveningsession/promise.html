@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //given number is even number promise we have to
+
+      // var evenpromise=new Promise((resolve,reject)=>{
+      //     var num=9;
+      //     if(num%2==0){
+      //         resolve("Promise resoved and number is even");
+      //     }else{
+      //         reject("Promise rejected and number is not even");
+      //     }
+      // });
+
+      // evenpromise.then((result)=>{
+      //     console.log(result)
+      // }).catch((error)=>{
+      //     console.log(error)
+      // })
+
+      function getPromiseObject() {
+        var evenpromise = new Promise((resolve, reject) => {
+          var num = 9;
+          if (num % 2 == 0) {
+            resolve("Promise resoved and number is even");
+          } else {
+            reject("Promise rejected and number is not even");
+          }
+        });
+        return evenpromise;
+      }
+
+      //    const res=getPromiseObject();
+      //    res.then().catch();
+      getPromiseObject()//if we pass argument
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+        function sum(a,b){
+            console.log("Calculating sum...");
+            var sumPromise=new Promise((resolve,reject)=>{
+                console.log("Calcualtinf sum........");
+                setTimeout(()=>{
+                    var c=a+b;
+                    if(c){
+                        resolve(c);
+                    }else{
+                        reject("Error: Something went wrong with inputs");
+                    }
+                },1000);
+            })
+            return sumPromise;
+        }
+
+        sum(2,4).then((result)=>{
+            console.log(result)
+            fact(result)
+        }).catch((error)=>{
+            console.log(error)
+        });
+
+
+
+
+        function fact(num){
+            return new Promise((resolve,reject)=>{
+                console.log("Calculating factorial......");
+                setTimeout(()=>{
+                    var f=1;
+                    for(i=1;i<=num;i++){
+                        f=f*i;
+                    }
+                    if(f){
+                        resolve(f);
+                    }else{
+                        reject("Error!!")
+                    }
+                },1000)
+            })
+        }
+
+        fact(5)
+        .then((res)=>{
+            console.log(res)
+        })
+        .catch((err)=>{
+            console.log(err)
+        });
+    </script>
+  </body>
+</html>

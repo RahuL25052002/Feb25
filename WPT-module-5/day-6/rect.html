@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+        class Rectangel{
+            constructor(l,b){
+                this.l=l;
+                this.b=b;
+            }
+            getArea(){
+                return this.l*this.b;
+            }
+            getPerimiter(){
+                return 2*(this.l+this.b);
+            }
+        }
+
+        var r1=new Rectangel(4,3);
+        const area=r1.getArea();
+        const per=r1.getPerimiter();
+        console.log("Area of rectangle: ",area);
+        console.log("Perimiter of rectangle: ",per);
+    </script>
+</body>
+</html>
