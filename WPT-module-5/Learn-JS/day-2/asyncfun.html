@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+   <script>
+     function findSum(n){
+        let ans=0;
+        for(let i=0;i<n;i++){
+            ans=ans+i;
+        }
+        return ans;
+    }
+
+    function findSumtill(){
+        console.log(findSum(100))
+    }
+
+    //sync wainting
+
+    function syncSleep(){
+        let a=1;
+        for(let i=0;i<100000000;i++){
+            a++;
+        }
+    }
+
+    // syncSleep();
+    // findSumtill();
+    setTimeout(findSumtill,1000);
+    console.log("Hello world")
+   </script>
+    
+</body>
+</html>
