@@ -1,6 +1,6 @@
 
 const mongoose=require("mongoose");
-import CONNECTION_STRING from "./.env"
+import {CONNECTION_STRING} from "./.env"
 mongoose.connect(CONNECTION_STRING)
 
 const  todoSchema=mongoose.Schema({
