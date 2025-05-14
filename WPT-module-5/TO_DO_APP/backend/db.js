@@ -1,8 +1,7 @@
 
 const mongoose=require("mongoose");
-
-mongoose.connect("mongodb+srv://rahul:Rahul%40123456789@cluster0.warq1.mongodb.net/todos");
-//mongodb+srv://rahul:Rahul%40123456789@cluster0.warq1.mongodb.net/
+import CONNECTION_STRING from "./.env"
+mongoose.connect(CONNECTION_STRING)
 
 const  todoSchema=mongoose.Schema({
     title: String,
