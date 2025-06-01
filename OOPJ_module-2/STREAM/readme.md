@@ -20,10 +20,6 @@ Before Java 8 Streams, processing collections often involved writing imperative 
 -   **Immutable Data:**  Streams operate on  _immutable data_, avoiding side effects and promoting thread safety, making them suitable for parallel processing.
 -   **Lazy Evaluation:**  Streams use lazy evaluation, meaning intermediate operations are only executed when terminal operations are invoked, resulting in optimized performance.
 
-> I have written one article to understand terminal and intermediate operation . check below
-> 
-> ([https://www.linkedin.com/pulse/intermediate-terminal-operations-java-streams-jahid-momin/](https://www.linkedin.com/pulse/intermediate-terminal-operations-java-streams-jahid-momin/)) .
-
 ## Basics
 
 > Creating Streams: Streams can be created from various sources such as collections, arrays, or even directly from values.
