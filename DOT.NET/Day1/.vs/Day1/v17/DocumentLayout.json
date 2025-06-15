@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{167027C3-33FE-4F78-9634-FB265CAF01CF}|ContructorsAndDestructors\\ContructorsAndDestructors.csproj|d:\\feb25\\feb25\\dot.net\\day1\\contructorsanddestructors\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{167027C3-33FE-4F78-9634-FB265CAF01CF}|ContructorsAndDestructors\\ContructorsAndDestructors.csproj|solutionrelative:contructorsanddestructors\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CE339EF-F254-4B9D-AFD6-C45D083394FA}|ObjectInitializers\\ObjectInitializers.csproj|d:\\feb25\\feb25\\dot.net\\day1\\objectinitializers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CE339EF-F254-4B9D-AFD6-C45D083394FA}|ObjectInitializers\\ObjectInitializers.csproj|solutionrelative:objectinitializers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C60599-E4BB-4AAD-832D-9120839CD617}|ClassBasics\\ClassBasics.csproj|d:\\feb25\\feb25\\dot.net\\day1\\classbasics\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1C60599-E4BB-4AAD-832D-9120839CD617}|ClassBasics\\ClassBasics.csproj|solutionrelative:classbasics\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C901EB6A-334D-49F6-91BB-8EDB87D1A2AA}|FieldsAndProperties\\FieldsAndProperties.csproj|d:\\feb25\\feb25\\dot.net\\day1\\fieldsandproperties\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C901EB6A-334D-49F6-91BB-8EDB87D1A2AA}|FieldsAndProperties\\FieldsAndProperties.csproj|solutionrelative:fieldsandproperties\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8EAD89E-36CF-4F6B-8791-291C8C9E8957}|Employee\\EmployeeProgram.csproj|d:\\feb25\\feb25\\dot.net\\day1\\employee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8EAD89E-36CF-4F6B-8791-291C8C9E8957}|Employee\\EmployeeProgram.csproj|solutionrelative:employee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\Employee\\Program.cs",
+              "RelativeDocumentMoniker": "Employee\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\Employee\\Program.cs",
+              "RelativeToolTip": "Employee\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T17:57:54.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\FieldsAndProperties\\Program.cs",
+              "RelativeDocumentMoniker": "FieldsAndProperties\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\FieldsAndProperties\\Program.cs",
+              "RelativeToolTip": "FieldsAndProperties\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T17:45:24.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\ClassBasics\\Program.cs",
+              "RelativeDocumentMoniker": "ClassBasics\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\ClassBasics\\Program.cs",
+              "RelativeToolTip": "ClassBasics\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T17:33:54.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\ObjectInitializers\\Program.cs",
+              "RelativeDocumentMoniker": "ObjectInitializers\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\ObjectInitializers\\Program.cs",
+              "RelativeToolTip": "ObjectInitializers\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T11:14:18.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\ContructorsAndDestructors\\Program.cs",
+              "RelativeDocumentMoniker": "ContructorsAndDestructors\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\DOT.NET\\Day1\\ContructorsAndDestructors\\Program.cs",
+              "RelativeToolTip": "ContructorsAndDestructors\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T10:55:54.974Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

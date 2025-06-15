@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\bin\Debug\net9.0\ContructorsAndDestructors.exe
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\bin\Debug\net9.0\ContructorsAndDestructors.deps.json
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\bin\Debug\net9.0\ContructorsAndDestructors.runtimeconfig.json
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\bin\Debug\net9.0\ContructorsAndDestructors.dll
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\bin\Debug\net9.0\ContructorsAndDestructors.pdb
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\ContructorsAndDestructors.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\ContructorsAndDestructors.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\ContructorsAndDestructors.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\ContructorsAndDestructors.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\ContructorsAndDestructors.dll
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\refint\ContructorsAndDestructors.dll
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\ContructorsAndDestructors.pdb
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\ContructorsAndDestructors.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day1\ContructorsAndDestructors\obj\Debug\net9.0\ref\ContructorsAndDestructors.dll

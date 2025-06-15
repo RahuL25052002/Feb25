@@ -1,0 +1,15 @@
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\bin\Debug\net9.0\ClassBasic.exe
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\bin\Debug\net9.0\ClassBasic.deps.json
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\bin\Debug\net9.0\ClassBasic.runtimeconfig.json
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\bin\Debug\net9.0\ClassBasic.dll
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\bin\Debug\net9.0\ClassBasic.pdb
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ClassBasic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ClassBasic.AssemblyInfoInputs.cache
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ClassBasic.AssemblyInfo.cs
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ClassBasic.csproj.CoreCompileInputs.cache
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ClassBasic.sourcelink.json
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ClassBasic.dll
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\refint\ClassBasic.dll
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ClassBasic.pdb
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ClassBasic.genruntimeconfig.cache
+D:\Feb25\Feb25\DOT.NET\Day1.1\ClassBasic\obj\Debug\net9.0\ref\ClassBasic.dll
