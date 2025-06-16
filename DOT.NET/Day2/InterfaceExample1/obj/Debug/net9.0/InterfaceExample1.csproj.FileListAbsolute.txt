@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day2\InterfaceExample1\bin\Debug\net9.0\InterfaceExample1.exe
+D:\Trainings\JKJun25\Day2\InterfaceExample1\bin\Debug\net9.0\InterfaceExample1.deps.json
+D:\Trainings\JKJun25\Day2\InterfaceExample1\bin\Debug\net9.0\InterfaceExample1.runtimeconfig.json
+D:\Trainings\JKJun25\Day2\InterfaceExample1\bin\Debug\net9.0\InterfaceExample1.dll
+D:\Trainings\JKJun25\Day2\InterfaceExample1\bin\Debug\net9.0\InterfaceExample1.pdb
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\InterfaceExample1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\InterfaceExample1.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\InterfaceExample1.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\InterfaceExample1.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\InterfaceExample1.dll
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\refint\InterfaceExample1.dll
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\InterfaceExample1.pdb
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\InterfaceExample1.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day2\InterfaceExample1\obj\Debug\net9.0\ref\InterfaceExample1.dll

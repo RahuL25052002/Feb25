@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\bin\Debug\net9.0\TestAccessSpecifiers.exe
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\bin\Debug\net9.0\TestAccessSpecifiers.deps.json
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\bin\Debug\net9.0\TestAccessSpecifiers.runtimeconfig.json
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\bin\Debug\net9.0\TestAccessSpecifiers.dll
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\bin\Debug\net9.0\TestAccessSpecifiers.pdb
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\TestAccessSpecifiers.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\TestAccessSpecifiers.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\TestAccessSpecifiers.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\TestAccessSpecifiers.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\TestAccessSpecifiers.dll
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\refint\TestAccessSpecifiers.dll
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\TestAccessSpecifiers.pdb
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\TestAccessSpecifiers.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day2\TestAccessSpecifiers\obj\Debug\net9.0\ref\TestAccessSpecifiers.dll

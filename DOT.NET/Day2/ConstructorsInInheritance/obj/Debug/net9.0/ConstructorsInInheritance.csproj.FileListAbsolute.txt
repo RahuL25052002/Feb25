@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\bin\Debug\net9.0\ConstructorsInInheritance.exe
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\bin\Debug\net9.0\ConstructorsInInheritance.deps.json
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\bin\Debug\net9.0\ConstructorsInInheritance.runtimeconfig.json
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\bin\Debug\net9.0\ConstructorsInInheritance.dll
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\bin\Debug\net9.0\ConstructorsInInheritance.pdb
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\ConstructorsInInheritance.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\ConstructorsInInheritance.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\ConstructorsInInheritance.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\ConstructorsInInheritance.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\ConstructorsInInheritance.dll
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\refint\ConstructorsInInheritance.dll
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\ConstructorsInInheritance.pdb
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\ConstructorsInInheritance.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day2\ConstructorsInInheritance\obj\Debug\net9.0\ref\ConstructorsInInheritance.dll

@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day2\EmployeeAssign\bin\Debug\net9.0\EmployeeAssign.exe
+D:\Trainings\JKJun25\Day2\EmployeeAssign\bin\Debug\net9.0\EmployeeAssign.deps.json
+D:\Trainings\JKJun25\Day2\EmployeeAssign\bin\Debug\net9.0\EmployeeAssign.runtimeconfig.json
+D:\Trainings\JKJun25\Day2\EmployeeAssign\bin\Debug\net9.0\EmployeeAssign.dll
+D:\Trainings\JKJun25\Day2\EmployeeAssign\bin\Debug\net9.0\EmployeeAssign.pdb
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\EmployeeAssign.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\EmployeeAssign.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\EmployeeAssign.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\EmployeeAssign.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\EmployeeAssign.dll
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\refint\EmployeeAssign.dll
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\EmployeeAssign.pdb
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\EmployeeAssign.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day2\EmployeeAssign\obj\Debug\net9.0\ref\EmployeeAssign.dll

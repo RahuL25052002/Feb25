@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day2\InheritanceExample1\bin\Debug\net9.0\InheritanceExample1.exe
+D:\Trainings\JKJun25\Day2\InheritanceExample1\bin\Debug\net9.0\InheritanceExample1.deps.json
+D:\Trainings\JKJun25\Day2\InheritanceExample1\bin\Debug\net9.0\InheritanceExample1.runtimeconfig.json
+D:\Trainings\JKJun25\Day2\InheritanceExample1\bin\Debug\net9.0\InheritanceExample1.dll
+D:\Trainings\JKJun25\Day2\InheritanceExample1\bin\Debug\net9.0\InheritanceExample1.pdb
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\InheritanceExample1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\InheritanceExample1.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\InheritanceExample1.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\InheritanceExample1.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\InheritanceExample1.dll
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\refint\InheritanceExample1.dll
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\InheritanceExample1.pdb
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\InheritanceExample1.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day2\InheritanceExample1\obj\Debug\net9.0\ref\InheritanceExample1.dll
