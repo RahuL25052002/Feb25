@@ -1,4 +1,47 @@
-Obj
-Day2.csproj
-bin 
+## Ignore Visual Studio temporary files, build results, and more
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+bin/
+obj/
+out/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+
+## VS Code
+.vscode/
+
+## Rider
+.idea/
+*.sln.iml
+
+## Other
+*.log
+*.tmp
+*.bak
+*.cache
+*.pdb
+*.dbmdl
+*.dbproj.schemaview
+*.sqlite
+
+## OS-specific
+.DS_Store
+Thumbs.db
+
+## Environment files
+.env
 
