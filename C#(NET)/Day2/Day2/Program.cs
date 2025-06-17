@@ -4,7 +4,7 @@ namespace Day2
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             Console.WriteLine("Hello, World!");
             Employee o1 = new Employee(1, "Rahul", 12333, 10);
