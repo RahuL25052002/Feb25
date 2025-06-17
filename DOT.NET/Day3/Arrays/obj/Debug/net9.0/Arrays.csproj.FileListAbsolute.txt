@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day3\Arrays\bin\Debug\net9.0\Arrays.exe
+D:\Trainings\JKJun25\Day3\Arrays\bin\Debug\net9.0\Arrays.deps.json
+D:\Trainings\JKJun25\Day3\Arrays\bin\Debug\net9.0\Arrays.runtimeconfig.json
+D:\Trainings\JKJun25\Day3\Arrays\bin\Debug\net9.0\Arrays.dll
+D:\Trainings\JKJun25\Day3\Arrays\bin\Debug\net9.0\Arrays.pdb
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\Arrays.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\Arrays.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\Arrays.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\Arrays.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\Arrays.dll
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\refint\Arrays.dll
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\Arrays.pdb
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\Arrays.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day3\Arrays\obj\Debug\net9.0\ref\Arrays.dll

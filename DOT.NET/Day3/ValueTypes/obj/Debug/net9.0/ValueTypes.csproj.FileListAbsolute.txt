@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day3\ValueTypes\bin\Debug\net9.0\ValueTypes.exe
+D:\Trainings\JKJun25\Day3\ValueTypes\bin\Debug\net9.0\ValueTypes.deps.json
+D:\Trainings\JKJun25\Day3\ValueTypes\bin\Debug\net9.0\ValueTypes.runtimeconfig.json
+D:\Trainings\JKJun25\Day3\ValueTypes\bin\Debug\net9.0\ValueTypes.dll
+D:\Trainings\JKJun25\Day3\ValueTypes\bin\Debug\net9.0\ValueTypes.pdb
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\ValueTypes.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\ValueTypes.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\ValueTypes.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\ValueTypes.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\ValueTypes.dll
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\refint\ValueTypes.dll
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\ValueTypes.pdb
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\ValueTypes.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day3\ValueTypes\obj\Debug\net9.0\ref\ValueTypes.dll

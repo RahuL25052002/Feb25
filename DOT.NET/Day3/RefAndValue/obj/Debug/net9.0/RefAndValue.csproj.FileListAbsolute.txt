@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\RefAndValue.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\RefAndValue.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\RefAndValue.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\RefAndValue.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day3\RefAndValue\bin\Debug\net9.0\RefAndValue.exe
+D:\Trainings\JKJun25\Day3\RefAndValue\bin\Debug\net9.0\RefAndValue.deps.json
+D:\Trainings\JKJun25\Day3\RefAndValue\bin\Debug\net9.0\RefAndValue.runtimeconfig.json
+D:\Trainings\JKJun25\Day3\RefAndValue\bin\Debug\net9.0\RefAndValue.dll
+D:\Trainings\JKJun25\Day3\RefAndValue\bin\Debug\net9.0\RefAndValue.pdb
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\RefAndValue.dll
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\refint\RefAndValue.dll
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\RefAndValue.pdb
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\RefAndValue.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day3\RefAndValue\obj\Debug\net9.0\ref\RefAndValue.dll

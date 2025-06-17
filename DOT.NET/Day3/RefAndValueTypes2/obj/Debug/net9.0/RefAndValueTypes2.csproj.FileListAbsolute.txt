@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\bin\Debug\net9.0\RefAndValueTypes2.exe
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\bin\Debug\net9.0\RefAndValueTypes2.deps.json
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\bin\Debug\net9.0\RefAndValueTypes2.runtimeconfig.json
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\bin\Debug\net9.0\RefAndValueTypes2.dll
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\bin\Debug\net9.0\RefAndValueTypes2.pdb
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\RefAndValueTypes2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\RefAndValueTypes2.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\RefAndValueTypes2.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\RefAndValueTypes2.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\RefAndValueTypes2.dll
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\refint\RefAndValueTypes2.dll
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\RefAndValueTypes2.pdb
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\RefAndValueTypes2.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day3\RefAndValueTypes2\obj\Debug\net9.0\ref\RefAndValueTypes2.dll
