@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Feb25\\Feb25\\C#(NET)\\Day2\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF9A2A5C-B442-49C4-93E5-0B253588800C}|InterfaceExample\\InterfaceExample.csproj|d:\\feb25\\feb25\\c#(net)\\day2\\interfaceexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF9A2A5C-B442-49C4-93E5-0B253588800C}|InterfaceExample\\InterfaceExample.csproj|solutionrelative:interfaceexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C6ACA78-A210-4407-800D-494A01B0C0A9}|ConstructorInheritance\\ConstructorInheritance.csproj|d:\\feb25\\feb25\\c#(net)\\day2\\constructorinheritance\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C6ACA78-A210-4407-800D-494A01B0C0A9}|ConstructorInheritance\\ConstructorInheritance.csproj|solutionrelative:constructorinheritance\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44F41C14-9711-44DC-B30F-24E604FEEB13}|Assignment\\Assignment.csproj|d:\\feb25\\feb25\\c#(net)\\day2\\assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44F41C14-9711-44DC-B30F-24E604FEEB13}|Assignment\\Assignment.csproj|solutionrelative:assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\C#(NET)\\Day2\\InterfaceExample\\Program.cs",
+              "RelativeDocumentMoniker": "InterfaceExample\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\C#(NET)\\Day2\\InterfaceExample\\Program.cs",
+              "RelativeToolTip": "InterfaceExample\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T07:13:48.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\C#(NET)\\Day2\\ConstructorInheritance\\Program.cs",
+              "RelativeDocumentMoniker": "ConstructorInheritance\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\C#(NET)\\Day2\\ConstructorInheritance\\Program.cs",
+              "RelativeToolTip": "ConstructorInheritance\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T06:37:23.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\C#(NET)\\Day2\\Assignment\\Program.cs",
+              "RelativeDocumentMoniker": "Assignment\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\C#(NET)\\Day2\\Assignment\\Program.cs",
+              "RelativeToolTip": "Assignment\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T04:44:41.411Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -15,9 +15,9 @@
             Io.Update();
             Io.Delete();
             Io.Insert();
-           
+
             //Io.Display(); //gives error because Io is ref of IDfunction and in not havae this member
-            Io = (IDbFunction)o;
+            o = (DerivedClass)Io;
             o.Display();
 
             //implcit ref
