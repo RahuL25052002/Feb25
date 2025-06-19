@@ -1,0 +1,46 @@
+Day4
+
+
+static void Main1()
+   {
+       Action o1 = Display;
+       o1();
+
+       Action<string> o2 = Display;
+       o2("aaaa");
+
+       Action<string, int> o3 = Display;
+       o3("aaa", 123);
+   }
+   static void Main()
+   {
+       Func<string> o1 = GetTime;
+       Console.WriteLine(o1());
+
+       Func<int, int> o2 = MakeDouble;
+       Console.WriteLine(o2(10));
+
+       Func<int, int, int> o3 = Add;
+       Console.WriteLine(o3(10,5));
+
+       Func<int, bool> o4 = IsEven;
+       Console.WriteLine(o4(10));
+
+       Predicate<int> o5 = IsEven;
+       Console.WriteLine(o5(10));
+       
+       Employee emp = new Employee { EmpNo = 1, Basic = 5000 };
+       Func<Employee, bool> o6 = IsBasicGreaterThan10000;
+       Console.WriteLine(o6(emp));
+
+       Predicate<Employee> o7 = IsBasicGreaterThan10000;
+       Console.WriteLine(o7(emp)); ;
+   }
+
+
+
+Annonymous method
+
+does not contain name
+
+to call them with the help of delegates
