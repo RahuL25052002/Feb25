@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambdas", "Lambdas\Lambdas.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraySortingExample", "ArraySortingExample\ArraySortingExample.csproj", "{CA58243E-1C79-4549-9BB1-35AFA31F3EA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Params", "Params\Params.csproj", "{6F09AD02-AC94-4BEA-85BA-17DC4BDA252C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndicesAndRanges", "IndicesAndRanges\IndicesAndRanges.csproj", "{E5E16F92-0E07-44A6-A314-D5AAA1773C6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{CA58243E-1C79-4549-9BB1-35AFA31F3EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA58243E-1C79-4549-9BB1-35AFA31F3EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA58243E-1C79-4549-9BB1-35AFA31F3EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F09AD02-AC94-4BEA-85BA-17DC4BDA252C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F09AD02-AC94-4BEA-85BA-17DC4BDA252C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F09AD02-AC94-4BEA-85BA-17DC4BDA252C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F09AD02-AC94-4BEA-85BA-17DC4BDA252C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E16F92-0E07-44A6-A314-D5AAA1773C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E16F92-0E07-44A6-A314-D5AAA1773C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E16F92-0E07-44A6-A314-D5AAA1773C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E16F92-0E07-44A6-A314-D5AAA1773C6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
