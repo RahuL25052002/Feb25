@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\bin\Debug\net9.0\WorkingWithTasks.exe
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\bin\Debug\net9.0\WorkingWithTasks.deps.json
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\bin\Debug\net9.0\WorkingWithTasks.runtimeconfig.json
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\bin\Debug\net9.0\WorkingWithTasks.dll
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\bin\Debug\net9.0\WorkingWithTasks.pdb
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\WorkingWithTasks.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\WorkingWithTasks.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\WorkingWithTasks.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\WorkingWithTasks.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\WorkingWithTasks.dll
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\refint\WorkingWithTasks.dll
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\WorkingWithTasks.pdb
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\WorkingWithTasks.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day8\WorkingWithTasks\obj\Debug\net9.0\ref\WorkingWithTasks.dll

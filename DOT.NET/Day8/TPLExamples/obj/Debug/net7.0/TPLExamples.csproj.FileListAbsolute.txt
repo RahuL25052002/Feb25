@@ -1,0 +1,70 @@
+D:\Trainings\ActsDec2023\Day7\TPLExamples\bin\Debug\net7.0\TPLExamples.exe
+D:\Trainings\ActsDec2023\Day7\TPLExamples\bin\Debug\net7.0\TPLExamples.deps.json
+D:\Trainings\ActsDec2023\Day7\TPLExamples\bin\Debug\net7.0\TPLExamples.runtimeconfig.json
+D:\Trainings\ActsDec2023\Day7\TPLExamples\bin\Debug\net7.0\TPLExamples.dll
+D:\Trainings\ActsDec2023\Day7\TPLExamples\bin\Debug\net7.0\TPLExamples.pdb
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\TPLExamples.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfoInputs.cache
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfo.cs
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\TPLExamples.csproj.CoreCompileInputs.cache
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\TPLExamples.dll
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\refint\TPLExamples.dll
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\TPLExamples.pdb
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\TPLExamples.genruntimeconfig.cache
+D:\Trainings\ActsDec2023\Day7\TPLExamples\obj\Debug\net7.0\ref\TPLExamples.dll
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\bin\Debug\net7.0\TPLExamples.exe
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\bin\Debug\net7.0\TPLExamples.deps.json
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\bin\Debug\net7.0\TPLExamples.runtimeconfig.json
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\bin\Debug\net7.0\TPLExamples.dll
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\bin\Debug\net7.0\TPLExamples.pdb
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\TPLExamples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfoInputs.cache
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfo.cs
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\TPLExamples.csproj.CoreCompileInputs.cache
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\TPLExamples.dll
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\refint\TPLExamples.dll
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\TPLExamples.pdb
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\TPLExamples.genruntimeconfig.cache
+C:\Users\vikra\Desktop\Today\Day9-20241113T030209Z-001\Day9\TPLExamples\obj\Debug\net7.0\ref\TPLExamples.dll
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\bin\Debug\net7.0\TPLExamples.exe
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\bin\Debug\net7.0\TPLExamples.deps.json
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\bin\Debug\net7.0\TPLExamples.runtimeconfig.json
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\bin\Debug\net7.0\TPLExamples.dll
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\bin\Debug\net7.0\TPLExamples.pdb
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\TPLExamples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfoInputs.cache
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfo.cs
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\TPLExamples.csproj.CoreCompileInputs.cache
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\TPLExamples.dll
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\refint\TPLExamples.dll
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\TPLExamples.pdb
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\TPLExamples.genruntimeconfig.cache
+C:\Users\vikra\Desktop\YCPOCT24\todo3\TPLExamples\obj\Debug\net7.0\ref\TPLExamples.dll
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\bin\Debug\net7.0\TPLExamples.exe
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\bin\Debug\net7.0\TPLExamples.deps.json
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\bin\Debug\net7.0\TPLExamples.runtimeconfig.json
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\bin\Debug\net7.0\TPLExamples.dll
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\bin\Debug\net7.0\TPLExamples.pdb
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\TPLExamples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfoInputs.cache
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfo.cs
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\TPLExamples.csproj.CoreCompileInputs.cache
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\TPLExamples.dll
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\refint\TPLExamples.dll
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\TPLExamples.pdb
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\TPLExamples.genruntimeconfig.cache
+C:\Users\vikra\Desktop\New folder\drive-download-20250423T064230Z-001\TPLExamples\obj\Debug\net7.0\ref\TPLExamples.dll
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\bin\Debug\net7.0\TPLExamples.exe
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\bin\Debug\net7.0\TPLExamples.deps.json
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\bin\Debug\net7.0\TPLExamples.runtimeconfig.json
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\bin\Debug\net7.0\TPLExamples.dll
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\bin\Debug\net7.0\TPLExamples.pdb
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\TPLExamples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfoInputs.cache
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\TPLExamples.AssemblyInfo.cs
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\TPLExamples.csproj.CoreCompileInputs.cache
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\TPLExamples.dll
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\refint\TPLExamples.dll
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\TPLExamples.pdb
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\TPLExamples.genruntimeconfig.cache
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TPLExamples\obj\Debug\net7.0\ref\TPLExamples.dll

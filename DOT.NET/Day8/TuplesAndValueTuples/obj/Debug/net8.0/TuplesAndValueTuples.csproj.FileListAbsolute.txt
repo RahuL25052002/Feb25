@@ -1,0 +1,14 @@
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\bin\Debug\net8.0\TuplesAndValueTuples.exe
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\bin\Debug\net8.0\TuplesAndValueTuples.deps.json
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\bin\Debug\net8.0\TuplesAndValueTuples.runtimeconfig.json
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\bin\Debug\net8.0\TuplesAndValueTuples.dll
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\bin\Debug\net8.0\TuplesAndValueTuples.pdb
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\TuplesAndValueTuples.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\TuplesAndValueTuples.AssemblyInfoInputs.cache
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\TuplesAndValueTuples.AssemblyInfo.cs
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\TuplesAndValueTuples.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\TuplesAndValueTuples.dll
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\refint\TuplesAndValueTuples.dll
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\TuplesAndValueTuples.pdb
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\TuplesAndValueTuples.genruntimeconfig.cache
+D:\Trainings\JKJune2024\Day5\TuplesAndValueTuples\obj\Debug\net8.0\ref\TuplesAndValueTuples.dll

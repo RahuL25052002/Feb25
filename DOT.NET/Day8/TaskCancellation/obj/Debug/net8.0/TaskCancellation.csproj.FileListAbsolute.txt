@@ -1,0 +1,56 @@
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\TaskCancellation.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\TaskCancellation.AssemblyInfoInputs.cache
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\TaskCancellation.AssemblyInfo.cs
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\TaskCancellation.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJune2024\TaskCancellation\bin\Debug\net8.0\TaskCancellation.exe
+D:\Trainings\JKJune2024\TaskCancellation\bin\Debug\net8.0\TaskCancellation.deps.json
+D:\Trainings\JKJune2024\TaskCancellation\bin\Debug\net8.0\TaskCancellation.runtimeconfig.json
+D:\Trainings\JKJune2024\TaskCancellation\bin\Debug\net8.0\TaskCancellation.dll
+D:\Trainings\JKJune2024\TaskCancellation\bin\Debug\net8.0\TaskCancellation.pdb
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\TaskCancellation.dll
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\refint\TaskCancellation.dll
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\TaskCancellation.pdb
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\TaskCancellation.genruntimeconfig.cache
+D:\Trainings\JKJune2024\TaskCancellation\obj\Debug\net8.0\ref\TaskCancellation.dll
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\bin\Debug\net8.0\TaskCancellation.exe
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\bin\Debug\net8.0\TaskCancellation.deps.json
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\bin\Debug\net8.0\TaskCancellation.runtimeconfig.json
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\bin\Debug\net8.0\TaskCancellation.dll
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\bin\Debug\net8.0\TaskCancellation.pdb
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\TaskCancellation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\TaskCancellation.AssemblyInfoInputs.cache
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\TaskCancellation.AssemblyInfo.cs
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\TaskCancellation.csproj.CoreCompileInputs.cache
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\TaskCancellation.dll
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\refint\TaskCancellation.dll
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\TaskCancellation.pdb
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\TaskCancellation.genruntimeconfig.cache
+C:\Users\vikra\Desktop\YCPJune2024\Day8\TaskCancellation\obj\Debug\net8.0\ref\TaskCancellation.dll
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\bin\Debug\net8.0\TaskCancellation.exe
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\bin\Debug\net8.0\TaskCancellation.deps.json
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\bin\Debug\net8.0\TaskCancellation.runtimeconfig.json
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\bin\Debug\net8.0\TaskCancellation.dll
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\bin\Debug\net8.0\TaskCancellation.pdb
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\TaskCancellation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\TaskCancellation.AssemblyInfoInputs.cache
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\TaskCancellation.AssemblyInfo.cs
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\TaskCancellation.csproj.CoreCompileInputs.cache
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\TaskCancellation.dll
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\refint\TaskCancellation.dll
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\TaskCancellation.pdb
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\TaskCancellation.genruntimeconfig.cache
+C:\Users\vikra\Desktop\New folder\TaskCancellation-20250423T105342Z-001\TaskCancellation\obj\Debug\net8.0\ref\TaskCancellation.dll
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\bin\Debug\net8.0\TaskCancellation.exe
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\bin\Debug\net8.0\TaskCancellation.deps.json
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\bin\Debug\net8.0\TaskCancellation.runtimeconfig.json
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\bin\Debug\net8.0\TaskCancellation.dll
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\bin\Debug\net8.0\TaskCancellation.pdb
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\TaskCancellation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\TaskCancellation.AssemblyInfoInputs.cache
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\TaskCancellation.AssemblyInfo.cs
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\TaskCancellation.csproj.CoreCompileInputs.cache
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\TaskCancellation.dll
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\refint\TaskCancellation.dll
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\TaskCancellation.pdb
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\TaskCancellation.genruntimeconfig.cache
+C:\Users\vikra\Desktop\IACSDJunn25\Day10\Day10\TaskCancellation\obj\Debug\net8.0\ref\TaskCancellation.dll
