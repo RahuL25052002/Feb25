@@ -1,0 +1,81 @@
+import React from 'react';
+import { Container, Row, Col, Button, Card, Carousel, Navbar, Nav } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import studentImg from '../assets/bg1.jpg'; // Rename your uploaded image to match path
+import './Dashboard.css'; // Optional external CSS
+
+const quotes = [
+  "A teacher affects eternity; he can never tell where his influence stops.",
+  "The best teachers teach from the heart, not from the book.",
+  "Teaching is the one profession that creates all other professions."
+];
+
+const Dashboard = () => {
+  return (
+    <>
+      {/* Enhanced Navbar */}
+      <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm px-4">
+        <Navbar.Brand className="fw-bold text-info">🎓 Student Attendance Tracker</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Nav className="ms-auto gap-3">
+            <Nav.Link href="#">View Students</Nav.Link>
+            <Nav.Link href="#">Add Student</Nav.Link>
+            <Nav.Link href="#">Attendance</Nav.Link>
+            <Nav.Link href="#">Performance</Nav.Link>
+            <Nav.Link href="#">Reports</Nav.Link>
+            <Nav.Link href="#">Classes</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+
+      {/* Main Content */}
+      <Container className="mt-5">
+        <Row className="align-items-center g-4">
+          {/* Left Side: Text + Buttons */}
+          <Col md={6}>
+            <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <Card className="p-4 shadow rounded-4">
+                <h2 className="fw-bold mb-3">👋 Welcome to the Dashboard</h2>
+                <p className="text-muted">
+                  Use the navigation bar above to manage students, attendance, reports, and more.
+                </p>
+                <div className="d-flex gap-3 mt-3">
+                  <Button variant="primary">Go to Students</Button>
+                  <Button variant="success">Add New Student</Button>
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* Carousel of quotes */}
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+              <Carousel fade indicators={false} controls={false} className="mt-4">
+                {quotes.map((quote, index) => (
+                  <Carousel.Item key={index}>
+                    <Card className="p-3 bg-light text-center shadow-sm rounded-3">
+                      <em>“{quote}”</em>
+                    </Card>
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            </motion.div>
+          </Col>
+
+          {/* Right Side: Student Image */}
+          <Col md={6}>
+            <motion.img
+              src={studentImg}
+              alt="Students"
+              className="img-fluid rounded-4 shadow-lg"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+};
+
+export default Dashboard;

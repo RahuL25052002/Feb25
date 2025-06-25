@@ -1,0 +1,179 @@
+import { hashSync } from 'bcrypt';
+import express from 'express';
+import mysql from 'mysql2';
+const app=express();
+import jwt from 'jsonwebtoken'
+import { compareSync } from 'bcrypt';
+
+
+// import bcrypt from 'bcrypt';
+
+function dbConnection(){
+
+    const conn=mysql.createConnection({
+        host:
+        user:
+        password:
+        database:
+    });
+    
+    conn.connect(function(err){
+        if(err){
+            console.log(err);
+        }else{
+            console.log("Db connected");
+        }
+    })
+
+    return conn;
+}
+
+const conn=dbConnection();
+
+
+function verifyToken(request,response,next){
+
+    const authHeader = request.get('Authorization');
+        if(authHeader){
+            const token = authHeader.split(" ")[1];
+            jwt.verify(token,"hello123",(error,payload)=>{
+                if(error){
+                    response.status(StatusCodes.UNAUTHORIZED).send({message:'Token is invalid'});   
+                }
+                else{
+                    next();
+                }
+            })
+        }else{
+
+    }
+}
+
+app.post("/student",(req,res)=>{
+    try{
+        const data=req.body;
+        const qry = `insert into student values(${data.id},'${data.name}',${data.marks})`;
+        conn.query(qry,(error,result)=>{
+            if(error){
+                // console.log(error)
+                if(error.errno==1062){
+                    res.status(400).send({msg:"Error: Duplicate id ....."})
+                }else{
+                    res.status(400).send({msg:"error in inserting data"});
+                }
+                
+            }else{
+                console.log(result);
+                res.status(200).send({msg:"Student registered"});
+            }
+        });
+    }catch(err){
+        // console.log(err)
+        res.status(500).send("Error:Invalide students..")
+    }
+})
+
+app.get("/student",(req,res)=>{
+    try{
+        const qry=`select * from student`;
+        conn.query(qry,(error,result)=>{
+            if(error){
+                res.status(400).send({msg:"Error not get data"});
+            }else{
+                res.status(200).send({result})
+            }
+        })
+    }catch(err){
+        res.status(500).send("Error:Invalide students..")
+    }
+})
+
+app.delete("/student/:id",(req,res)=>{
+    try{
+        const id=req.params.id;
+        const qry=`delete from student where id=${id}`;
+        conn.query(qry,(err,result)=>{
+            if(err){
+                res.status(400).send({msg:"Error:Not deleted"});
+            }else{
+                res.status(200).send({msg:"deleted successfully"})
+            }
+        })
+    }catch(err){
+        res.status(500).send("Error:Invalide students..")
+    }
+})
+
+app.put("/student/:id",(req,res)=>{
+    try{
+        const id=parseInt(req.params.id);
+        const data=req.body;
+        const qry=`update student set name='${data.name}', marks=${data.marks} where id=${id}`;
+        conn.query(qry,(err,result)=>{
+            if(err){
+                res.status(400).send({msg:"Not udated!!"})
+            }else{
+                res.status(200).send({msg:"Student updated"})
+            }
+        })
+    }catch(err){
+        res.status(500).send("Error:Invalide students..");
+    }
+})
+
+app.post("/admin/register",(req,res)=>{
+    try{
+        const data=req.body;
+        const hashpass=hashSync(data.password,10);
+        data.password="";
+        const qry=`insert into admin values(${data.id},'${data.name}','${data.username}','${hashpass}')`;
+
+        conn.query(qry,(err,result)=>{
+            if(err){
+                res.status(400).send({msg:"not succesful register"});
+            }else{
+                res.status(200).send({msg:"Registered successfully"})
+            }
+        });
+
+    }catch(err){
+        res.status(500).send({msg:"Server error.."})
+    }
+})
+app.post("/admin/login",(req,res)=>{
+    try{
+        const requestData=req.body;
+        const qry=`select * from admin where username='${requestData.username}'`;
+
+        conn.query(qry,(err,result)=>{
+            if(err){
+                res.status(400).send({msg:"not succesful register"});
+            }else{
+                if(result.length===0){
+                    res.status(400).send({message:'Username or Password is invalid'});
+                }
+                else{
+                    if(compareSync(requestData.password,result[0].password)){
+                        const token = jwt.sign({adminId:result[0].id},"hello123");
+                        res.status(200).send({message:'Login successful',token:token});
+                    }
+                    else{
+                        res.status(400).send({message:'Username or Password is invalid'});
+                    }
+                    
+                }
+            }
+        });
+    }catch(err){
+        res.status(500).send({msg:"Server error.."})
+    }
+})
+
+
+
+app.get("/",(req,res)=>{
+    res.status(200).send("Welcome to crud operation");
+})
+app.listen(5000,()=>{
+    console.log("Server is running....");
+})

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="date" id="dob">
+    <input type="button" onclick="getData()" value="click">
+
+    <script>
+        function getData(){
+            const dob=document.getElementById('dob').value;
+            console.log(dob);
+            const dateObj=new Date(dob);
+            console.log(dateObj)
+        }
+    </script>
+</body>
+</html>

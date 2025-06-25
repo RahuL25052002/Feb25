@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- <input type="text" name="" id="textfeild">
+    <a href="https://www.flipcart.com">Online shopping</a>
+    <button onclick="getelementAtrrubutes()" id="shopping">get Attributes
+    </button>
+
+    <script>
+        function getelementAtrrubutes(){
+
+            var obj=document.getElementById("textfeild");
+            var ancobj=document.getElementById("shopping");
+            var typevalue=obj.getAttribute("type");
+            var hrefvalue=ancobj.getAttribute("href");
+            console.log(typevalue,hrefvalue)
+
+        }
+    </script> -->
+<!-- 
+    <input type="text" name="" id="textfeild">
+    <a href="https://www.flipcart.com">Online shopping</a>
+    <button onclick="chnageelementAtrrubutes()" id="shopping">get Attributes
+    </button>
+
+    <script>
+        function chnageelementAtrrubutes(){
+
+            var obj=document.getElementById("textfeild");
+            var ancobj=document.getElementById("shopping");
+            obj.setAttribute("type","password");
+            ancobj.setAttribute("herf","https://www.google.com")
+        }
+    </script> -->
+
+<!-- 
+    <input type="password"id="passFeild">
+    <button onclick="togglePassword()" id="changePass">show</button>
+
+    <script>
+        function togglePassword(){
+
+            var passfield=document.getElementById("passFeild");
+            var btn=document.getElementById("changePass");
+            if(btn.innerHTML=="show"){
+                passfield.setAttribute("type","text");
+                btn.innerHTML="hide";
+            }else{
+                passfield.setAttribute("type","password");
+                btn.innerHTML="show";
+            }
+           
+        }
+    </script> -->
+
+    
+    <!-- <input type="text" id="field1">
+    <input type="text" name="" id="field2">
+    <div id="result"></div>
+    <button onclick="add()">add</button>
+
+    <script>
+        function add(){
+            var n1=document.getElementById("field1").value;
+            var n2=document.getElementById("field2").value;
+            var n3=parseInt(n1)+parseInt(n2);
+            document.getElementById("result").innerHTML="Sum is "+n3;
+            
+        }
+    </script> -->
+
+
+
+    <!-- Validation part -->
+
+    <input type="text" id="textfeild" onkeyup="validate()">
+    <p  id="validation-msg"></p>
+    <div id="result"></div>
+
+    <script>
+      function validate(){
+
+        var textfeild=document.getElementById("textfeild");
+        var obj=document.getElementById("validation-msg");
+        if(textfeild.value.length!=0){
+            obj.innerHTML="Value is valid!"
+            obj.style.color='green'
+        }else{
+            obj.innerHTML="Value is required!"
+            obj.style.color='red'
+        }
+      }
+    </script>
+</body>
+</html>

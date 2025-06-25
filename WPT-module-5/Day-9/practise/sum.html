@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+        .container{
+            background-color: #3333;
+
+            display: flex;
+            flex-direction: column;
+            /* flex-wrap: wrap; */
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            border-radius: 200px;
+            padding-left: 100px;
+            padding-right: 100px;
+            /* width: 50vw; */
+            /* padding: 100px; */
+            margin: 100px;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        nav{
+            background-color: antiquewhite;
+            padding: 20px 20px;
+        }
+        #nav-right{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 10px;
+
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            background-color: pink;
+            border-radius: 10px;
+            font-weight: 200;
+            font-style: italic;
+        }
+
+        a:hover{
+            color: aliceblue;
+            background-color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <h1>Sum of Two numbers</h1>
+        </div>
+        <div id="nav-right">
+            <a href="product.html">product</a>
+            <a href="#">Substraction</a>
+            <a href="#">Division</a>
+        </div>
+      
+        
+    </nav>
+
+   
+    
+    <div class="container">
+        <input type="text" oninput="add()" onchange="add()" name="" placeholder="Num1" id="first"><br><br>
+        <input type="text"  oninput="add()" onchange="add()" name="" placeholder="Num2" id="sec"><br><br>
+        <!-- <button onclick="add()">Add</button> -->
+        <br><br><br>
+        <!-- //onchange after enter it see the changes -->
+        <div id="Ans"></div>
+    </div>
+
+   
+    <script>
+
+      
+
+        function add(){
+            var num1=document.getElementById("first").value;
+            var num2=document.getElementById("sec").value;
+            var c=parseInt(num1)+parseInt(num2);
+            const ele=document.getElementById("Ans")
+            ele.innerHTML=`Sum is ${c}`
+        }
+    </script>
+</body>
+</html>
+

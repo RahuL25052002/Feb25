@@ -1,81 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
     <script>
+      // fetch id from server
+      // fetch data based on id
+      // based on data check voting eligiblity
 
+      function fetchIds() {
+        return new Promise((resolve, reject) => {
+          console.log("Fetch ids....");
+          setTimeout(() => {
+            var ids = [123, 675, 345, 101];
 
-        // fetch id from server
-        // fetch data based on id
-        // based on data check voting eligiblity
+            if (ids) {
+              resolve(ids);
+            } else {
+              reject("Error: Cannot have id");
+            }
+          }, 2000);
+        });
+      }
 
-        function fetchIds(){
+      function fetchData(id) {
+        return new Promise((resolve, reject) => {
+          console.log("Fetch data for....", id);
+          setTimeout(() => {
+            var userdata = {
+              UserId: id,
+              name: "Aman",
+              phone: "848484848",
+              age: 23,
+            };
 
-            return new Promise((resolve,reject)=>{
-                console.log("Fetch ids....");
-                setTimeout(()=>{
-                    var ids=[123,675,345,101];
+            if (userdata) {
+              resolve(userdata);
+            } else {
+              reject("Error: Cannot find data");
+            }
+          }, 2000);
+        });
+      }
+      function checkEligiblity(age) {
+        return new Promise((resolve, reject) => {
+          console.log("Checking age......");
+          setTimeout(() => {
+            if (age > 18) {
+              resolve(age);
+            } else {
+              reject("Error: You are not eligible");
+            }
+          }, 2000);
+        });
+      }
 
-                    if(ids){
-                        resolve(ids);
-                    }else{
-                        reject("Error: Cannot have id")
-                    }
-                },2000)
-            })
-        }
-
-        function fetchData(id){
-
-            return new Promise((resolve,reject)=>{
-                console.log("Fetch data for....",id);
-                setTimeout(()=>{
-                    var userdata={UserId:id,name:"Aman",phone:"848484848",age:23};
-
-                    if(userdata){
-                        resolve(userdata);
-                    }else{
-                        reject("Error: Cannot find data")
-                    }
-                },2000)
-            })
-        }
-        function checkEligiblity(age){
-            return new Promise((resolve,reject)=>{
-
-                console.log("Checking age......");
-                setTimeout(() => {
-                    if(age>18){
-                        resolve(age);
-                    }else{
-                        reject("Error: You are not eligible")
-                    }
-                }, 2000);
-            })
-        }
-
-        fetchIds()
-        .then((idResult)=>{
-            console.log("ids are: ",idResult);
-            var obj=fetchData(idResult[1]);
-            return obj;
-        }).then((userData)=>{
-            console.log("userData",userData);
-            return checkEligiblity(userData.age);
-
-        }).then((msg)=>{
-            console.log(msg)
+      fetchIds()
+        .then((idResult) => {
+          console.log("ids are: ", idResult);
+          var obj = fetchData(idResult[1]);
+          return obj;
         })
-        .catch((error)=>{
-            console.log(error)
+        .then((userData) => {
+          console.log("userData", userData);
+          return checkEligiblity(userData.age);
         })
-
+        .then((msg) => {
+          console.log(msg);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     </script>
-</body>
+  </body>
 </html>

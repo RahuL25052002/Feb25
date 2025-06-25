@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="fetchData()">Fetch data</button>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <script>
+
+        function fetchData(){
+            var xhr=new XMLHttpRequest();
+            xhr.open("GET","https://jsonplaceholder.typicode.com/users");
+            xhr.send();
+
+            xhr.onreadystatechange=()=>{
+                console.log(xhr.readyState)
+                if(xhr.readyState===3){
+                    console.log("Please wait....")
+                }
+                if(xhr.readyState===4){
+                    if(xhr.status===200){
+                        console.log("Got response....");
+                        console.log(xhr.responseText)
+                        var data=JSON.parse(xhr.responseText);
+                        console.log(data);
+                        var tbody=document.getElementById("tbody");
+
+                        for(let i=0;i<data.length;i++){
+                            var tr=document.createElement("tr");
+                            var idcol=document.createElement("td");
+                            var namecol=document.createElement("td");
+                            var phonecol=document.createElement("td");
+                            var usernamecol=document.createElement("td");
+                            var emailcol=document.createElement("td");
+                            idcol.innerHTML=data[i].id;
+                            namecol.innerHTML=data[i].name;
+                            phonecol.innerHTML=data[i].phone;
+                            usernamecol.innerHTML=data[i].username;
+                            emailcol.innerHTML=data[i].email;
+                            tr.appendChild(idcol);
+                            tr.appendChild(namecol);
+                            tr.appendChild(phonecol);
+                            tr.appendChild(usernamecol);
+                            tr.appendChild(emailcol);
+                            tbody.appendChild(tr);
+
+                        }
+                    } 
+                }
+            }
+        }
+    </script>
+</body>
+</html>

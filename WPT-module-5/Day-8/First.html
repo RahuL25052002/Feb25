@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+        
+    <!-- get the content -->
+         <h1 id="box1">Lecture of DOM manipulation</h1>
+        <button onclick="getContent()">Get Content</button>
+
+    <script>
+        function getContent(){
+            var ele=document.getElementById("box1");
+            console.log(ele.innerHTML)
+        }
+      //innnerHtml will return content inside the tag
+    </script>
+
+
+    <!-- Updation the content
+        <h1 id="box1">Lecture of DOM manipulation</h1>
+        <button onclick="changeContent()">update Content</button>
+
+    <script>
+        function changeContent(){
+            var ele=document.getElementById("box1");
+            ele.innerHTML="Updated content.....!"
+        }
+      //innnerHtml will return content inside the tag
+    </script> -->
+
+    <!--add new  the content-->
+        <!-- <h1 id="box1">Lecture of DOM manipulation</h1>
+
+        <div id="newHead">
+
+
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Iure, cumque. Totam enim placeat nesciunt eligendi, 
+            explicabo quo repellendus alias vitae nostrum ea. 
+            In sit pariatur nostrum aliquam et rerum commodi?</p>
+
+        <button onclick="addElement()">add new heading</button>
+   
+
+    <script>
+        function addElement(){
+           var obj=document.createElement('h2');
+           obj.innerHTML=`Rahul `;
+            var containerdiv=document.getElementById("newHead");
+            containerdiv.append(obj)
+        }
+      //innnerHtml will return content inside the tag
+    </script> -->
+
+    <!--Remove element-->
+    <!-- <h1 id="box1">Lecture of DOM manipulation</h1>
+
+    <div id="newHead">
+
+
+    </div>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Iure, cumque. Totam enim placeat nesciunt eligendi, 
+        explicabo quo repellendus alias vitae nostrum ea. 
+        In sit pariatur nostrum aliquam et rerum commodi?</p>
+
+    <button onclick="removeElement()">remove para</button>
+
+
+<script>
+    function removeElement(){
+        var obj=document.getElementById("para");
+        obj.remove();
+    }
+  //innnerHtml will return content inside the tag
+</script> -->
+</body>
+</html>

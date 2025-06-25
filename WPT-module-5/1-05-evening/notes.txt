@@ -1,0 +1,36 @@
+CRUD operations:
+
+C: Create
+R: Read
+U: Update
+D: Delete
+
+npx json-server data.json
+
+"editform.html?postId=10&name=hhh&age=17"
+
+
+1. .html file create -> list, save.html, edit.html
+2. save.html -> create a form
+		handle the submit event
+	        read form data
+	        submit it to server using fetch()
+3. list.html -> create a empty table 
+	        in script write code to send request to fetch data
+                once data is there in response, using dom manipulation write that data into table
+create a action column that will contain delete & edit button
+first implement delete button
+then implement edit button
+
+4. edit.html -> read id from url
+                fetch data by the id
+                fill input fields 
+                 handle the submit event
+	        read form data
+	        submit it to server using fetch()
+
+
+	        
+
+
+

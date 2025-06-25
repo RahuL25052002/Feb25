@@ -1,0 +1,50 @@
+.container{
+    height: 400px;
+    border: 1px solid black;
+    /* display: flex;
+
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    /* justify-content:space-around; spcae in item  */
+    /* justify-content: flex-end; */
+  /*  justify-content: center;
+    align-items: center;
+     */
+    
+    /* align-items:flex-start */
+/* This all are the container flex properties */
+    display: flex;/*For making flex*/
+    flex-direction: row;/* making the row-wise*/
+    /* flex-wrap: wrap;when we descrease size of page or squiz the page ten we have ti maitain width of items */
+    /* flex-flow: column wrap; do same as the flex-direction and the flex wrap */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.box{
+    border: 1px solid green;
+    background-color: pink;
+    width: 100px;
+    flex-grow: 1;
+}
+
+/* Items flex properties */
+
+#box1{
+    order: 1;
+
+    flex-shrink: 4;
+}
+
+#box2{
+    order: 4;
+    flex-basis: 100px;
+    align-self: stretch;
+}
+#box3{
+    order: 3;
+    align-self: flex-end;
+}

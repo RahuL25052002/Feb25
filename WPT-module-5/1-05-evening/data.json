@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "title": "title for id 1",
+      "body": "content for id 1"
+    },
+    {
+      "id": "34",
+      "userId": 1,
+      "title": "title section new value",
+      "body": "content dummy new value"
+    },
+    {
+      "id": "10",
+      "userId": 1,
+      "title": "my title area",
+      "body": "this is content area"
+    }
+  ]
+}
