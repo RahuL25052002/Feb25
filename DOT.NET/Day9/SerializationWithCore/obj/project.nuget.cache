@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jn43xjUwHeY=",
+  "success": true,
+  "projectFilePath": "D:\\Feb25\\Feb25\\DOT.NET\\Day9\\SerializationWithCore\\SerializationWithCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rahul\\.nuget\\packages\\soapformatter\\1.1.9\\soapformatter.1.1.9.nupkg.sha512"
+  ],
+  "logs": []
+}

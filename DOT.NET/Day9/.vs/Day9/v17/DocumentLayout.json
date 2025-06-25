@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Feb25\\Feb25\\DOT.NET\\Day9\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{206CD1A1-E3F4-4F40-974F-680CC8F9DBE7}|SerializationWithCore\\SerializationWithCore.csproj|d:\\feb25\\feb25\\dot.net\\day9\\serializationwithcore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{206CD1A1-E3F4-4F40-974F-680CC8F9DBE7}|SerializationWithCore\\SerializationWithCore.csproj|solutionrelative:serializationwithcore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2AFA4C3-3793-4F62-A2DC-F5505EC03E9F}|FileHandingInCore\\FileHandingInCore.csproj|d:\\feb25\\feb25\\dot.net\\day9\\filehandingincore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2AFA4C3-3793-4F62-A2DC-F5505EC03E9F}|FileHandingInCore\\FileHandingInCore.csproj|solutionrelative:filehandingincore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\DOT.NET\\Day9\\SerializationWithCore\\Program.cs",
+              "RelativeDocumentMoniker": "SerializationWithCore\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\DOT.NET\\Day9\\SerializationWithCore\\Program.cs",
+              "RelativeToolTip": "SerializationWithCore\\Program.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T18:24:42.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\DOT.NET\\Day9\\FileHandingInCore\\Program.cs",
+              "RelativeDocumentMoniker": "FileHandingInCore\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\DOT.NET\\Day9\\FileHandingInCore\\Program.cs",
+              "RelativeToolTip": "FileHandingInCore\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T18:24:32.74Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+D:\Trainings\JKJun25\Day9\FileHandingInCore\bin\Debug\net9.0\FileHandingInCore.exe
+D:\Trainings\JKJun25\Day9\FileHandingInCore\bin\Debug\net9.0\FileHandingInCore.deps.json
+D:\Trainings\JKJun25\Day9\FileHandingInCore\bin\Debug\net9.0\FileHandingInCore.runtimeconfig.json
+D:\Trainings\JKJun25\Day9\FileHandingInCore\bin\Debug\net9.0\FileHandingInCore.dll
+D:\Trainings\JKJun25\Day9\FileHandingInCore\bin\Debug\net9.0\FileHandingInCore.pdb
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\FileHandingInCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\FileHandingInCore.AssemblyInfoInputs.cache
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\FileHandingInCore.AssemblyInfo.cs
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\FileHandingInCore.csproj.CoreCompileInputs.cache
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\FileHandingInCore.dll
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\refint\FileHandingInCore.dll
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\FileHandingInCore.pdb
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\FileHandingInCore.genruntimeconfig.cache
+D:\Trainings\JKJun25\Day9\FileHandingInCore\obj\Debug\net9.0\ref\FileHandingInCore.dll
