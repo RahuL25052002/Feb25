@@ -10,9 +10,11 @@ namespace SerializAayionWitCore
         {
             JSON_Serialize();
             JSON_DeSerialize();
+            Soap_Serialize();
+            Soap_DeSerializ();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private static void Soap_Serialize()
         {
             Class1 o = new Class1();
             o.i = 100;
@@ -23,7 +25,7 @@ namespace SerializAayionWitCore
             sf.Serialize(s, o);
             s.Close();
         }
-        private void button3_Click(object sender, EventArgs e)
+        private static void Soap_DeSerializ()
         {
             SoapFormatter sf = new SoapFormatter();
             Stream s = new FileStream("C:\\o.soap", FileMode.Open);
