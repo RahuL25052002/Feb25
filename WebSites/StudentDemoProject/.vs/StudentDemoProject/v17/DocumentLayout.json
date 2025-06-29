@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|d:\\feb25\\feb25\\websites\\studentdemoproject\\studentdemoproject\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|solutionrelative:studentdemoproject\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|d:\\feb25\\feb25\\websites\\studentdemoproject\\studentdemoproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|solutionrelative:studentdemoproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|d:\\feb25\\feb25\\websites\\studentdemoproject\\studentdemoproject\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|solutionrelative:studentdemoproject\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|d:\\feb25\\feb25\\websites\\studentdemoproject\\studentdemoproject\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|solutionrelative:studentdemoproject\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|d:\\feb25\\feb25\\websites\\studentdemoproject\\studentdemoproject\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|solutionrelative:studentdemoproject\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|d:\\feb25\\feb25\\websites\\studentdemoproject\\studentdemoproject\\views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C7B62CC-6D14-44EB-94E5-FCBB5A821A9B}|StudentDemoProject\\StudentDemoProject.csproj|solutionrelative:studentdemoproject\\views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Views\\Student\\Edit.cshtml",
+              "RelativeDocumentMoniker": "StudentDemoProject\\Views\\Student\\Edit.cshtml",
+              "ToolTip": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Views\\Student\\Edit.cshtml",
+              "RelativeToolTip": "StudentDemoProject\\Views\\Student\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-28T17:36:59.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "StudentDemoProject\\Views\\Student\\Index.cshtml",
+              "ToolTip": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "StudentDemoProject\\Views\\Student\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-28T17:32:18.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Program.cs",
+              "RelativeDocumentMoniker": "StudentDemoProject\\Program.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Program.cs",
+              "RelativeToolTip": "StudentDemoProject\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:23:18.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Views\\Student\\Details.cshtml",
+              "RelativeDocumentMoniker": "StudentDemoProject\\Views\\Student\\Details.cshtml",
+              "ToolTip": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Views\\Student\\Details.cshtml",
+              "RelativeToolTip": "StudentDemoProject\\Views\\Student\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-28T17:19:01.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "StudentDemoProject\\Models\\Student.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Models\\Student.cs",
+              "RelativeToolTip": "StudentDemoProject\\Models\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T16:52:12.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "StudentDemoProject\\Controllers\\StudentController.cs",
+              "ToolTip": "D:\\Feb25\\Feb25\\WebSites\\StudentDemoProject\\StudentDemoProject\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "StudentDemoProject\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwDAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T16:51:31.332Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
