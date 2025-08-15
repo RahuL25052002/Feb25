@@ -1,199 +1,123 @@
 
-# First Missing Positive
+# 268. Missing Number
 
-## Problem Description
-Given an unsorted integer array `nums`, return the smallest positive integer that is **not present** in the array.
-
-You must implement an algorithm that:
-- Runs in **O(n)** time
-- Uses **O(1)** auxiliary space
+## 📝 Problem Statement
+Given an array `nums` containing **n** distinct numbers in the range `[0, n]`, return the **only number** in the range that is missing from the array.
 
 ---
 
-## Examples
+## 📌 Examples
 
-### Example 1:
+### Example 1
 **Input:**
-nums = [1, 2, 0]
-
-
-**Output:**
-3
-
-**Explanation:**  
-The numbers in the range `[1, 2]` are all present in the array, so the next smallest positive integer is `3`.
-
----
-
-### Example 2:
-**Input:**
-nums = [3, 4, -1, 1]
+nums = [3, 0, 1]
 
 **Output:**
 2
 
 **Explanation:**  
-The number `1` exists in the array, but `2` is missing.
+`n = 3` → numbers in range `[0, 3]` should be `{0, 1, 2, 3}`. Missing number is **2**.
 
 ---
 
-### Example 3:
+### Example 2
 **Input:**
-nums = [7, 8, 9, 11, 12]
+nums = [0, 1]
 
 **Output:**
-1
+2
 
 **Explanation:**  
-The smallest positive integer `1` is missing.
+`n = 2` → numbers in range `[0, 2]` should be `{0, 1, 2}`. Missing number is **2**.
 
 ---
 
-## Constraints
-- `1 <= nums.length <= 10^5`
-- `-2^31 <= nums[i] <= 2^31 - 1`
+### Example 3
+**Input:**
+nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]
+
+**Output:**
+8
+
+pgsql
+Copy code
+**Explanation:**  
+`n = 9` → numbers in range `[0, 9]` should be `{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}`. Missing number is **8**.
 
 ---
 
-## Approach
+## 🎯 Constraints
+- `n == nums.length`
+- `1 <= n <= 10^4`
+- `0 <= nums[i] <= n`
+- All numbers in `nums` are unique.
 
-This problem can be solved using the **Cyclic Sort** technique:
+---
 
+## 💡 Approach (Cycle Sort Method)
+
+We can place each number at its **correct index** using **Cycle Sort**:
 1. Iterate through the array.
-2. If the current number is in the range `[1, n]` (where `n` is the array length) and is not in its correct position, swap it to its correct position.
-3. Once all numbers are placed correctly, iterate again to find the first index where `nums[i] != i + 1`.  
-   That index + 1 is the missing positive number.
-4. If all positions are correct, return `n + 1`.
+2. If the current number is within `[0, n-1]` and **not already at the correct index**, swap it with the number at its target index.
+3. Otherwise, move to the next index.
+4. After sorting, the first index where `nums[i] != i` is the missing number.
+5. If all positions are correct, the missing number is `n`.
 
-**Time Complexity:** `O(n)`  
-**Space Complexity:** `O(1)`
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
 
 ---
 
-## Java Solution
-```java
+## 🔄 Flow Diagram
+
+
+flowchart TD
+    A[Start] --> B[Set i = 0]
+    B --> C{ i < nums.length ? }
+    C -- No --> G[Go to check loop]
+    C -- Yes --> D[correct = nums[i]]
+    D --> E{ nums[i] >= 0 AND nums[i] < nums.length AND nums[i] != nums[correct] ? }
+    E -- Yes --> F[Swap nums[i] and nums[correct]]
+    F --> C
+    E -- No --> H[i++]
+    H --> C
+    G --> I[For j from 0 to nums.length - 1]
+    I --> J{ nums[j] != j ? }
+    J -- Yes --> K[Return j]
+    J -- No --> L[Return nums.length]
+    K --> M[End]
+    L --> M
+💻 Java Code (Cycle Sort Approach)
+
+```
 class Solution {
-    public int firstMissingPositive(int[] nums) {
+    public int missingNumber(int[] nums) {
         int i = 0;
         while (i < nums.length) {
-            int correct = nums[i] - 1;
-            if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != nums[correct]) {
-                int temp = nums[i];
-                nums[i] = nums[correct];
-                nums[correct] = temp;
+            int correct = nums[i];
+            if (nums[i] >= 0 && nums[i] < nums.length && nums[i] != nums[correct]) {
+                int temp = nums[correct];
+                nums[correct] = nums[i];
+                nums[i] = temp;
             } else {
                 i++;
             }
         }
+
         for (int j = 0; j < nums.length; j++) {
-            if (nums[j] != j + 1)
-                return j + 1;
+            if (nums[j] != j) {
+                return j;
+            }
         }
-        return nums.length + 1;
+        return nums.length;
     }
 }
 ```
+✅ Key Insights
+The Cycle Sort approach ensures O(n) time complexity without extra space.
 
-## How It Works
+Instead of summing or using XOR, we directly position each number at its index.
 
-Swap logic: Places each positive integer x in the position x - 1 if possible.
-
-Final scan: Finds the first missing positive integer by checking mismatched indices.
-
-
----
-
-# First Missing Positive
-
-## Problem Statement
-
-Given an **unsorted** integer array `nums`, return the **smallest positive integer** that is **not present** in the array.
-
-You must implement an algorithm that runs in **O(n)** time and uses **O(1)** extra space.
-
----
-
-### Examples
-
-**Example 1:**
-Input: nums = [1, 2, 0]
-Output: 3
-Explanation: Numbers 1 and 2 are present, so the smallest missing positive is 3.
+The first mismatch in index → missing number found.
 
 
-**Example 2:**
-Input: nums = [3, 4, -1, 1]
-Output: 2
-Explanation: 1 is present, but 2 is missing.
-
-markdown
-Copy
-Edit
-
-**Example 3:**
-Input: nums = [7, 8, 9, 11, 12]
-Output: 1
-Explanation: 1 is missing, so it is the answer.
-
-
----
-
-## Constraints
-- `1 <= nums.length <= 10^5`
-- `-2^31 <= nums[i] <= 2^31 - 1`
-
----
-
-## Approach
-
-The problem can be solved using **index mapping**:
-1. Ignore all non-positive numbers and numbers greater than `n` (array length) since they can't be the smallest missing positive.
-2. Place each number `x` (where `1 <= x <= n`) at index `x-1`.
-3. After rearrangement, iterate through the array:
-   - The first index `i` where `nums[i] != i+1` means `i+1` is the missing number.
-4. If all indices are correct, the answer is `n+1`.
-
----
-
-## Algorithm Flow
-
-pgsql
-Copy
-Edit
-        ┌─────────────────────────────┐
-        │    Input unsorted array      │
-        └──────────────┬──────────────┘
-                       ▼
-      ┌──────────────────────────────────┐
-      │ For each index i:                 │
-      │   While nums[i] in [1, n]         │
-      │   and nums[i] != nums[nums[i]-1]  │
-      │       Swap nums[i] with nums[x-1] │
-      └───────────────────┬──────────────┘
-                          ▼
-         ┌─────────────────────────────────┐
-         │ Iterate from i = 0 to n-1:       │
-         │   If nums[i] != i+1              │
-         │       Return i+1                 │
-         └──────────────────┬──────────────┘
-                            ▼
-           ┌────────────────────────────────┐
-           │ If no mismatch found: return n+1│
-           └────────────────────────────────┘
-
----
-
-## Example Walkthrough
-
-**Example:**
-nums = [3, 4, -1, 1]
-n = 4
-Step 1: Rearrange so that nums[i] = i+1
-[1, -1, 3, 4] → [1, 3, -1, 4] → [1, -1, 3, 4]
-Step 2: First mismatch is at index 1 → Missing number = 2
-
----
-
-## Time & Space Complexity
-- **Time Complexity:** O(n) (each number is swapped at most once)
-- **Space Complexity:** O(1) (in-place rearrangement)
