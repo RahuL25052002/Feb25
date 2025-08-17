@@ -1,621 +1,816 @@
-# Regular Expressions (Regex) - Complete Guide
+# HashMap in Java - Complete Guide with Examples
 
 ## Table of Contents
-1. [What is Regex?](#what-is-regex)
-2. [Basic Syntax](#basic-syntax)
-3. [Character Classes](#character-classes)
-4. [Quantifiers](#quantifiers)
-5. [Anchors and Boundaries](#anchors-and-boundaries)
-6. [Groups and Capturing](#groups-and-capturing)
-7. [Common Patterns](#common-patterns)
-8. [Java Implementation](#java-implementation)
-9. [Real-World Examples](#real-world-examples)
-10. [Best Practices](#best-practices)
-11. [Cheat Sheet](#cheat-sheet)
-12. [Resources](#resources)
+1. [Introduction](#introduction)
+2. [HashMap Basics](#hashmap-basics)
+3. [Problem Types and Solutions](#problem-types-and-solutions)
+4. [Advanced Techniques](#advanced-techniques)
+5. [Best Practices](#best-practices)
+6. [Common Interview Problems](#common-interview-problems)
 
----
+## Introduction
 
-## What is Regex?
+HashMap is one of the most important data structures in Java, providing efficient key-value storage with O(1) average time complexity for basic operations. This guide covers all concepts with practical examples.
 
-**Regular Expression (Regex)** is a sequence of characters that defines a search pattern. It's used for:
-- Pattern matching in strings
-- Text validation (emails, phone numbers, etc.)
-- Search and replace operations
-- Data extraction from text
-- Input sanitization
+## HashMap Basics
 
-### Why Use Regex?
-- **Powerful**: Can describe complex patterns in a concise way
-- **Flexible**: Works across different programming languages
-- **Efficient**: Fast pattern matching for large texts
-- **Standardized**: Similar syntax across platforms
+### Creating and Basic Operations
 
----
-
-## Basic Syntax
-
-### Literal Characters
-Most characters match themselves exactly:
-```regex
-hello       # matches "hello"
-123         # matches "123"
-abc123      # matches "abc123"
-```
-
-### Metacharacters (Special Characters)
-These characters have special meanings:
-```
-. ^ $ * + ? { } [ ] \ | ( )
-```
-
-To match these literally, escape them with backslash `\`:
-```regex
-\.          # matches literal dot
-\$          # matches literal dollar sign
-\\          # matches literal backslash
-```
-
----
-
-## Character Classes
-
-### Basic Character Classes
-```regex
-[abc]       # matches 'a', 'b', or 'c'
-[a-z]       # matches any lowercase letter
-[A-Z]       # matches any uppercase letter
-[0-9]       # matches any digit
-[a-zA-Z]    # matches any letter
-[a-zA-Z0-9] # matches any alphanumeric character
-```
-
-### Negated Character Classes
-```regex
-[^abc]      # matches anything EXCEPT 'a', 'b', or 'c'
-[^0-9]      # matches anything that's not a digit
-[^a-zA-Z]   # matches anything that's not a letter
-```
-
-### Predefined Character Classes
-```regex
-.           # matches any character except newline
-\d          # matches any digit [0-9]
-\D          # matches any non-digit [^0-9]
-\w          # matches any word character [a-zA-Z0-9_]
-\W          # matches any non-word character [^a-zA-Z0-9_]
-\s          # matches any whitespace character [ \t\n\r\f]
-\S          # matches any non-whitespace character [^ \t\n\r\f]
-```
-
----
-
-## Quantifiers
-
-### Basic Quantifiers
-```regex
-*           # 0 or more times
-+           # 1 or more times
-?           # 0 or 1 time (optional)
-```
-
-### Specific Quantifiers
-```regex
-{n}         # exactly n times
-{n,}        # n or more times
-{n,m}       # between n and m times (inclusive)
-```
-
-### Examples
-```regex
-a*          # "", "a", "aa", "aaa", ...
-a+          # "a", "aa", "aaa", ... (but not "")
-a?          # "", "a"
-a{3}        # "aaa"
-a{2,4}      # "aa", "aaa", "aaaa"
-\d{3}       # exactly 3 digits
-\d{1,3}     # 1 to 3 digits
-```
-
-### Greedy vs Non-Greedy
-```regex
-.*          # greedy: matches as much as possible
-.*?         # non-greedy: matches as little as possible
-.+          # greedy
-.+?         # non-greedy
-```
-
----
-
-## Anchors and Boundaries
-
-### String Anchors
-```regex
-^           # start of string
-$           # end of string
-^abc$       # matches "abc" exactly (entire string)
-```
-
-### Word Boundaries
-```regex
-\b          # word boundary
-\B          # non-word boundary
-\bcat\b     # matches "cat" as a whole word
-\Bcat\B     # matches "cat" inside another word
-```
-
-### Examples
-```regex
-^Hello      # matches strings starting with "Hello"
-world$      # matches strings ending with "world"
-^\d+$       # matches strings containing only digits
-\b\w{4}\b   # matches 4-letter words
-```
-
----
-
-## Groups and Capturing
-
-### Basic Groups
-```regex
-(abc)       # capturing group
-(?:abc)     # non-capturing group
-```
-
-### Alternation (OR)
-```regex
-cat|dog     # matches "cat" or "dog"
-(cat|dog)   # captures "cat" or "dog"
-```
-
-### Backreferences
-```regex
-(\w+) \1    # matches repeated words like "hello hello"
-```
-
-### Examples
 ```java
-// Java example with groups
-String text = "John Doe";
-Pattern pattern = Pattern.compile("(\\w+) (\\w+)");
-Matcher matcher = pattern.matcher(text);
-if (matcher.find()) {
-    System.out.println("First name: " + matcher.group(1));  // John
-    System.out.println("Last name: " + matcher.group(2));   // Doe
-}
-```
+import java.util.*;
 
----
-
-## Common Patterns
-
-### Email Validation
-```regex
-^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
-
-# Breakdown:
-^                   # start of string
-[a-zA-Z0-9._%+-]+   # username part
-@                   # literal @
-[a-zA-Z0-9.-]+      # domain name
-\.                  # literal dot
-[a-zA-Z]{2,}        # domain extension (2+ letters)
-$                   # end of string
-```
-
-### Phone Numbers
-```regex
-# US format: (123) 456-7890
-^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$
-
-# International format: +1-123-456-7890
-^\+\d{1,3}-\d{3,4}-\d{3,4}-\d{4}$
-
-# Flexible format
-^[\+]?[1-9][\d]{0,15}$
-```
-
-### URLs
-```regex
-^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$
-```
-
-### IP Addresses
-```regex
-# IPv4
-^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$
-
-# Simple IPv4
-^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
-```
-
-### Dates
-```regex
-# MM/DD/YYYY
-^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$
-
-# YYYY-MM-DD
-^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$
-```
-
-### Password Validation
-```regex
-# At least 8 chars, 1 uppercase, 1 lowercase, 1 digit, 1 special
-^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$
-```
-
----
-
-## Java Implementation
-
-### String Methods
-```java
-// matches() - entire string must match
-"hello123".matches("\\w+");        // true
-
-// split() - split string using regex
-String[] parts = "one,two,three".split(",");
-
-// replaceAll() - replace all matches
-String result = "abc123def456".replaceAll("\\d+", "X");  // "abcXdefX"
-
-// replaceFirst() - replace first match only
-String result = "abc123def456".replaceFirst("\\d+", "X");  // "abcXdef456"
-```
-
-### Pattern and Matcher Classes
-```java
-import java.util.regex.*;
-
-// Compile pattern for reuse
-Pattern pattern = Pattern.compile("\\d+");
-Matcher matcher = pattern.matcher("abc123def456");
-
-// Find all matches
-while (matcher.find()) {
-    System.out.println("Found: " + matcher.group());
-    System.out.println("Position: " + matcher.start() + "-" + matcher.end());
-}
-
-// Check if pattern matches
-boolean matches = matcher.matches();
-
-// Find first match
-boolean found = matcher.find();
-
-// Replace matches
-String result = matcher.replaceAll("NUMBER");
-```
-
-### Pattern Flags
-```java
-// Case insensitive
-Pattern pattern = Pattern.compile("hello", Pattern.CASE_INSENSITIVE);
-
-// Multiple flags
-Pattern pattern = Pattern.compile("hello", 
-    Pattern.CASE_INSENSITIVE | Pattern.MULTILINE);
-
-// Common flags:
-Pattern.CASE_INSENSITIVE    // (?i)
-Pattern.MULTILINE          // (?m)
-Pattern.DOTALL            // (?s) - dot matches newlines
-Pattern.UNICODE_CASE      // (?u)
-```
-
----
-
-## Real-World Examples
-
-### Data Validation
-```java
-public class Validator {
-    
-    // Email validation
-    public static boolean isValidEmail(String email) {
-        String pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-        return email.matches(pattern);
-    }
-    
-    // Phone validation (US format)
-    public static boolean isValidPhone(String phone) {
-        String pattern = "^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$";
-        return phone.matches(pattern);
-    }
-    
-    // Strong password validation
-    public static boolean isStrongPassword(String password) {
-        String pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
-        return password.matches(pattern);
+public class HashMapBasics {
+    public static void main(String[] args) {
+        // Creating HashMap
+        HashMap<String, Integer> map = new HashMap<>();
+        
+        // Adding elements
+        map.put("apple", 5);
+        map.put("banana", 3);
+        map.put("orange", 7);
+        
+        // Getting elements
+        System.out.println(map.get("apple")); // Output: 5
+        System.out.println(map.get("grape")); // Output: null
+        
+        // Check if key exists
+        System.out.println(map.containsKey("banana")); // true
+        
+        // Check if value exists
+        System.out.println(map.containsValue(3)); // true
+        
+        // Size and empty check
+        System.out.println(map.size()); // 3
+        System.out.println(map.isEmpty()); // false
+        
+        // Remove element
+        map.remove("orange");
+        System.out.println(map.size()); // 2
     }
 }
 ```
 
-### Log File Processing
+## Problem Types and Solutions
+
+### 1. Frequency Counting Problems
+
+**Problem**: Count frequency of characters in a string
 ```java
-public class LogProcessor {
+public class FrequencyCounter {
+    // Example 1: Character frequency
+    public static Map<Character, Integer> countCharacters(String s) {
+        Map<Character, Integer> freq = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            freq.put(c, freq.getOrDefault(c, 0) + 1);
+        }
+        return freq;
+    }
     
-    public static void parseLogFile(String logContent) {
-        // Extract timestamps: 2024-01-15 10:30:45
-        Pattern timestampPattern = Pattern.compile("(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})");
+    // Example 2: Word frequency
+    public static Map<String, Integer> countWords(String[] words) {
+        Map<String, Integer> freq = new HashMap<>();
+        for (String word : words) {
+            freq.merge(word, 1, Integer::sum);
+        }
+        return freq;
+    }
+    
+    // Example 3: Find first non-repeating character
+    public static char firstNonRepeating(String s) {
+        Map<Character, Integer> freq = new HashMap<>();
         
-        // Extract IP addresses
-        Pattern ipPattern = Pattern.compile("\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b");
+        // Count frequencies
+        for (char c : s.toCharArray()) {
+            freq.put(c, freq.getOrDefault(c, 0) + 1);
+        }
         
-        // Extract error levels
-        Pattern levelPattern = Pattern.compile("\\b(ERROR|WARN|INFO|DEBUG)\\b");
+        // Find first non-repeating
+        for (char c : s.toCharArray()) {
+            if (freq.get(c) == 1) {
+                return c;
+            }
+        }
+        return '\0'; // No non-repeating character found
+    }
+    
+    public static void main(String[] args) {
+        // Test character frequency
+        String text = "programming";
+        System.out.println("Character frequencies: " + countCharacters(text));
         
-        Matcher matcher = timestampPattern.matcher(logContent);
-        while (matcher.find()) {
-            System.out.println("Timestamp: " + matcher.group(1));
+        // Test word frequency
+        String[] words = {"java", "python", "java", "c++", "python", "java"};
+        System.out.println("Word frequencies: " + countWords(words));
+        
+        // Test first non-repeating
+        System.out.println("First non-repeating in 'programming': " + 
+                         firstNonRepeating("programming")); // 'p'
+    }
+}
+```
+
+### 2. Two Sum and Complement Finding
+
+**Problem**: Find pairs that sum to target
+```java
+public class TwoSumProblems {
+    // Example 1: Classic Two Sum
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
+            }
+            map.put(nums[i], i);
+        }
+        return new int[]{}; // No solution found
+    }
+    
+    // Example 2: Two Sum - All Pairs
+    public static List<int[]> twoSumAllPairs(int[] nums, int target) {
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        List<int[]> result = new ArrayList<>();
+        
+        // Store all indices for each number
+        for (int i = 0; i < nums.length; i++) {
+            map.computeIfAbsent(nums[i], k -> new ArrayList<>()).add(i);
+        }
+        
+        Set<String> seen = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                for (int j : map.get(complement)) {
+                    if (i < j) { // Avoid duplicates and same element
+                        String pair = nums[i] + "," + nums[j];
+                        if (!seen.contains(pair)) {
+                            result.add(new int[]{i, j});
+                            seen.add(pair);
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+    
+    // Example 3: Three Sum using HashMap
+    public static List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i-1]) continue; // Skip duplicates
+            
+            Map<Integer, Integer> map = new HashMap<>();
+            int target = -nums[i];
+            
+            for (int j = i + 1; j < nums.length; j++) {
+                int complement = target - nums[j];
+                if (map.containsKey(complement)) {
+                    result.add(Arrays.asList(nums[i], complement, nums[j]));
+                    // Skip duplicates
+                    while (j + 1 < nums.length && nums[j] == nums[j + 1]) j++;
+                }
+                map.put(nums[j], j);
+            }
+        }
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 11, 15, 3, 6};
+        int target = 9;
+        
+        System.out.println("Two Sum indices: " + Arrays.toString(twoSum(nums, target)));
+        
+        int[] threeNums = {-1, 0, 1, 2, -1, -4};
+        System.out.println("Three Sum: " + threeSum(threeNums));
+    }
+}
+```
+
+### 3. Caching and Memoization
+
+**Problem**: Optimize recursive algorithms using caching
+```java
+public class MemoizationExamples {
+    private static Map<Integer, Long> fibCache = new HashMap<>();
+    private static Map<String, Integer> dpCache = new HashMap<>();
+    
+    // Example 1: Fibonacci with memoization
+    public static long fibonacci(int n) {
+        if (n <= 1) return n;
+        if (fibCache.containsKey(n)) {
+            return fibCache.get(n);
+        }
+        
+        long result = fibonacci(n-1) + fibonacci(n-2);
+        fibCache.put(n, result);
+        return result;
+    }
+    
+    // Example 2: Climbing Stairs with memoization
+    public static int climbStairs(int n) {
+        return climbStairsHelper(n, new HashMap<>());
+    }
+    
+    private static int climbStairsHelper(int n, Map<Integer, Integer> memo) {
+        if (n <= 1) return 1;
+        if (memo.containsKey(n)) return memo.get(n);
+        
+        int result = climbStairsHelper(n-1, memo) + climbStairsHelper(n-2, memo);
+        memo.put(n, result);
+        return result;
+    }
+    
+    // Example 3: Coin Change with memoization
+    public static int coinChange(int[] coins, int amount) {
+        return coinChangeHelper(coins, amount, new HashMap<>());
+    }
+    
+    private static int coinChangeHelper(int[] coins, int amount, Map<Integer, Integer> memo) {
+        if (amount == 0) return 0;
+        if (amount < 0) return -1;
+        if (memo.containsKey(amount)) return memo.get(amount);
+        
+        int minCoins = Integer.MAX_VALUE;
+        for (int coin : coins) {
+            int result = coinChangeHelper(coins, amount - coin, memo);
+            if (result != -1) {
+                minCoins = Math.min(minCoins, result + 1);
+            }
+        }
+        
+        int finalResult = (minCoins == Integer.MAX_VALUE) ? -1 : minCoins;
+        memo.put(amount, finalResult);
+        return finalResult;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Fibonacci(40): " + fibonacci(40));
+        System.out.println("Climb 10 stairs: " + climbStairs(10));
+        
+        int[] coins = {1, 3, 4};
+        System.out.println("Min coins for 6: " + coinChange(coins, 6));
+    }
+}
+```
+
+### 4. Grouping and Classification
+
+**Problem**: Group elements by common properties
+```java
+public class GroupingExamples {
+    // Example 1: Group Anagrams
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> groups = new HashMap<>();
+        
+        for (String str : strs) {
+            char[] chars = str.toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
+            
+            groups.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
+        }
+        
+        return new ArrayList<>(groups.values());
+    }
+    
+    // Example 2: Group numbers by their digit sum
+    public static Map<Integer, List<Integer>> groupByDigitSum(int[] numbers) {
+        Map<Integer, List<Integer>> groups = new HashMap<>();
+        
+        for (int num : numbers) {
+            int digitSum = getDigitSum(num);
+            groups.computeIfAbsent(digitSum, k -> new ArrayList<>()).add(num);
+        }
+        
+        return groups;
+    }
+    
+    private static int getDigitSum(int n) {
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+    
+    // Example 3: Group students by grade
+    static class Student {
+        String name;
+        char grade;
+        
+        Student(String name, char grade) {
+            this.name = name;
+            this.grade = grade;
+        }
+        
+        @Override
+        public String toString() {
+            return name + "(" + grade + ")";
         }
     }
+    
+    public static Map<Character, List<Student>> groupStudentsByGrade(Student[] students) {
+        Map<Character, List<Student>> groups = new HashMap<>();
+        
+        for (Student student : students) {
+            groups.computeIfAbsent(student.grade, k -> new ArrayList<>()).add(student);
+        }
+        
+        return groups;
+    }
+    
+    public static void main(String[] args) {
+        // Test anagram grouping
+        String[] words = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        System.out.println("Anagram groups: " + groupAnagrams(words));
+        
+        // Test digit sum grouping
+        int[] numbers = {12, 21, 345, 543, 678, 876};
+        System.out.println("Groups by digit sum: " + groupByDigitSum(numbers));
+        
+        // Test student grouping
+        Student[] students = {
+            new Student("Alice", 'A'),
+            new Student("Bob", 'B'),
+            new Student("Charlie", 'A'),
+            new Student("David", 'C'),
+            new Student("Eve", 'B')
+        };
+        System.out.println("Students by grade: " + groupStudentsByGrade(students));
+    }
 }
 ```
 
-### Data Extraction
+### 5. Sliding Window with HashMap
+
+**Problem**: Find substrings/subarrays with specific properties
 ```java
-public class DataExtractor {
-    
-    // Extract all URLs from text
-    public static List<String> extractUrls(String text) {
-        List<String> urls = new ArrayList<>();
-        String urlPattern = "https?://[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%&:/~\\+#]*[\\w\\-\\@?^=%&/~\\+#])?";
+public class SlidingWindowHashMap {
+    // Example 1: Longest substring without repeating characters
+    public static int lengthOfLongestSubstring(String s) {
+        Map<Character, Integer> window = new HashMap<>();
+        int left = 0, maxLength = 0;
         
-        Pattern pattern = Pattern.compile(urlPattern);
-        Matcher matcher = pattern.matcher(text);
-        
-        while (matcher.find()) {
-            urls.add(matcher.group());
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+            window.put(c, window.getOrDefault(c, 0) + 1);
+            
+            // Shrink window while we have duplicates
+            while (window.get(c) > 1) {
+                char leftChar = s.charAt(left);
+                window.put(leftChar, window.get(leftChar) - 1);
+                if (window.get(leftChar) == 0) {
+                    window.remove(leftChar);
+                }
+                left++;
+            }
+            
+            maxLength = Math.max(maxLength, right - left + 1);
         }
-        return urls;
+        
+        return maxLength;
     }
     
-    // Extract credit card numbers (masked for security)
-    public static List<String> extractCreditCards(String text) {
-        List<String> cards = new ArrayList<>();
-        String ccPattern = "\\b(?:\\d{4}[- ]?){3}\\d{4}\\b";
+    // Example 2: Find all anagrams in string
+    public static List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+        if (s.length() < p.length()) return result;
         
-        Pattern pattern = Pattern.compile(ccPattern);
-        Matcher matcher = pattern.matcher(text);
+        Map<Character, Integer> pCount = new HashMap<>();
+        Map<Character, Integer> window = new HashMap<>();
         
-        while (matcher.find()) {
-            String card = matcher.group();
-            // Mask the card number for security
-            String masked = card.substring(0, 4) + " **** **** " + card.substring(card.length() - 4);
-            cards.add(masked);
+        // Count characters in p
+        for (char c : p.toCharArray()) {
+            pCount.put(c, pCount.getOrDefault(c, 0) + 1);
         }
-        return cards;
+        
+        int left = 0;
+        for (int right = 0; right < s.length(); right++) {
+            // Expand window
+            char c = s.charAt(right);
+            window.put(c, window.getOrDefault(c, 0) + 1);
+            
+            // Shrink window if too large
+            if (right - left + 1 > p.length()) {
+                char leftChar = s.charAt(left);
+                window.put(leftChar, window.get(leftChar) - 1);
+                if (window.get(leftChar) == 0) {
+                    window.remove(leftChar);
+                }
+                left++;
+            }
+            
+            // Check if current window is anagram
+            if (window.equals(pCount)) {
+                result.add(left);
+            }
+        }
+        
+        return result;
+    }
+    
+    // Example 3: Minimum window substring
+    public static String minWindow(String s, String t) {
+        if (s.length() < t.length()) return "";
+        
+        Map<Character, Integer> need = new HashMap<>();
+        Map<Character, Integer> window = new HashMap<>();
+        
+        for (char c : t.toCharArray()) {
+            need.put(c, need.getOrDefault(c, 0) + 1);
+        }
+        
+        int left = 0, right = 0;
+        int valid = 0; // Number of characters that satisfy the condition
+        int start = 0, len = Integer.MAX_VALUE;
+        
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            right++;
+            
+            if (need.containsKey(c)) {
+                window.put(c, window.getOrDefault(c, 0) + 1);
+                if (window.get(c).equals(need.get(c))) {
+                    valid++;
+                }
+            }
+            
+            while (valid == need.size()) {
+                if (right - left < len) {
+                    start = left;
+                    len = right - left;
+                }
+                
+                char d = s.charAt(left);
+                left++;
+                
+                if (need.containsKey(d)) {
+                    if (window.get(d).equals(need.get(d))) {
+                        valid--;
+                    }
+                    window.put(d, window.get(d) - 1);
+                }
+            }
+        }
+        
+        return len == Integer.MAX_VALUE ? "" : s.substring(start, start + len);
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Longest substring without repeating: " + 
+                         lengthOfLongestSubstring("abcabcbb")); // 3
+        
+        System.out.println("Anagram indices: " + 
+                         findAnagrams("abab", "ab")); // [0, 2]
+        
+        System.out.println("Minimum window: " + 
+                         minWindow("ADOBECODEBANC", "ABC")); // "BANC"
     }
 }
 ```
 
-### Text Cleaning and Formatting
+### 6. Custom Objects as Keys
+
+**Problem**: Using complex objects as HashMap keys
 ```java
-public class TextCleaner {
-    
-    // Remove extra whitespaces
-    public static String cleanWhitespace(String text) {
-        return text.replaceAll("\\s+", " ").trim();
-    }
-    
-    // Remove HTML tags
-    public static String removeHtmlTags(String html) {
-        return html.replaceAll("<[^>]+>", "");
-    }
-    
-    // Format phone numbers
-    public static String formatPhoneNumber(String phone) {
-        String digits = phone.replaceAll("[^0-9]", "");
-        if (digits.length() == 10) {
-            return digits.replaceAll("(\\d{3})(\\d{3})(\\d{4})", "($1) $2-$3");
+public class CustomKeyExamples {
+    // Example 1: Point class as key
+    static class Point {
+        int x, y;
+        
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
-        return phone; // return original if not 10 digits
+        
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (!(obj instanceof Point)) return false;
+            Point p = (Point) obj;
+            return x == p.x && y == p.y;
+        }
+        
+        @Override
+        public int hashCode() {
+            return Objects.hash(x, y);
+        }
+        
+        @Override
+        public String toString() {
+            return "(" + x + "," + y + ")";
+        }
     }
     
-    // Capitalize words
-    public static String capitalizeWords(String text) {
-        return text.replaceAll("\\b(\\w)(\\w*)", 
-            match -> match.group(1).toUpperCase() + match.group(2).toLowerCase());
+    // Example 2: Interval class as key
+    static class Interval {
+        int start, end;
+        
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+        
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (!(obj instanceof Interval)) return false;
+            Interval interval = (Interval) obj;
+            return start == interval.start && end == interval.end;
+        }
+        
+        @Override
+        public int hashCode() {
+            return Objects.hash(start, end);
+        }
+        
+        @Override
+        public String toString() {
+            return "[" + start + "," + end + "]";
+        }
+    }
+    
+    public static void demonstrateCustomKeys() {
+        // Using Point as key
+        Map<Point, String> pointMap = new HashMap<>();
+        pointMap.put(new Point(1, 2), "First Point");
+        pointMap.put(new Point(3, 4), "Second Point");
+        pointMap.put(new Point(1, 2), "Updated First Point"); // Overwrites
+        
+        System.out.println("Point Map:");
+        for (Map.Entry<Point, String> entry : pointMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+        
+        // Using Interval as key
+        Map<Interval, Integer> intervalMap = new HashMap<>();
+        intervalMap.put(new Interval(1, 5), 100);
+        intervalMap.put(new Interval(6, 10), 200);
+        intervalMap.put(new Interval(1, 5), 150); // Overwrites
+        
+        System.out.println("\nInterval Map:");
+        for (Map.Entry<Interval, Integer> entry : intervalMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+    }
+    
+    public static void main(String[] args) {
+        demonstrateCustomKeys();
     }
 }
 ```
 
----
+## Advanced Techniques
+
+### HashMap Methods Deep Dive
+
+```java
+public class AdvancedHashMapMethods {
+    public static void demonstrateAdvancedMethods() {
+        Map<String, Integer> map = new HashMap<>();
+        
+        // 1. getOrDefault - Safe getting with default
+        map.put("apple", 5);
+        System.out.println(map.getOrDefault("banana", 0)); // Returns 0
+        
+        // 2. computeIfAbsent - Compute value if key is absent
+        map.computeIfAbsent("banana", k -> k.length()); // Puts "banana" -> 6
+        
+        // 3. computeIfPresent - Compute new value if key exists
+        map.computeIfPresent("apple", (k, v) -> v * 2); // Updates "apple" to 10
+        
+        // 4. compute - Always compute new value
+        map.compute("orange", (k, v) -> (v == null) ? 1 : v + 1); // Puts "orange" -> 1
+        
+        // 5. merge - Merge values
+        map.merge("apple", 3, Integer::sum); // Updates "apple" to 13
+        
+        // 6. putIfAbsent - Put only if key doesn't exist
+        map.putIfAbsent("grape", 4); // Puts "grape" -> 4
+        map.putIfAbsent("apple", 100); // Doesn't change "apple"
+        
+        // 7. replace and replaceAll
+        map.replace("banana", 10); // Replaces value for "banana"
+        map.replaceAll((k, v) -> v + 1); // Increments all values
+        
+        System.out.println("Final map: " + map);
+        
+        // 8. forEach with lambda
+        System.out.println("Map contents:");
+        map.forEach((k, v) -> System.out.println(k + " = " + v));
+    }
+    
+    public static void main(String[] args) {
+        demonstrateAdvancedMethods();
+    }
+}
+```
+
+## Common Interview Problems
+
+### Problem Collection
+
+```java
+public class InterviewProblems {
+    // 1. Isomorphic Strings
+    public static boolean isIsomorphic(String s, String t) {
+        if (s.length() != t.length()) return false;
+        
+        Map<Character, Character> mapS = new HashMap<>();
+        Map<Character, Character> mapT = new HashMap<>();
+        
+        for (int i = 0; i < s.length(); i++) {
+            char c1 = s.charAt(i), c2 = t.charAt(i);
+            
+            if (mapS.containsKey(c1)) {
+                if (mapS.get(c1) != c2) return false;
+            } else {
+                mapS.put(c1, c2);
+            }
+            
+            if (mapT.containsKey(c2)) {
+                if (mapT.get(c2) != c1) return false;
+            } else {
+                mapT.put(c2, c1);
+            }
+        }
+        return true;
+    }
+    
+    // 2. Subarray Sum Equals K
+    public static int subarraySum(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1); // Important: empty subarray sum
+        
+        int sum = 0, count = 0;
+        for (int num : nums) {
+            sum += num;
+            if (map.containsKey(sum - k)) {
+                count += map.get(sum - k);
+            }
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
+        }
+        return count;
+    }
+    
+    // 3. Longest Consecutive Sequence
+    public static int longestConsecutive(int[] nums) {
+        Set<Integer> numSet = new HashSet<>();
+        for (int num : nums) {
+            numSet.add(num);
+        }
+        
+        int longestStreak = 0;
+        for (int num : numSet) {
+            if (!numSet.contains(num - 1)) { // Start of sequence
+                int currentNum = num;
+                int currentStreak = 1;
+                
+                while (numSet.contains(currentNum + 1)) {
+                    currentNum++;
+                    currentStreak++;
+                }
+                
+                longestStreak = Math.max(longestStreak, currentStreak);
+            }
+        }
+        return longestStreak;
+    }
+    
+    // 4. Top K Frequent Elements
+    public static int[] topKFrequent(int[] nums, int k) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int num : nums) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+        
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(
+            (a, b) -> b.getValue().compareTo(a.getValue())
+        );
+        
+        pq.addAll(freq.entrySet());
+        
+        int[] result = new int[k];
+        for (int i = 0; i < k; i++) {
+            result[i] = pq.poll().getKey();
+        }
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        // Test all problems
+        System.out.println("Isomorphic 'egg' and 'add': " + isIsomorphic("egg", "add"));
+        
+        int[] arr1 = {1, 1, 1, 2, 2};
+        System.out.println("Subarray sum equals 2: " + subarraySum(arr1, 2));
+        
+        int[] arr2 = {100, 4, 200, 1, 3, 2};
+        System.out.println("Longest consecutive: " + longestConsecutive(arr2));
+        
+        int[] arr3 = {1, 1, 1, 2, 2, 3};
+        System.out.println("Top 2 frequent: " + Arrays.toString(topKFrequent(arr3, 2)));
+    }
+}
+```
 
 ## Best Practices
 
-### 1. Keep It Simple
-```java
-// Good: Simple and readable
-String phonePattern = "\\d{3}-\\d{3}-\\d{4}";
+### Performance Tips
 
-// Avoid: Overly complex patterns that are hard to maintain
-String complexPattern = "^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$";
-```
-
-### 2. Use Comments and Documentation
 ```java
-public class RegexPatterns {
-    // Email pattern: user@domain.com
-    // ^[a-zA-Z0-9._%+-]+  - username part
-    // @                   - literal @ symbol  
-    // [a-zA-Z0-9.-]+      - domain name
-    // \.                  - literal dot
-    // [a-zA-Z]{2,}        - domain extension
-    // $                   - end of string
-    public static final String EMAIL_PATTERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-}
-```
-
-### 3. Compile Patterns for Reuse
-```java
-// Good: Compile once, use many times
-public class EmailValidator {
-    private static final Pattern EMAIL_PATTERN = Pattern.compile(
-        "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
-    );
+public class HashMapBestPractices {
+    public static void performanceTips() {
+        // 1. Initialize with proper capacity to avoid resizing
+        Map<String, Integer> map1 = new HashMap<>(16); // Default
+        Map<String, Integer> map2 = new HashMap<>(100); // If you know size
+        
+        // 2. Use appropriate load factor
+        Map<String, Integer> map3 = new HashMap<>(16, 0.75f); // Default load factor
+        
+        // 3. Use Objects.hash() for custom hashCode
+        class Person {
+            String name;
+            int age;
+            
+            @Override
+            public int hashCode() {
+                return Objects.hash(name, age); // Good practice
+            }
+        }
+        
+        // 4. Avoid using mutable objects as keys
+        List<String> mutableKey = new ArrayList<>(); // Don't use as key!
+        String immutableKey = "safe"; // Good to use as key
+        
+        // 5. Handle null keys carefully
+        Map<String, String> map4 = new HashMap<>();
+        map4.put(null, "null key allowed"); // Only one null key allowed
+        
+        // 6. Use appropriate iteration method
+        Map<String, Integer> map5 = new HashMap<>();
+        map5.put("a", 1);
+        map5.put("b", 2);
+        
+        // Efficient iteration methods:
+        // For keys only
+        for (String key : map5.keySet()) {
+            System.out.println(key);
+        }
+        
+        // For values only
+        for (Integer value : map5.values()) {
+            System.out.println(value);
+        }
+        
+        // For both key and value (most efficient)
+        for (Map.Entry<String, Integer> entry : map5.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
+        
+        // Using streams (Java 8+)
+        map5.entrySet().stream()
+            .filter(entry -> entry.getValue() > 0)
+            .forEach(entry -> System.out.println(entry.getKey()));
+    }
     
-    public static boolean isValid(String email) {
-        return EMAIL_PATTERN.matcher(email).matches();
+    public static void main(String[] args) {
+        performanceTips();
     }
 }
-
-// Avoid: Compiling pattern every time
-public static boolean isValidEmail(String email) {
-    return email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"); // Inefficient!
-}
-```
-
-### 4. Handle Edge Cases
-```java
-public static boolean isValidInput(String input) {
-    // Check for null or empty
-    if (input == null || input.trim().isEmpty()) {
-        return false;
-    }
-    
-    // Apply regex validation
-    return input.matches("^[a-zA-Z0-9]+$");
-}
-```
-
-### 5. Use Appropriate Methods
-```java
-// Use matches() for entire string validation
-boolean isValid = input.matches("\\d+");
-
-// Use find() for searching within text
-Pattern pattern = Pattern.compile("\\d+");
-Matcher matcher = pattern.matcher(text);
-while (matcher.find()) {
-    // Process each match
-}
-
-// Use split() for tokenization
-String[] parts = text.split("\\s+");
-
-// Use replaceAll() for substitution
-String cleaned = text.replaceAll("\\s+", " ");
 ```
 
 ---
 
-## Cheat Sheet
+## Quick Reference
 
-### Character Classes
-| Pattern | Description | Example |
-|---------|-------------|---------|
-| `[abc]` | Any of a, b, c | `[aeiou]` matches vowels |
-| `[^abc]` | Not a, b, c | `[^0-9]` matches non-digits |
-| `[a-z]` | Range a to z | `[A-Za-z]` matches letters |
-| `.` | Any character | `a.c` matches "abc", "axc" |
-| `\d` | Digit [0-9] | `\d+` matches "123" |
-| `\D` | Non-digit | `\D+` matches "abc" |
-| `\w` | Word char [a-zA-Z0-9_] | `\w+` matches "hello_123" |
-| `\W` | Non-word char | `\W+` matches "@#$" |
-| `\s` | Whitespace | `\s+` matches spaces |
-| `\S` | Non-whitespace | `\S+` matches "hello" |
+### Time Complexities
+- **get()**: O(1) average, O(n) worst case
+- **put()**: O(1) average, O(n) worst case  
+- **remove()**: O(1) average, O(n) worst case
+- **containsKey()**: O(1) average, O(n) worst case
 
-### Quantifiers
-| Pattern | Description | Example |
-|---------|-------------|---------|
-| `*` | 0 or more | `a*` matches "", "a", "aaa" |
-| `+` | 1 or more | `a+` matches "a", "aaa" |
-| `?` | 0 or 1 | `a?` matches "", "a" |
-| `{n}` | Exactly n | `a{3}` matches "aaa" |
-| `{n,}` | n or more | `a{2,}` matches "aa", "aaa" |
-| `{n,m}` | n to m times | `a{2,4}` matches "aa" to "aaaa" |
+### Common Patterns
+1. **Frequency Counting**: `map.getOrDefault(key, 0) + 1`
+2. **Grouping**: `map.computeIfAbsent(key, k -> new ArrayList<>())`
+3. **Caching**: Check if key exists before computing
+4. **Two Pointers**: Store complement in map
+5. **Sliding Window**: Use map to track window contents
 
-### Anchors
-| Pattern | Description | Example |
-|---------|-------------|---------|
-| `^` | Start of string | `^Hello` matches "Hello world" |
-| `$` | End of string | `world$` matches "Hello world" |
-| `\b` | Word boundary | `\bcat\b` matches "cat" (whole word) |
-| `\B` | Non-word boundary | `\Bcat\B` matches "concatenate" |
-
-### Groups
-| Pattern | Description | Example |
-|---------|-------------|---------|
-| `(abc)` | Capturing group | `(cat\|dog)` captures "cat" or "dog" |
-| `(?:abc)` | Non-capturing group | `(?:cat\|dog)+` matches patterns |
-| `\|` | Alternation (OR) | `cat\|dog` matches "cat" or "dog" |
-| `\1` | Backreference | `(\w+) \1` matches "hello hello" |
-
-### Escape Sequences
-| Pattern | Description |
-|---------|-------------|
-| `\.` | Literal dot |
-| `\*` | Literal asterisk |
-| `\+` | Literal plus |
-| `\?` | Literal question mark |
-| `\\` | Literal backslash |
-| `\[` | Literal opening bracket |
-| `\]` | Literal closing bracket |
-| `\(` | Literal opening parenthesis |
-| `\)` | Literal closing parenthesis |
-
----
-
-## Resources
-
-### Online Tools
-- [regex101.com](https://regex101.com/) - Interactive regex tester with explanations
-- [regexpal.com](https://regexpal.com/) - Simple regex testing tool
-- [regexr.com](https://regexr.com/) - Visual regex builder and tester
-- [regexlib.com](https://regexlib.com/) - Library of common regex patterns
-
-### Documentation
-- [Java Pattern Class](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- [Java Matcher Class](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html)
-- [Oracle Regex Tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/)
-
-### Books
-- "Mastering Regular Expressions" by Jeffrey Friedl
-- "Regular Expressions Cookbook" by Jan Goyvaerts & Steven Levithan
-
-### Practice Sites
-- [RegexOne](https://regexone.com/) - Interactive regex tutorial
-- [RegexCrossword](https://regexcrossword.com/) - Regex puzzles
-- [HackerRank Regex Challenges](https://www.hackerrank.com/domains/regex)
-
----
-
-## Quick Reference for Java Developers
-
-### Common Validation Methods
-```java
-public class RegexUtils {
-    
-    private static final Pattern EMAIL_PATTERN = 
-        Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
-    
-    private static final Pattern PHONE_PATTERN = 
-        Pattern.compile("^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$");
-    
-    private static final Pattern PASSWORD_PATTERN = 
-        Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
-    
-    public static boolean isValidEmail(String email) {
-        return email != null && EMAIL_PATTERN.matcher(email).matches();
-    }
-    
-    public static boolean isValidPhone(String phone) {
-        return phone != null && PHONE_PATTERN.matcher(phone).matches();
-    }
-    
-    public static boolean isStrongPassword(String password) {
-        return password != null && PASSWORD_PATTERN.matcher(password).matches();
-    }
-}
-```
-
-**Remember**: Start simple, test thoroughly, and always consider edge cases when using regex in production code!
-
----
-
-*Last updated: August 2025*
+### When to Use HashMap
+- ✅ Need fast lookups by key
+- ✅ Counting frequencies
+- ✅ Caching/memoization
+- ✅ Grouping elements
+- ✅ Finding complements/pairs
+- ❌ Need sorted order (use TreeMap)
+- ❌ Thread safety required (use ConcurrentHashMap)
+- ❌ Memory is very limited (consider alternatives)
 
 
 # HashMap in Java - Complete Learning Resource 📚
@@ -645,3 +840,4 @@ This repository contains a comprehensive guide to HashMap in Java, covering ever
 - Java 8 or higher
 - Basic understanding of Java syntax
 - Familiarity with arrays and loops
+
