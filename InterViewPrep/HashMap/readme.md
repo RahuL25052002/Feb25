@@ -841,3 +841,354 @@ This repository contains a comprehensive guide to HashMap in Java, covering ever
 - Basic understanding of Java syntax
 - Familiarity with arrays and loops
 
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/your-username/hashmap-java-guide.git
+cd hashmap-java-guide
+
+# Compile Java files
+javac *.java
+
+# Run examples
+java HashMapBasics
+```
+
+## 📚 What You'll Learn
+
+### Core Concepts
+- ✅ HashMap internal working and hash functions
+- ✅ Time and space complexity analysis
+- ✅ Collision handling and load factor
+- ✅ equals() and hashCode() implementation
+- ✅ Best practices and performance optimization
+
+### Problem-Solving Skills
+- ✅ Frequency counting techniques
+- ✅ Two-sum and complement finding
+- ✅ Sliding window with HashMap
+- ✅ Caching and memoization
+- ✅ Grouping and classification algorithms
+- ✅ Custom objects as keys
+
+## 🎯 Problem Categories
+
+| Category | Difficulty | Examples | Time Complexity |
+|----------|------------|----------|----------------|
+| **Frequency Counting** | 🟢 Easy | Character count, Word frequency | O(n) |
+| **Two Sum Problems** | 🟡 Medium | Two sum, Three sum, Target pairs | O(n) |
+| **Sliding Window** | 🔴 Hard | Longest substring, Anagram finding | O(n) |
+| **Caching/Memoization** | 🟡 Medium | Fibonacci, DP optimization | O(1) lookup |
+| **Grouping** | 🟡 Medium | Group anagrams, Classification | O(n) |
+| **Custom Keys** | 🔴 Hard | Point mapping, Complex objects | O(1) |
+
+## 💡 Key Concepts
+
+### HashMap vs Other Data Structures
+
+| Structure | Search | Insert | Delete | Ordered | Thread Safe |
+|-----------|--------|--------|--------|---------|-------------|
+| **HashMap** | O(1)* | O(1)* | O(1)* | ❌ | ❌ |
+| **LinkedHashMap** | O(1)* | O(1)* | O(1)* | ✅ | ❌ |
+| **TreeMap** | O(log n) | O(log n) | O(log n) | ✅ | ❌ |
+| **ConcurrentHashMap** | O(1)* | O(1)* | O(1)* | ❌ | ✅ |
+| **ArrayList** | O(n) | O(1) | O(n) | ✅ | ❌ |
+
+*Average case - worst case is O(n)
+
+### When to Use HashMap
+
+#### ✅ Perfect For:
+- **Fast Lookups**: Need O(1) average access time
+- **Frequency Analysis**: Counting occurrences of elements
+- **Caching**: Storing computed results for reuse
+- **Mapping Relationships**: Key-value associations
+- **Duplicate Detection**: Quick existence checking
+- **Complement Finding**: Two-sum type problems
+
+#### ❌ Consider Alternatives:
+- **Sorted Data**: Use TreeMap instead
+- **Insertion Order**: Use LinkedHashMap instead  
+- **Thread Safety**: Use ConcurrentHashMap instead
+- **Memory Constraints**: Use arrays or primitive collections
+- **Small Fixed Sets**: Use EnumMap for enums
+
+## 🧪 Running Examples
+
+### Basic Usage
+```java
+// Compile and run basic examples
+javac HashMapBasics.java
+java HashMapBasics
+```
+
+### Problem Categories
+```java
+// Frequency counting examples
+java FrequencyCounter
+
+// Two sum problems
+java TwoSumProblems
+
+// Sliding window techniques
+java SlidingWindowHashMap
+
+// Memoization examples
+java MemoizationExamples
+
+// Grouping algorithms
+java GroupingExamples
+
+// Advanced techniques
+java AdvancedHashMapMethods
+
+// Interview problems
+java InterviewProblems
+```
+
+### Expected Output
+```
+Character frequencies: {p=1, r=2, o=2, g=2, a=1, m=2, i=1, n=2}
+Word frequencies: {java=3, python=2, c++=1}
+First non-repeating in 'programming': p
+Two Sum indices: [0, 1]
+Longest substring without repeating: 3
+Anagram groups: [[eat, tea, ate], [tan, nat], [bat]]
+```
+
+## 📖 Study Guide
+
+### Week 1: Fundamentals
+- [ ] Understand HashMap internals and hash functions
+- [ ] Learn basic operations (put, get, remove)
+- [ ] Practice with simple frequency counting
+- [ ] Implement equals() and hashCode() for custom classes
+
+### Week 2: Problem Patterns  
+- [ ] Master Two Sum and its variations
+- [ ] Learn sliding window with HashMap
+- [ ] Practice grouping and classification problems
+- [ ] Implement memoization techniques
+
+### Week 3: Advanced Topics
+- [ ] Custom objects as keys
+- [ ] Performance optimization techniques
+- [ ] Complex interview problems
+- [ ] Integration with other data structures
+
+### Daily Practice Problems
+
+#### Beginner (Week 1)
+1. Count character frequency in a string
+2. Find first non-repeating character
+3. Check if two strings are anagrams
+4. Count word occurrences in text
+5. Remove duplicates from array
+
+#### Intermediate (Week 2)
+6. Two Sum problem and variations
+7. Group anagrams together
+8. Longest substring without repeating characters
+9. Find all anagrams in a string
+10. Subarray sum equals K
+
+#### Advanced (Week 3)  
+11. Minimum window substring
+12. Three Sum problem
+13. Top K frequent elements
+14. Longest consecutive sequence
+15. Design LRU Cache
+
+## 🎤 Interview Preparation
+
+### Top 15 HashMap Interview Questions
+
+#### Conceptual Questions (5 mins each)
+1. **How does HashMap work internally?**
+   - Hash function, buckets, collision handling
+   - Load factor and resizing mechanism
+   
+2. **What's the difference between HashMap and HashTable?**
+   - Synchronization, null values, inheritance
+   
+3. **When would you use HashMap vs TreeMap vs LinkedHashMap?**
+   - Performance vs ordering requirements
+
+#### Coding Problems (15-30 mins each)
+
+##### Easy Level
+4. **Two Sum** - Find indices of two numbers that add up to target
+5. **Valid Anagram** - Check if two strings are anagrams
+6. **First Unique Character** - Find first non-repeating character
+
+##### Medium Level
+7. **Group Anagrams** - Group strings that are anagrams
+8. **Top K Frequent Elements** - Find K most frequent elements
+9. **Subarray Sum Equals K** - Count subarrays with sum K
+10. **Longest Substring Without Repeating** - Find longest unique substring
+
+##### Hard Level
+11. **Minimum Window Substring** - Find minimum window containing all characters
+12. **Three Sum** - Find all unique triplets that sum to zero
+13. **Longest Consecutive Sequence** - Find longest consecutive elements sequence
+14. **Design LRU Cache** - Implement LRU cache with HashMap
+15. **Word Pattern** - Check if string follows given pattern
+
+### Interview Tips 💡
+
+#### Before the Interview
+- [ ] Review time/space complexities
+- [ ] Practice whiteboard coding
+- [ ] Understand when NOT to use HashMap
+- [ ] Know alternative approaches
+
+#### During the Interview
+- [ ] Ask clarifying questions about input constraints
+- [ ] Explain your approach before coding
+- [ ] Consider edge cases (empty input, duplicates, null values)
+- [ ] Analyze time and space complexity
+- [ ] Test your solution with examples
+
+#### Common Mistakes to Avoid
+- ❌ Forgetting to handle null keys/values
+- ❌ Not considering hash collisions in complexity analysis
+- ❌ Using mutable objects as keys without proper equals/hashCode
+- ❌ Ignoring thread safety requirements
+- ❌ Not optimizing for the specific use case
+
+## 🏆 Complexity Cheat Sheet
+
+### HashMap Operations
+```java
+Operation          | Average | Worst Case | Notes
+-------------------|---------|------------|------------------
+get(key)          | O(1)    | O(n)       | Depends on hash quality
+put(key, value)   | O(1)    | O(n)       | May trigger resize
+remove(key)       | O(1)    | O(n)       | Same as get
+containsKey(key)  | O(1)    | O(n)       | Same as get
+isEmpty()         | O(1)    | O(1)       | Simple flag check
+size()            | O(1)    | O(1)       | Counter maintained
+```
+
+### Common Problem Patterns
+```java
+Pattern                    | Time     | Space    | Example Problems
+---------------------------|----------|----------|------------------
+Frequency Counting         | O(n)     | O(k)     | Character count, duplicates
+Two Pointer + HashMap      | O(n)     | O(n)     | Two sum, three sum
+Sliding Window + HashMap   | O(n)     | O(k)     | Longest substring
+Prefix Sum + HashMap       | O(n)     | O(n)     | Subarray sum problems
+DFS/BFS + HashMap         | O(V+E)   | O(V)     | Graph problems with state
+```
+
+## 🛠 Tools and Resources
+
+### IDE Setup
+- **IntelliJ IDEA**: Excellent Java support with debugging
+- **Eclipse**: Free alternative with good HashMap visualization
+- **VS Code**: Lightweight with Java extensions
+
+### Debugging HashMap
+```java
+// Enable HashMap debugging in your IDE
+System.out.println("HashMap contents: " + map);
+map.forEach((k, v) -> System.out.println(k + " -> " + v));
+
+// Check internal structure (for learning purposes)
+System.out.println("Size: " + map.size());
+System.out.println("Is empty: " + map.isEmpty());
+```
+
+### Performance Profiling
+```java
+// Measure HashMap performance
+long startTime = System.nanoTime();
+// ... HashMap operations ...
+long endTime = System.nanoTime();
+System.out.println("Execution time: " + (endTime - startTime) / 1_000_000 + " ms");
+```
+
+## 📚 Additional Resources
+
+### Books
+- **"Effective Java" by Joshua Bloch** - Best practices for HashMap usage
+- **"Java: The Complete Reference" by Herbert Schildt** - Comprehensive HashMap coverage
+- **"Cracking the Coding Interview" by Gayle McDowell** - HashMap interview problems
+
+### Online Platforms
+- **LeetCode**: 150+ HashMap problems with solutions
+- **HackerRank**: Data structure challenges
+- **GeeksforGeeks**: Theory and practice problems
+- **Coursera/edX**: Data structures and algorithms courses
+
+### Practice Websites
+- [LeetCode HashMap Tag](https://leetcode.com/tag/hash-table/)
+- [HackerRank Data Structures](https://www.hackerrank.com/domains/data-structures)
+- [GeeksforGeeks HashMap Problems](https://www.geeksforgeeks.org/hashing/)
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+### Ways to Contribute
+- 🐛 **Bug Reports**: Found an error in the examples?
+- 💡 **New Examples**: Have a great HashMap problem to share?
+- 📝 **Documentation**: Improve explanations or add more details
+- 🧪 **Test Cases**: Add more test scenarios
+- 🌐 **Translations**: Help translate to other languages
+
+### Contribution Process
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-example`)
+3. Commit your changes (`git commit -am 'Add new HashMap example'`)
+4. Push to the branch (`git push origin feature/new-example`)
+5. Create a Pull Request
+
+### Code Style Guidelines
+- Follow Java naming conventions
+- Add comments for complex algorithms
+- Include time/space complexity analysis
+- Provide test cases with expected output
+- Keep examples self-contained and runnable
+
+## 📞 Support
+
+### Getting Help
+- 💬 **Issues**: Create an issue for bugs or questions
+- 📧 **Email**: Contact maintainers for complex queries
+- 💭 **Discussions**: Join community discussions
+- 📖 **Wiki**: Check the wiki for additional resources
+
+### FAQ
+
+**Q: Why does HashMap sometimes have O(n) time complexity?**
+A: When many keys hash to the same bucket (poor hash function or many collisions), HashMap degrades to a linked list, resulting in O(n) operations.
+
+**Q: Can I use mutable objects as HashMap keys?**
+A: Not recommended. If the object changes after being used as a key, you might not be able to retrieve the value later.
+
+**Q: When should I use HashMap vs ArrayList?**
+A: Use HashMap for key-value associations and fast lookups. Use ArrayList for ordered data and index-based access.
+
+**Q: Is HashMap thread-safe?**
+A: No. Use ConcurrentHashMap for thread-safe operations or synchronize access manually.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 🙏 Acknowledgments
+
+- Oracle Java Documentation Team
+- LeetCode and HackerRank for problem inspiration  
+- Java community for best practices and patterns
+- Contributors and reviewers
+
+---
+
+### ⭐ Star this repository if it helped you master HashMap!
+
+**Happy Coding! 🚀**
+
