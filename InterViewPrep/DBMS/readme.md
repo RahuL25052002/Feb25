@@ -83,6 +83,9 @@ CREATE TABLE Students (
   name VARCHAR(50),
   age INT
 );
+
+```
+
 🟢 DML (Data Manipulation Language)
 Works with data inside tables.
 
